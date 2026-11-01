@@ -17,3 +17,5 @@ Activated after the successful 2026-11-01 Pages launch. Task: `preparedness-week
 This is a local Codex task, not a continuously running public warning service. It depends on the machine/app and source access being available. A weekly review is not adequate for live hazard alerts, and the site must never present itself as one. Actual hazard warnings should be obtained from the relevant official service. Future cadence changes can be made in the Codex schedule.
 
 Local scheduled tasks require the computer to be on and the app running with the project available. See [official OpenAI documentation](https://learn.chatgpt.com/docs/automations?surface=app).
+
+Public presentation: follow the journalistic site standards in WEBSITE.md. Recheck changed public references, inspect supporting content, use credited source imagery, and keep roadmap/product planning local-only. Do not list unsourced leads as public investigations.

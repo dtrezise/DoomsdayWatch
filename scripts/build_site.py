@@ -2,10 +2,11 @@
 """Build the public, allowlisted GitHub Pages artifact using standard Python only."""
 import argparse
 import html
+import hashlib
 import json
 import re
 import shutil
-import textwrap
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
 from xml.etree.ElementTree import Element, SubElement, tostring
@@ -24,6 +25,11 @@ SECTORS = {
 
 def esc(value):
     return html.escape(str(value), quote=True)
+
+
+def date_label(value):
+    parsed = date.fromisoformat(value)
+    return parsed.strftime("%B") + f" {parsed.day}, {parsed.year}"
 
 
 def inline(value):
@@ -101,8 +107,37 @@ def load_public(root=ROOT):
             s = sources[c['source_id']]
             if s['access_outcome'] != 'full_text' or not s['url'].startswith('https://'):
                 raise ValueError('Public finding requires inspectable external source')
-    return config, tables, [f for f in all_findings if f['publication_status'] == 'published']
-
+    media = json.loads((root/'site/media.json').read_text())
+    checks = {c['source_id']: c for c in json.loads((root/'site/reference_checks.json').read_text())}
+    published = [f for f in all_findings if f['publication_status'] == 'published']
+    public_ids = {f['id'] for f in published}
+    for finding in published:
+        image = media.get(finding.get('image_id'))
+        if not image or not image.get('credit') or not image.get('license_url') or not image.get('caption'):
+            raise ValueError('Published story requires sourced image and credit metadata')
+        image_path = root/'site'/image['path']
+        if not image_path.resolve().is_relative_to((root/'site/assets/photos').resolve()) or not image_path.is_file():
+            raise ValueError('Missing or unsafe story image')
+        if image['source_url'] != sources[image['source_id']]['url']:
+            raise ValueError('Image source URL must match its registered source')
+        licence_ids = {sid for sid, source in sources.items() if source['url'] == image['license_url']}
+        if not licence_ids:
+            raise ValueError('Image reuse policy requires a registered checked reference')
+        source_ids = {claims[cid]['source_id'] for cid in finding['claim_ids']} | {image['source_id']} | licence_ids
+        for sid in source_ids:
+            check = checks.get(sid, {})
+            if check.get('url') != sources[sid]['url'] or check.get('status') != 'retrieved' or check.get('http_status') != 200:
+                raise ValueError(f"{finding['id']}: missing successful reference check for {sid}")
+    slugs = set()
+    for investigation in json.loads((root/'site/investigations.json').read_text()):
+        if not re.fullmatch(r'[a-z0-9-]+', investigation['slug']) or investigation['slug'] in slugs:
+            raise ValueError('Invalid or duplicate investigation slug')
+        slugs.add(investigation['slug'])
+        if not investigation['finding_ids'] or not set(investigation['finding_ids']).issubset(public_ids):
+            raise ValueError('Public investigations require sourced published reporting')
+        if investigation['image_id'] not in media:
+            raise ValueError('Investigation requires a sourced image')
+    return config, tables, published
 
 class Site:
     def __init__(self, root, out):
@@ -112,6 +147,10 @@ class Site:
         self.claims = {c['claim_id']: c for c in self.tables['claims']}
         self.sources = {s['source_id']: s for s in self.tables['sources']}
         self.events = {e['event_id']: e for e in self.tables['events']}
+        self.media = json.loads((root/'site/media.json').read_text())
+        self.checks = {c['source_id']:c for c in json.loads((root/'site/reference_checks.json').read_text())}
+        self.investigations = json.loads((root/'site/investigations.json').read_text())
+        self.by_id = {f['id']:f for f in self.findings}
         self.routes = []
 
     def href(self, path=''):
@@ -120,149 +159,169 @@ class Site:
     def absolute(self, path=''):
         return self.config['url'].rstrip('/') + '/' + path.lstrip('/')
 
+    def asset_href(self, path):
+        digest=hashlib.sha256((self.root/'site'/path).read_bytes()).hexdigest()[:12]
+        return self.href(path)+'?v='+digest
+
+    def asset_absolute(self, path):
+        digest=hashlib.sha256((self.root/'site'/path).read_bytes()).hexdigest()[:12]
+        return self.absolute(path)+'?v='+digest
+
     def share(self, f):
-        payload = dict(title=f['title'], summary=f['summary'], status='Verified record · confidence in source support: high',
+        payload = dict(title=f['title'], summary=f['summary'], status='Document review · verified source records',
                        boundary=f['boundary'], url=self.absolute(f"findings/{f['id']}/"))
-        return f'<button type="button" class="share-trigger" data-share="{esc(json.dumps(payload))}">Share finding ↗</button>'
+        return f'<button type="button" class="share-trigger" data-share="{esc(json.dumps(payload))}">Share story ↗</button>'
+
+    def heading(self, title, desc, label='Reporting'):
+        return f'<header class="page-heading"><p class="eyebrow">{esc(label)}</p><h1>{esc(title)}</h1><p class="dek">{esc(desc)}</p></header>'
 
     def page(self, route, title, description, body, active='', image='assets/share.png'):
         cfg = self.config
-        nav = [('findings/', 'Findings'), ('investigations/', 'Investigations'), ('timeline/', 'Timeline'), ('methods/', 'Methods'), ('roadmap/', 'Roadmap')]
+        nav = [('', 'Home'), ('findings/', 'Reporting'), ('investigations/', 'Investigations'), ('timeline/', 'Timeline'), ('methods/', 'Methods')]
         navigation = ''.join(f'<a href="{self.href(path)}"'+(' aria-current="page"' if active==path else '')+f'>{name}</a>' for path,name in nav)
         canonical = self.absolute(route)
         content = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} · Preparedness Observatory</title><meta name="description" content="{esc(description)}">
-<link rel="canonical" href="{esc(canonical)}"><meta property="og:type" content="article"><meta property="og:site_name" content="Preparedness Observatory">
+<link rel="canonical" href="{esc(canonical)}"><meta property="og:type" content="{'website' if not route else 'article'}"><meta property="og:site_name" content="Preparedness Observatory">
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(canonical)}">
-<meta property="og:image" content="{esc(self.absolute(image))}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{esc(title)}">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{esc(self.absolute(image))}">
-<link rel="icon" href="{self.href('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{self.href('assets/style.css')}">
-<link rel="alternate" type="application/atom+xml" title="Preparedness findings" href="{self.href('feed.xml')}"><script defer src="{self.href('assets/app.js')}"></script></head><body>
-<a class="skip" href="#main">Skip to content</a><div class="topline"><div class="wrap"><span>Independent public-source research</span><span>{esc(cfg['edition'])} / Research through {esc(cfg['research_cutoff'])}</span></div></div>
-<header class="masthead wrap"><a class="brand" href="{self.href()}"><span class="mark" aria-hidden="true">◎</span><span class="brand-name">PREPAREDNESS<small>Observatory</small></span></a><nav aria-label="Main navigation">{navigation}</nav></header>
+<meta property="og:image" content="{esc(self.asset_absolute(image))}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{esc(title)}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{esc(self.asset_absolute(image))}">
+<link rel="icon" href="{self.href('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{self.asset_href('assets/style.css')}">
+<link rel="alternate" type="application/atom+xml" title="Preparedness reporting" href="{self.href('feed.xml')}"><script defer src="{self.asset_href('assets/app.js')}"></script></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="edition-bar wrap"><span>Independent reporting</span><span>Security · Infrastructure · Civil preparedness</span><time datetime="{esc(cfg['research_cutoff'])}">{esc(date_label(cfg["research_cutoff"]))} edition</time></div>
+<header class="masthead wrap"><a class="brand" href="{self.href()}"><span class="brand-name">Preparedness<span>Observatory</span></span></a><p>Government preparedness<br>Military readiness · Civil resilience</p></header>
+<div class="nav-wrap"><nav class="wrap" aria-label="Main navigation">{navigation}<a class="nav-about" href="{self.href('about/')}">About the publication</a></nav></div>
 <main id="main" class="wrap">{body}</main>
-<footer><div class="wrap"><div>Preparedness Observatory<br>Evidence and uncertainty, kept together.</div><div><a href="{self.href('sources/')}">Sources</a><a href="{self.href('corrections/')}">Corrections</a><a href="{self.href('about/')}">About & privacy</a><a href="{esc(cfg['repository'])}">GitHub ↗</a></div></div></footer>
-<dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-top"><p class="eyebrow">Share the evidence</p><button type="button" id="close-share" class="dialog-close" aria-label="Close share composer">×</button></div><h2 id="share-title">Keep the evidence in context.</h2><label for="share-text">Suggested post · edit before sharing</label><textarea id="share-text" rows="8"></textarea><div class="actions"><button class="primary" id="copy-post" type="button">Copy post</button><button class="button secondary" id="copy-link" type="button">Copy link</button><button class="button secondary" id="native-share" type="button">Share…</button></div><div class="share-destinations"><a data-destination="email">Email</a><a data-destination="facebook" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a data-destination="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><p class="message" id="share-message" role="status"></p><p class="subtle">Your post is sent only when you choose a destination. Link previews use the published finding title, image, and description; custom post text may need to be pasted.</p></dialog>
+<footer><div class="wrap footer-main"><div><a class="footer-brand" href="{self.href()}">Preparedness Observatory</a><p>Independent reporting on preparedness, security and resilience.</p></div><div class="footer-links"><a href="{self.href('sources/')}">Source registry</a><a href="{self.href('corrections/')}">Corrections</a><a href="{self.href('about/')}">About & privacy</a><a href="{self.href('feed.xml')}">RSS / Atom</a></div></div><div class="wrap footer-note"><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p><a href="{esc(cfg['repository'])}">Public research repository ↗</a></div></footer>
+<dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-top"><p class="eyebrow">Share this story</p><button type="button" id="close-share" class="dialog-close" aria-label="Close share composer">×</button></div><h2 id="share-title">Share story</h2><label for="share-text">Suggested post · edit before sharing</label><textarea id="share-text" rows="8"></textarea><div class="actions"><button class="primary" id="copy-post" type="button">Copy post</button><button class="button secondary" id="copy-link" type="button">Copy link</button><button class="button secondary" id="native-share" type="button">Share…</button></div><div class="share-destinations"><a data-destination="email">Email</a><a data-destination="facebook" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a data-destination="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><p class="message" id="share-message" role="status"></p><p class="subtle">Social previews use the published headline and image. Custom text may need to be pasted into your post.</p></dialog>
 </body></html>'''
         path = self.out/route/'index.html' if route else self.out/'index.html'
         path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(content)
         self.routes.append(route)
 
-    def heading(self, title, desc, label='Research desk'):
-        return f'<header class="page-heading"><p class="eyebrow">{esc(label)}</p><h1>{esc(title)}</h1><p>{esc(desc)}</p></header>'
+    def source_ids(self, finding):
+        return sorted({self.claims[cid]['source_id'] for cid in finding['claim_ids']})
 
-    def card(self, f):
-        return f'''<article class="finding-card" data-finding data-sector="{f['sector']}"><div class="card-top"><span>{f['id']} / {esc(SECTORS[f['sector']][0])}</span><span>{f['published_at']}</span></div><h3><a href="{self.href('findings/'+f['id']+'/')}">{esc(f['title'])}</a></h3><p>{esc(f['summary'])}</p><p class="boundary"><strong>Limit:</strong> {esc(f['boundary'])}</p><div class="card-foot"><span class="badge">Verified record</span>{self.share(f)}</div></article>'''
+    def photo(self, image_id, full=False, eager=False):
+        m=self.media[image_id]
+        return f'''<figure class="story-photo {esc(image_id)}"><img src="{self.asset_href(m['path'])}" alt="{esc(m['alt'])}" width="{m['width']}" height="{m['height']}" loading="{'eager' if eager else 'lazy'}" decoding="async"><figcaption>{esc(m['caption'])+' ' if full else ''}<span>{esc(m['credit'])}</span> <a href="{esc(m['source_url'])}" rel="noreferrer" aria-label="Image source: {esc(m['credit'])}">↗</a></figcaption></figure>'''
+
+    def references(self, source_ids, prefix, image_id=None, finding=None):
+        ids=sorted(set(source_ids))
+        items=[]
+        for sid in ids:
+            s=self.sources[sid];c=self.checks[sid]
+            items.append(f'''<li><a href="{esc(s['url'])}" rel="noreferrer">{esc(s['title'])} ↗</a><p>{esc(s['publisher'])} · {esc(s['published_at'] or 'Publication date not recorded')}</p><p>{esc(s['locator'])}. Link checked {esc(c['checked_at'][:10])}.</p></li>''')
+        notes=''
+        if finding:
+            notes=f'<h3>Reporting notes</h3><p>{esc(finding["boundary"])}</p><p><strong>Source support:</strong> high confidence in the documented proposition. Broader interpretations are assessed separately.</p>'
+        if image_id:
+            m=self.media[image_id]
+            notes+=f'<h3>Image credit & reuse</h3><p>{esc(m["credit"])}. <a href="{esc(m["source_url"])}">Original record</a> · <a href="{esc(m["license_url"])}">{esc(m["license"])}</a>. {esc(m["changes"])}</p>'
+        return f'<details class="references" id="refs-{esc(prefix)}"><summary>Sources & reporting notes <span>{len(ids)} reference'+('s' if len(ids)!=1 else '')+f'</span></summary><div class="reference-body"><ol>{"".join(items)}</ol>{notes}</div></details>'
+
+    def card(self, finding, layout='standard'):
+        f=finding
+        if layout == 'lead':
+            return f'''<article class="story-card lead" data-finding data-sector="{f['sector']}"><p class="eyebrow">{esc(f['kicker'])} <span>/ {esc(f['format'])}</span></p><h2><a href="{self.href('findings/'+f['id']+'/')}">{esc(f['title'])}</a></h2>{self.photo(f['image_id'],eager=True)}<p class="story-dek">{esc(f['summary'])}</p><div class="story-meta"><time datetime="{f['published_at']}">{esc(date_label(f['published_at']))}</time>{self.share(f)}</div>{self.references(self.source_ids(f),f['id'],f['image_id'])}</article>'''
+        return f'''<article class="story-card {layout}" data-finding data-sector="{f['sector']}">{self.photo(f['image_id'])}<div class="story-copy"><p class="eyebrow">{esc(f['kicker'])} <span>/ {esc(f['format'])}</span></p><h3><a href="{self.href('findings/'+f['id']+'/')}">{esc(f['title'])}</a></h3><p class="story-dek">{esc(f['summary'])}</p><div class="story-meta"><time datetime="{f['published_at']}">{esc(date_label(f["published_at"]))}</time>{self.share(f)}</div>{self.references(self.source_ids(f),f['id'],f['image_id'])}</div></article>'''
+
+    def dossier_card(self, dossier):
+        d=dossier
+        ids=sorted({sid for fid in d['finding_ids'] for sid in self.source_ids(self.by_id[fid])})
+        return f'''<article class="dossier-card">{self.photo(d['image_id'])}<div class="story-copy"><p class="eyebrow">{esc(d['status'])}</p><h3><a href="{self.href('investigations/'+d['slug']+'/')}">{esc(d['title'])}</a></h3><p>{esc(d['summary'])}</p><a class="text-link" href="{self.href('investigations/'+d['slug']+'/')}">Read the file →</a>{self.references(ids,d['id'],d['image_id'])}</div></article>'''
 
     def source(self, sid):
-        s = self.sources[sid]
-        return f'''<section class="source" id="{sid}"><p class="eyebrow">{sid} · {esc(s['source_type'].replace('_',' '))}</p><h3><a href="{esc(s['url'])}" rel="noreferrer">{esc(s['title'])} ↗</a></h3><p>{esc(s['publisher'])} · Published {esc(s['published_at'] or 'date not recorded')} · Inspected {esc(s['accessed_at'])}</p><p><strong>Record locator:</strong> {esc(s['locator'])}<br><strong>Independence group:</strong> {esc(s['independence_group'])}</p></section>'''
+        s=self.sources[sid];check=self.checks[sid]
+        return f'''<section class="source" id="{sid}"><p class="eyebrow">{sid} / {esc(s['publisher'])}</p><h3><a href="{esc(s['url'])}" rel="noreferrer">{esc(s['title'])} ↗</a></h3><p>Published {esc(s['published_at'] or 'date not recorded')} · Link checked {esc(check['checked_at'][:10])}</p><p>{esc(s['locator'])}</p></section>'''
 
     def build(self):
-        if self.out.resolve() == self.root.resolve() or self.root.resolve().is_relative_to(self.out.resolve()):
+        if self.out.resolve()==self.root.resolve() or self.root.resolve().is_relative_to(self.out.resolve()):
             raise ValueError('Build output cannot replace the repository or its parent')
         if self.out.exists() and any(self.out.iterdir()):
-            if not (self.out/'.preparedness-build').exists():
-                # Accept the initial generated build only in the known ignored output folder.
-                if self.out.resolve() != (self.root/'_site').resolve():
-                    raise ValueError('Refusing to clear an unrecognized output directory')
+            if not (self.out/'.preparedness-build').exists() and self.out.resolve()!=(self.root/'_site').resolve():
+                raise ValueError('Refusing to clear an unrecognized output directory')
             shutil.rmtree(self.out)
         self.out.mkdir(parents=True,exist_ok=True)
         (self.out/'.preparedness-build').write_text('Generated public artifact; safe to rebuild.\n')
         shutil.copytree(self.root/'site/assets',self.out/'assets',dirs_exist_ok=True)
-        sectors = ''.join(f'<a class="sector" href="{self.href("investigations/#"+key)}"><span>0{i}</span><h3>{title}</h3><p>{desc}</p></a>' for i,(key,(title,desc)) in enumerate(SECTORS.items(),1))
-        visual = '''<div class="hero-visual" role="img" aria-label="Illustrative observation grid; not live threat data"><svg viewBox="0 0 420 340" fill="none" aria-hidden="true"><defs><pattern id="grid" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M35 0H0V35" stroke="#acc2a7" stroke-width=".4"/></pattern></defs><rect width="420" height="340" fill="url(#grid)"/><g stroke="#cad8b9"><circle cx="290" cy="120" r="100"/><circle cx="290" cy="120" r="70"/><circle cx="290" cy="120" r="35"/><path d="M160 120H420M290 0V250M218 49L361 191M219 190L360 50"/></g><circle cx="335" cy="75" r="5" fill="#f3cb84"/><path d="M290 120L335 75" stroke="#f3cb84"/></svg><div class="caption"><strong>Observe.<br>Verify. Understand.</strong>Eight research lenses.<br>One transparent evidence trail.</div></div>'''
-        home = f'''<section class="hero"><div><p class="eyebrow">The preparedness research project / 001</p><h1>Read the signals.<br><em>Question the pattern.</em></h1><p class="lede">An open investigation into government preparedness and potential global threats. We trace claims to their sources, compare them with history, and make the limits visible.</p><div class="actions"><a class="button" href="{self.href('findings/')}">Explore the findings ↗</a><a class="button secondary" href="{self.href('assessment/')}">Read the assessment</a></div></div>{visual}</section>
-<section class="assessment"><p class="eyebrow">Current assessment</p><div><h2>A shared, undisclosed imminent global threat has not been established by this research.</h2><p>Some apparent signals have older policy precedents. Other leads still need primary records and comparable baselines. This is a limited evidence assessment, not an all-clear. <a href="{self.href('assessment/')}">Read the reasoning and gaps →</a></p></div></section>
-<div class="stats"><div class="stat"><strong>{len(self.findings):02}</strong><span>Published findings</span></div><div class="stat"><strong>08</strong><span>Research workstreams</span></div><div class="stat"><strong>{len(self.tables['leads']):02}</strong><span>Open research leads</span></div><div class="stat"><strong>2023–25</strong><span>Baseline collection window</span></div></div>
-<section class="section"><div class="section-head"><div><p class="eyebrow">The evidence, in context</p><h2>Start with what we can document.</h2></div><a href="{self.href('findings/')}">Browse all findings →</a></div><div class="finding-grid">{''.join(self.card(f) for f in self.findings)}</div></section>
-<section class="section"><div class="section-head"><div><p class="eyebrow">Follow the investigation</p><h2>Eight lenses. No assumed conclusion.</h2></div><p>Open questions are leads, not findings.</p></div><div class="sectors">{sectors}</div></section>
-<aside class="roadmap-strip"><div><p class="eyebrow">On the horizon</p><h2>From understanding<br>to practical readiness.</h2></div><div><p>A future family preparedness planner will help households think through supplies, communication, destinations, shelter, and evacuation routes. It is in planning; no family information is collected here.</p><a href="{self.href('roadmap/')}">See the project roadmap →</a></div></aside>'''
-        self.page('', 'Read the signals. Question the pattern.', self.config['tagline'], home)
-        opts = ''.join(f'<option value="{key}">{title}</option>' for key,(title,_) in SECTORS.items())
-        body = self.heading('Findings you can inspect. Context you can share.', 'Each finding has a permanent record, its supporting sources, and an explicit limit. Published findings currently cover verified documentary facts; unresolved leads remain in the investigation queue.', 'Evidence library')
-        body += f'<section class="section"><div class="filters"><label for="search">Search findings<input id="search" type="search" placeholder="Try household advice, medical, NATO…"></label><label for="sector">Research lens<select id="sector"><option value="">All workstreams</option>{opts}</select></label></div><p id="filter-count" class="filter-count" role="status">{len(self.findings)} findings shown</p><div class="finding-grid">'+''.join(self.card(f) for f in self.findings)+'</div><p id="no-results" class="no-results" hidden>No matching findings yet. Try another term, or explore the open investigation leads.</p></section>'
-        self.page('findings/', 'Evidence library', 'Search sourced preparedness findings and share their permanent records.', body, 'findings/')
-        public_claims, public_sources = set(), set()
+        lead=self.by_id['F004']
+        home=f'''<section class="landing-intro"><div><p class="eyebrow">The preparedness beat</p><h1>How governments prepare<br>for the next crisis.</h1></div><div><p>Military exercises. Emergency spending. The infrastructure we rely on.</p><p>Preparedness Observatory investigates the decisions, documents and resources behind preparations for war, disruption and disaster.</p><a class="text-link" href="{self.href('about/')}">About our reporting →</a></div></section>
+<section class="front-page" aria-label="Featured reporting"><div class="lead-story">{self.card(lead,'lead')}</div><aside class="front-sidebar"><h2 class="section-label">Also in this edition</h2>{self.card(self.by_id['F001'],'compact')}{self.card(self.by_id['F002'],'compact')}</aside></section>
+<section class="editorial-section"><div class="section-head"><div><p class="eyebrow">Military medicine</p><h2>Inside the emergency-use paperwork</h2></div><a href="{self.href('findings/')}">All reporting →</a></div>{self.card(self.by_id['F003'],'wide')}</section>
+<section class="editorial-section"><div class="section-head"><div><p class="eyebrow">Ongoing coverage</p><h2>The investigation files</h2></div><a href="{self.href('investigations/')}">Browse investigations →</a></div><div class="dossier-grid">{''.join(self.dossier_card(d) for d in self.investigations)}</div></section>
+<section class="publication-note"><h2>What the reporting shows so far</h2><div><p>The first files examine household advice, military exercises and medical emergency authorities. Several measures have older precedents; key operational and spending comparisons are still being assembled.</p><p>Our current assessment has not established a shared, undisclosed imminent global threat.</p><a class="text-link" href="{self.href('assessment/')}">Read the assessment →</a></div></section>'''
+        self.page('','Investigating government preparedness','Independent reporting on military readiness, emergency spending, infrastructure and civil preparedness.',home)
+        opts=''.join(f'<option value="{key}">{title}</option>' for key,(title,_) in SECTORS.items())
+        body=self.heading('Reporting','Document-based stories on military readiness, emergency policy and civil preparedness.','Latest coverage')
+        body+=f'<section class="editorial-section"><div class="filters"><label for="search">Search stories<input id="search" type="search" placeholder="Search topics, places or documents"></label><label for="sector">Topic<select id="sector"><option value="">All topics</option>{opts}</select></label></div><p id="filter-count" class="filter-count" role="status">{len(self.findings)} stories shown</p><div class="story-grid">'+''.join(self.card(f) for f in self.findings)+'</div><p id="no-results" class="no-results" hidden>No stories match this search.</p></section>'
+        self.page('findings/','Reporting','Read the latest document-based stories from Preparedness Observatory.',body,'findings/')
+        public_claims=set();public_sources=set()
         for f in self.findings:
-            cs = [self.claims[cid] for cid in f['claim_ids']]
-            public_claims.update(f['claim_ids'])
-            source_ids = sorted({c['source_id'] for c in cs})
-            public_sources.update(source_ids)
-            claim_rows = ''.join(f'<tr><td>{c["claim_id"]}</td><td>{esc(c["proposition"])}</td><td><a href="#{c["source_id"]}">{c["source_id"]}</a></td></tr>' for c in cs)
-            body = f'<p class="crumb"><a href="{self.href("findings/")}">Findings</a> / {f["id"]}</p>'+self.heading(f['title'],f['summary'],f'{f["id"]} / {SECTORS[f["sector"]][0]}')
-            body += f'''<div class="article-layout"><article class="prose"><span class="badge">Confirmed documentary fact</span><h2>Why this matters</h2><p>{esc(f['why_it_matters'])}</p><h2>What this does — and does not — establish</h2><blockquote>{esc(f['boundary'])}</blockquote><h2>Alternative explanations</h2><p>{esc(f['alternatives'])}</p><h2>The next question</h2><p>{esc(f['next_question'])}</p><h2>The underlying record</h2><div class="table-wrap"><table><thead><tr><th>Claim</th><th>Proposition</th><th>Source</th></tr></thead><tbody>{claim_rows}</tbody></table></div><h2>Sources & citation trail</h2>{''.join(self.source(sid) for sid in source_ids)}<h2>Share with the boundary attached</h2>{self.share(f)}<p class="subtle"><a href="{self.href('assets/'+f['id']+'.png')}" download>Download the share card (PNG)</a> · <button type="button" class="share-trigger" id="print-finding">Print / save as PDF</button></p></article><aside class="sidebar"><h2>Record details</h2><dl><div><dt>Permanent ID</dt><dd>{f['id']}</dd></div><div><dt>Verification</dt><dd>Verified</dd></div><div><dt>Source support confidence</dt><dd>High · not a threat probability</dd></div><div><dt>Published / updated</dt><dd>{f['published_at']} / {f['updated_at']}</dd></div><div><dt>Review boundary</dt><dd>Documented facts only</dd></div></dl><p><a href="{self.href('methods/')}">How we verify →</a></p><p><a href="{self.href('corrections/')}">Corrections & revisions →</a></p></aside></div>'''
-            self.page(f"findings/{f['id']}/", f['title'],f['summary']+' Limit: '+f['boundary'],body,'findings/',f"assets/{f['id']}.png")
-        body = self.heading('An investigation organized around questions.', 'These research leads are research tasks. A lead’s priority reflects the importance of verification, not the likelihood of danger. No candidate anomaly has a completed quantitative baseline.', 'Research workstreams')
-        body += '<div class="prose section"><p class="notice">Status: source-integrity review and baseline collection are ongoing. Leads below are unverified or incompletely verified unless linked to a published finding. Repetition across sources is not independent corroboration.</p>'
-        for key,(title,desc) in SECTORS.items():
-            body += f'<section id="{key}"><h2>{title}</h2><p>{desc}</p>'
-            # L10 is also the financial workstream's source lead; avoid an empty lane.
-            leads = [l for l in self.tables['leads'] if l['sector']==key or (key=='financial_insurance' and l['lead_id']=='L10')]
-            for lead in leads:
-                body += f'<article class="lead"><span class="badge pending">Open lead · {lead["lead_id"]}</span><h3>{esc(lead["subject"])}</h3><p><strong>Verification task:</strong> {esc(lead["next_action"])}</p></article>'
-            body += f'<p><a href="{self.href("findings/?sector="+key)}">Published findings in this workstream →</a></p></section>'
-        body += '</div>'
-        self.page('investigations/','Open investigations','Eight preparedness research workstreams, unresolved questions, and verification tasks.',body,'investigations/')
-        body = self.heading('Chronology before correlation.', 'Only verified events supporting published findings appear here. The internal event database also retains alleged events, clearly marked and held apart.', 'Verified timeline')+'<section class="section">'
-        event_claims = {}
+            ids=self.source_ids(f);public_claims.update(f['claim_ids']);public_sources.update(ids)
+            public_sources.add(self.media[f['image_id']]['source_id'])
+            body=f'<p class="crumb"><a href="{self.href("findings/")}">Reporting</a> / {esc(f["kicker"])}</p>'+self.heading(f['title'],f['summary'],f['kicker']+' / '+f['format'])
+            body+=f'<div class="article-byline"><span>Preparedness Observatory</span><time datetime="{f["published_at"]}">Published {esc(date_label(f["published_at"]))}</time>{self.share(f)}</div>'+self.photo(f['image_id'],full=True,eager=True)
+            text=''.join(f'<section><h2>{esc(section["heading"])}</h2>'+''.join(f'<p>{esc(paragraph)}</p>' for paragraph in section['paragraphs'])+'</section>' for section in f['sections'])
+            body+=f'<div class="article-layout"><article class="prose story-body">{text}{self.references(ids,f["id"],f["image_id"],f)}<div class="article-share">{self.share(f)} <a href="{self.href("assets/"+f["id"]+".png")}" download>Download image card</a><button id="print-finding" type="button" class="share-trigger">Print / save PDF</button></div></article><aside class="sidebar"><h2>In this reporting file</h2><p>{esc(f["kicker"])}</p><p>Record {f["id"]}</p><a href="{self.href("methods/")}">Reporting standards →</a><a href="{self.href("corrections/")}">Corrections →</a></aside></div>'
+            self.page('findings/'+f['id']+'/',f['title'],f['summary'],body,'findings/','assets/'+f['id']+'.png')
+        body=self.heading('Investigations','Our reporting files follow public policy through the documents, decisions and operational records behind it.','Ongoing coverage')+'<section class="editorial-section dossier-grid">'+''.join(self.dossier_card(d) for d in self.investigations)+'</section>'
+        self.page('investigations/','Investigations','Ongoing reporting files on civil preparedness, military logistics and military medicine.',body,'investigations/')
+        for d in self.investigations:
+            ids=sorted({sid for fid in d['finding_ids'] for sid in self.source_ids(self.by_id[fid])})
+            body=f'<p class="crumb"><a href="{self.href("investigations/")}">Investigations</a> / {d["id"]}</p>'+self.heading(d['title'],d['summary'],d['status'])+self.photo(d['image_id'],full=True,eager=True)
+            body+=f'<div class="article-layout"><article class="prose"><h2>The reporting focus</h2><p>{esc(d["focus"])}</p><h2>Questions we are pursuing</h2><ul>'+''.join('<li>'+esc(q)+'</li>' for q in d['questions'])+'</ul>'+self.references(ids,d['id'],d['image_id'])+'</article><aside class="sidebar"><h2>Related coverage</h2>'+''.join(f'<a href="{self.href("findings/"+fid+"/")}">{esc(self.by_id[fid]["title"])}</a>' for fid in d['finding_ids'])+'</aside></div>'
+            self.page('investigations/'+d['slug']+'/',d['title'],d['summary'],body,'investigations/')
+        body=self.heading('The preparedness timeline','Key policy announcements and exercise records behind our reporting.','Public record')+'<section class="editorial-section timeline">'
+        event_claims={}
         for cid in sorted(public_claims):
             c=self.claims[cid];event_claims.setdefault(c['event_id'],[]).append(c)
         for eid in sorted(event_claims,key=lambda eid:self.events[eid]['event_date']):
-            e=self.events[eid]
-            refs=' · '.join(f'<a href="{self.href("sources/#"+c["source_id"])}">{c["claim_id"]} / {c["source_id"]}</a>' for c in event_claims[eid])
-            body += f'<article class="timeline-item"><time>{e["event_date"]}</time><div><h2>{esc(e["description"])}</h2><p>{esc(e["location"])} · Verified documentary record · {refs}</p></div></article>'
-        self.page('timeline/','Verified timeline','Dated records behind published preparedness findings.',body+'</section>','timeline/')
-        body=self.heading('Follow every published finding back to its source.', 'Publication date, access date, record locator, and shared source origins travel with the evidence. Archived local research backups are separate from these external source links.', 'Citation registry')+'<section class="section prose">'+''.join(self.source(sid) for sid in sorted(public_sources))+'</section>'
-        self.page('sources/','Source registry','Exact source links and provenance for published findings.',body)
+            e=self.events[eid];ids=[c['source_id'] for c in event_claims[eid]]
+            body+=f'<article class="timeline-item"><time datetime="{e["event_date"]}">{e["event_date"]}</time><div><p class="eyebrow">{esc(e["location"])}</p><h2>{esc(e["description"])}</h2>{self.references(ids,eid)}</div></article>'
+        self.page('timeline/','The preparedness timeline','A timeline of the records behind the reporting.',body+'</section>','timeline/')
+        body=self.heading('Source registry','The records cited in our published reporting. Each story also carries its own expandable reference section.','Reporting resources')+'<section class="editorial-section prose">'+''.join(self.source(sid) for sid in sorted(public_sources))+'</section>'
+        self.page('sources/','Source registry','Source documents and image records for published coverage.',body)
         for route,title,filename,desc in [
-            ('methods/','How we investigate','METHODOLOGY.md','Verification standards, competing hypotheses, confidence, and historical comparisons.'),
-            ('corrections/','Corrections stay on the record','CORRECTIONS.md','Material qualifications to earlier research, preserved for accountability.')]:
-            self.page(route,title,desc,self.heading(title,desc,'Research standards')+'<article class="prose section">'+markdown((self.root/'docs'/filename).read_text())+'</article>',route)
-        assessment='''<h2>The question</h2><p>Do independent, measurable departures from normal preparedness point to a specific approaching threat beyond publicly documented risks?</p><h2>Current judgment</h2><p>The evidence assembled in this initial research does not establish a shared, undisclosed imminent global threat. Confidence in a comprehensive cross-sector conclusion is low: most operational leads and comparable measurements remain incomplete. This is not a finding that all risks are absent.</p><h2>What the published records establish</h2><p>Some public-preparedness measures have older precedents, and legal notices need to be read within their actual scope. The findings library documents these narrow propositions. They weaken some novelty claims but do not explain every reported development.</p><h2>Competing explanations</h2><ul><li>Routine resilience policy, scheduled exercises, and procurement cycles.</li><li>Responses to known conflicts and infrastructure vulnerabilities.</li><li>Selection effects or inaccurate earlier claims creating an apparent pattern.</li><li>A new shared threat: still an unsubstantiated hypothesis requiring specific, independent operational evidence.</li></ul><h2>Baseline status</h2><p>Selected 2023–2025 policy and exercise milestones are documented. All eight workstreams still need complete matched quantitative series. No candidate deviation has been established as an anomaly, and no numerical threat probability is assigned.</p><h2>What would change the assessment</h2><p>Verified unusual activations or emergency deliveries, reproducible deviations from a comparable baseline, or dated authoritative hazard notices. Repeated headlines and contract ceilings alone are insufficient.</p><h2>Coverage limits</h2><p>The initial sample is selective. Source-integrity work remains open. Current asteroid and solar conditions have not been established by this project; dynamic or missing portal data cannot support an all-clear. Published documentary facts should not be generalized into a global threat forecast.</p>'''
-        assessment+=f'<p><a href="{self.href("findings/")}">Inspect the published findings →</a> · <a href="{self.href("investigations/")}">See unresolved leads →</a></p>'
-        self.page('assessment/','The working assessment','What this investigation currently supports, where it is uncertain, and what would change it.',self.heading('Evidence first. Conclusions proportional.',f'Initial public assessment · Research cutoff {self.config["research_cutoff"]}','Master assessment')+'<article class="prose section">'+assessment+'</article>')
-        roadmap='''<h2>1 / Establish the public record</h2><p>Build a public GitHub Pages site with permanent finding URLs, clear evidence status, source citations, share tools, and corrections. Only curated published findings are included in the site artifact.</p><h2>2 / Expand the watchdog investigation</h2><p>Continue verification of research leads and build historical denominators. Look for evidence that supports, refines, expands, or contradicts current ideas. New signals enter a review queue before becoming findings.</p><h2>3 / Recurring investigative updates</h2><p>After launch, a recurring research task will check priority sources, investigate meaningful changes, preserve records, and prepare reviewed site updates. Collection failures must not become threat alerts. The update schedule and activation status will be disclosed here.</p><h2>4 / Preserve a durable archive</h2><p>The local project keeps a private SQLite archive, content-addressed files, and portable backup exports. A backup on the same computer protects revision history but does not protect against device loss. A later independent, encrypted copy and restore-tested archival service will add that protection.</p><h2>5 / A family preparedness planner</h2><p>Planned only; no questionnaire or family data collection has been implemented. The intended guide covers core family members, trusted contacts, household needs, supplies, communications, shelter and evacuation choices, meeting points, destinations, addresses, and alternate routes.</p><p>Supply planning will eventually cover food, water, medicine, energy, clothing, transport, fuel, and lawful personal safety. Quantities and recommendations will need appropriate public-authority sources and household-specific constraints.</p><p>The planner should support private, browser-local answers, a printable family plan, an offline export, and an explicit delete/reset control. Names, home addresses, children’s details, routes, shelter locations, and access information must never enter the public research repository or analytics. Account sync, map routing, or a private backend would require a separate design.</p>'''
-        roadmap+=f'<p class="notice"><strong>Monitoring status:</strong> {esc(self.config["monitoring_status"])}. The family planner remains a future phase.</p>'
-        self.page('roadmap/','Where this project is heading','Public findings, recurring investigation, durable archiving, and a future private family planner.',self.heading('A public record that can keep growing.','The investigation comes first. Practical planning follows a considered design.','Project roadmap')+'<article class="prose section">'+roadmap+'</article>','roadmap/')
-        about='''<h2>Purpose and editorial independence</h2><p>Preparedness Observatory is an independent public-source research project. It is not an official warning service or a government publication. Its purpose is to investigate preparedness claims, compare them with historical context, and preserve uncertainty alongside evidence.</p><h2>How the site is made</h2><p>The project uses AI assistance for research organization, drafting, and software development. AI output is not primary evidence. Every research claim requires verification against its underlying sources. Published findings are curated from the structured research records and include their documentary boundaries.</p><h2>Privacy</h2><p>This static site has no accounts, forms, analytics scripts, tracking pixels, or family-plan storage. GitHub Pages and external source sites may process ordinary request information under their own policies. Social destinations are contacted only after you choose them. Share-composer edits remain in the current page until you choose to copy or send them.</p><h2>Corrections and contributions</h2><p>Use the public research repository to propose a correction with an exact finding ID, primary source link, and explanation. Do not include private personal details in public issues. Corrections remain visible rather than silently replacing earlier judgments.</p><h2>Archival limits</h2><p>The project’s local archive preserves research files and versioned findings offline. A registered source URL is not proof that a copy of that source has been archived. Original-source capture coverage is tracked separately.</p>'''
-        self.page('about/','About & privacy','Purpose, editorial standards, AI assistance, privacy and archival limits.',self.heading('An accountable, inspectable research project.','The methods and limits should be as easy to find as the findings.','About & privacy')+'<article class="prose section">'+about+'</article>')
-        self.page('404/','Page not found','The requested research page could not be found.',self.heading('This page is not in the record.','Use the findings library or research workstreams to continue.')+f'<p class="section"><a href="{self.href()}">Return to the Observatory →</a></p>')
+            ('methods/','Reporting standards','METHODOLOGY.md','How we verify records, assess claims and compare developments with earlier activity.'),
+            ('corrections/','Corrections & updates','CORRECTIONS.md','Substantive corrections, qualifications and revisions to the research record.')]:
+            self.page(route,title,desc,self.heading(title,desc,'Editorial standards')+'<article class="prose document-page">'+markdown((self.root/'docs'/filename).read_text())+'</article>',route)
+        assessment='''<h2>The current picture</h2><p>The reporting assembled so far has not established a shared, undisclosed imminent global threat. The coverage is limited: several operational questions remain unresolved, and complete historical comparisons are still being assembled.</p><h2>Policy history matters</h2><p>Household preparedness guidance and large military exercises have documented precedents. Our published stories examine those records and the legal scope of a military medical notice.</p><h2>Unfinished reporting</h2><p>The investigation still needs comparable transport, procurement and delivery records across the eight research sectors. A policy announcement or contract ceiling cannot substitute for evidence of actual activity.</p><h2>What could change the assessment</h2><p>Verified operational activations, emergency deliveries or a reproducible departure from comparable earlier activity would warrant further reporting. Current astronomical and space-weather conditions have not been established by this publication.</p>'''
+        assessment+=self.references(sorted({self.claims[cid]['source_id'] for cid in public_claims}),'assessment')
+        self.page('assessment/','Current assessment','The findings and outstanding questions in the preparedness investigation.',self.heading('Current assessment','A review of the reporting published in this edition.','Analysis')+'<article class="prose document-page">'+assessment+'</article>')
+        about='''<h2>Our remit</h2><p>Preparedness Observatory investigates how governments and institutions prepare for war, infrastructure disruption and major emergencies. Our coverage examines military logistics, emergency procurement, geopolitics, civilian infrastructure, medical readiness, financial and insurance indicators, continuity of government, and astronomical hazards.</p><h2>The reporting</h2><p>We examine public documents, follow reported developments back to their sources and compare new activity with historical records. Each published story carries source links and reporting notes. Unverified research leads are not presented as established events.</p><h2>Editorial independence</h2><p>This is an independent publication, not a government warning service. The project uses AI assistance for research organization, drafting and software development. AI output is not a source of evidence; claims require verification against underlying records.</p><h2>Corrections</h2><p>Substantive qualifications and corrections remain part of the research record. To propose a correction, identify the story or finding ID, the relevant passage and a supporting primary source through the public research repository. Keep private personal information out of public submissions.</p><h2>Privacy</h2><p>The site has no accounts, forms, analytics scripts or tracking pixels. GitHub Pages processes ordinary hosting requests under its own policies. Source and sharing destinations have their own privacy policies; social scripts are not embedded on these pages.</p><h2>Photography</h2><p>Images are obtained from the cited source organizations and credited with their reuse terms. Historical and illustrative material is identified in captions. Photographs do not establish facts beyond their documented context.</p>'''
+        self.page('about/','About Preparedness Observatory','Independent investigative reporting on government preparedness, military readiness and civil resilience.',self.heading('About Preparedness Observatory','Independent reporting on the decisions behind preparations for crisis.','The publication')+'<article class="prose document-page">'+about+'</article>')
+        self.page('404/','Page not found','The requested page is unavailable.',self.heading('Page not found','Browse our reporting or investigation files.')+f'<p class="editorial-section"><a href="{self.href()}">Return to the homepage →</a></p>')
         shutil.copy2(self.out/'404/index.html',self.out/'404.html')
         (self.out/'.nojekyll').touch()
         self.feed()
         urlset=Element('urlset',xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
         for route in self.routes:
-            if route=='404/': continue
-            u=SubElement(urlset,'url');SubElement(u,'loc').text=self.absolute(route)
+            if route=='404/':continue
+            url=SubElement(urlset,'url');SubElement(url,'loc').text=self.absolute(route)
         (self.out/'sitemap.xml').write_bytes(tostring(urlset,encoding='utf-8',xml_declaration=True))
         (self.out/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+self.absolute('sitemap.xml')+'\n')
-        # Public data is deliberately allowlisted; never copy the research root or local archive.
         (self.out/'findings.json').write_text(json.dumps(self.findings,ensure_ascii=False,indent=2)+'\n')
-        (self.out/'publication-manifest.json').write_text(json.dumps({'cutoff':self.config['research_cutoff'],'finding_ids':[f['id'] for f in self.findings],'claim_ids':sorted(public_claims),'source_ids':sorted(public_sources)},indent=2)+'\n')
+        (self.out/'publication-manifest.json').write_text(json.dumps({'cutoff':self.config['research_cutoff'],'finding_ids':[f['id'] for f in self.findings],'claim_ids':sorted(public_claims),'source_ids':sorted(public_sources),'investigation_ids':[d['id'] for d in self.investigations]},indent=2)+'\n')
 
     def feed(self):
-        ns='http://www.w3.org/2005/Atom'
-        feed=Element('feed',xmlns=ns)
-        SubElement(feed,'title').text='Preparedness Observatory · Findings'
+        feed=Element('feed',xmlns='http://www.w3.org/2005/Atom')
+        SubElement(feed,'title').text='Preparedness Observatory · Reporting'
         SubElement(feed,'id').text=self.absolute()
         SubElement(feed,'updated').text=max((f['updated_at'] for f in self.findings),default=self.config['research_cutoff'])+'T12:00:00-05:00'
-        SubElement(feed,'link',href=self.absolute('feed.xml'),rel='self')
-        SubElement(feed,'link',href=self.absolute())
+        SubElement(feed,'link',href=self.absolute('feed.xml'),rel='self');SubElement(feed,'link',href=self.absolute())
         author=SubElement(feed,'author');SubElement(author,'name').text='Preparedness Observatory'
         for f in sorted(self.findings,key=lambda f:(f['updated_at'],f['id']),reverse=True):
             entry=SubElement(feed,'entry');SubElement(entry,'id').text=self.absolute('findings/'+f['id']+'/')
-            SubElement(entry,'title').text=f['title']
-            SubElement(entry,'link',href=self.absolute('findings/'+f['id']+'/'))
-            SubElement(entry,'updated').text=f['updated_at']+'T12:00:00-05:00'
-            SubElement(entry,'summary').text=f['summary']+' Limit: '+f['boundary']
+            SubElement(entry,'title').text=f['title'];SubElement(entry,'link',href=self.absolute('findings/'+f['id']+'/'))
+            SubElement(entry,'updated').text=f['updated_at']+'T12:00:00-05:00';SubElement(entry,'summary').text=f['summary']
         (self.out/'feed.xml').write_bytes(tostring(feed,encoding='utf-8',xml_declaration=True))
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=ROOT/'_site');args=parser.parse_args()
-    site=Site(ROOT,args.output)
-    site.build()
-    print(f'Built {len(site.routes)} pages with {len(site.findings)} published findings in {args.output}')
+    site=Site(ROOT,args.output);site.build()
+    print(f'Built {len(site.routes)} pages with {len(site.findings)} published stories in {args.output}')

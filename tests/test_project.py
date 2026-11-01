@@ -62,6 +62,43 @@ class ProjectTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'requires verified'):
                 load_public(root)
 
+    def test_editorial_publication_has_sources_images_and_no_internal_planning(self):
+        with tempfile.TemporaryDirectory() as td:
+            out=Path(td)/'public'
+            site=Site(ROOT,out);site.build()
+            self.assertFalse((out/'roadmap').exists())
+            self.assertNotIn('/roadmap/',(out/'sitemap.xml').read_text())
+            for path in out.rglob('*.html'):
+                self.assertNotIn('Chronology before correlation',path.read_text())
+                self.assertNotIn('/roadmap/',path.read_text())
+            for finding in site.findings:
+                page=(out/'findings'/finding['id']/'index.html').read_text()
+                self.assertIn('<details class="references"',page)
+                self.assertIn('assets/photos/',page)
+                for sid in site.source_ids(finding):
+                    self.assertIn(site.sources[sid]['url'],page)
+            for dossier in site.investigations:
+                page=(out/'investigations'/dossier['slug']/'index.html').read_text()
+                self.assertIn('<details class="references"',page)
+                self.assertIn('assets/photos/',page)
+                self.assertTrue(dossier['finding_ids'])
+
+    def test_unchecked_reference_or_missing_media_blocks_publication(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            shutil.copytree(ROOT/'data',root/'data')
+            shutil.copytree(ROOT/'site',root/'site')
+            path=root/'site/reference_checks.json';checks=json.loads(path.read_text())
+            for check in checks:
+                if check['source_id']=='S003':check['status']='needs_review'
+            path.write_text(json.dumps(checks))
+            with self.assertRaisesRegex(ValueError,'reference check'):
+                load_public(root)
+            shutil.copy2(ROOT/'site/reference_checks.json',path)
+            image=root/'site/assets/photos/eu-response-centre.webp';image.unlink()
+            with self.assertRaisesRegex(ValueError,'story image'):
+                load_public(root)
+
     def test_archive_restore_capture_and_corruption_detection(self):
         with tempfile.TemporaryDirectory() as td:
             base=Path(td);home=base/'archive';destination=base/'restored'

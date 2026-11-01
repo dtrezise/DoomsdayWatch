@@ -11,7 +11,7 @@
       if (show) count++;
     });
     const result = document.querySelector('#filter-count');
-    if (result) result.textContent = `${count} finding${count === 1 ? '' : 's'} shown`;
+    if (result) result.textContent = `${count} ${count === 1 ? 'story' : 'stories'} shown`;
     const empty = document.querySelector('#no-results');
     if (empty) empty.hidden = count > 0;
   }
@@ -62,4 +62,17 @@
     catch (error) { if (error.name !== 'AbortError') message.textContent = 'Sharing unavailable. Copy the post or link instead.'; }
   });
   document.querySelector('#print-finding')?.addEventListener('click', () => window.print());
+})();
+
+// Include references in printed articles, then restore each reader's disclosure state.
+(() => {
+  let previouslyOpen = [];
+  addEventListener('beforeprint', () => {
+    previouslyOpen = [...document.querySelectorAll('details.references')].map(node => [node, node.open]);
+    previouslyOpen.forEach(([node]) => { node.open = true; });
+  });
+  addEventListener('afterprint', () => {
+    previouslyOpen.forEach(([node, open]) => { node.open = open; });
+    previouslyOpen = [];
+  });
 })();

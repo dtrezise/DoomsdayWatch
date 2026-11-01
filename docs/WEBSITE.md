@@ -35,3 +35,12 @@ Site builds use only standard Python. Social preview PNGs are committed assets; 
 After successful launch, the recurring local Codex research task is configured for Mondays at 9:00 a.m. America/New_York. It should check sources for meaningful changes, investigate context, record contrary evidence, preserve the local archive and prepare/publish only changes that meet the publication standards. Failed or incomplete checks remain leads. There is no external model API key or GitHub Actions research agent in this design.
 
 The workflow currently deploys reviewed repository changes; it does not itself conduct research. See MONITORING.md for the recurring research scope and operational limits.
+
+
+## Editorial presentation and reference checks
+
+The landing page explains the publication's remit and leads with sourced photography and reporting. Stories have stable finding URLs, direct headlines and narrative sections. Expandable source sections include inspected document links, the date each link was checked, reporting limits and image reuse terms. Public investigation dossiers derive their reference lists from published reporting; the wider unverified lead queue is not displayed as public investigation entries.
+
+Before changing published references, run `python3 scripts/verify_public_sources.py` with network access, inspect source content, and then run the normal validation/tests/build. The checker preserves retrieved bytes in the local archive and records HTTP results in `site/reference_checks.json`. HTTP success is a link check, not a factual-verification decision; the existing claim review remains required. New findings require linked verified claims and checked sources. Images and credits are cataloged in `site/media.json`.
+
+Product planning documents are local internal material, excluded from the public artifact. New coverage must not advertise deferred features.

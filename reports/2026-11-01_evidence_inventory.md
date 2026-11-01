@@ -8,7 +8,7 @@ Draft inventory only. This file contains reported and unverified material and ma
 
 - partially_verified: 2
 - unverified: 3
-- verified: 6
+- verified: 9
 
 ## Chronological records
 
@@ -41,6 +41,9 @@ Draft inventory only. This file contains reported and unverified material and ma
 | C009 | AP reports 2026 US Israel Iran war began February 28 | reported_claim / partially_verified / moderate | [S012](https://apnews.com/article/uae-iran-war-gulf-diplomacy-bahrain-forum-470d52d5df78eeb6bf9b9fb15a37d0e6) |
 | C010 | UK published National Risk Register on August 3 2023 | confirmed_fact / verified / high | [S005](https://www.gov.uk/government/publications/national-risk-register-2023) |
 | C011 | NATO announced 90000 planned Steadfast Defender participants in January 2024 | confirmed_fact / verified / high | [S006](https://www.nato.int/en/news-and-events/articles/news/2024/01/24/natos-largest-exercise-in-decades-steadfast-defender-gets-underway) |
+| C012 | EU preparedness strategy includes crisis coordination and public-private cooperation | confirmed_fact / verified / high | [S003](https://commission.europa.eu/topics/preparedness_en) |
+| C013 | NATO described Steadfast Defender 2024 as testing defense against a near-peer adversary in an Article 5 scenario | confirmed_fact / verified / high | [S006](https://www.nato.int/en/news-and-events/articles/news/2024/01/24/natos-largest-exercise-in-decades-steadfast-defender-gets-underway) |
+| C014 | HHS declaration concerns an emergency-use pathway for acute-pain drugs addressing military medical needs | confirmed_fact / verified / high | [S007](https://www.govinfo.gov/content/pkg/FR-2026-09-03/pdf/2026-18008.pdf) |
 
 ## Open work
 

@@ -12,4 +12,4 @@ The founding edition includes a structured event database, citation registry, ca
 
 The public website provides permanent finding records, source links, confidence and claim boundaries, a timeline, methods, and corrections. Local archival snapshots preserve research versions and original-source captures when available. Weekly investigative maintenance is described in MONITORING.md.
 
-The project does not presume a shared hidden threat. Conclusions must remain proportional to inspected evidence and reproducible comparisons. The future household preparedness planner is a separate, deferred phase.
+The project does not presume a shared hidden threat. Conclusions must remain proportional to inspected evidence and reproducible comparisons.

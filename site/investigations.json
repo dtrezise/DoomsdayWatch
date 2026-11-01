@@ -1,0 +1,62 @@
+[
+  {
+    "id": "D001",
+    "slug": "european-preparedness",
+    "title": "Europe’s preparedness push",
+    "summary": "Following the household advice and resilience policies taking shape across Europe.",
+    "image_id": "eu-response-centre",
+    "finding_ids": [
+      "F001",
+      "F002"
+    ],
+    "sectors": [
+      "civilian_infrastructure",
+      "continuity_of_government"
+    ],
+    "focus": "Compare the EU strategy with national campaigns, then examine changes in implementation and public resources.",
+    "questions": [
+      "Which measures are policy announcements, and which have been implemented?",
+      "What changed between the 2023–2025 period and the latest campaigns?"
+    ],
+    "status": "Ongoing reporting"
+  },
+  {
+    "id": "D002",
+    "slug": "military-logistics",
+    "title": "The machinery of military readiness",
+    "summary": "Examining the exercises and logistics used to prepare for large-scale operations.",
+    "image_id": "gunston-hall-norway",
+    "finding_ids": [
+      "F004"
+    ],
+    "sectors": [
+      "military_logistics"
+    ],
+    "focus": "Build comparable records of exercise size, transport use and actual activation before assessing new military activity.",
+    "questions": [
+      "How does announced participation compare with actual activity?",
+      "Are later exercises different in scale, duration or transport demand?"
+    ],
+    "status": "Ongoing reporting"
+  },
+  {
+    "id": "D003",
+    "slug": "military-medicine",
+    "title": "Military medicine: from authority to delivery",
+    "summary": "Tracing the decisions between an emergency-use declaration and treatment reaching military units.",
+    "image_id": "combat-medic-training",
+    "finding_ids": [
+      "F003"
+    ],
+    "sectors": [
+      "medical_preparedness",
+      "emergency_procurement"
+    ],
+    "focus": "Track product-specific decisions, obligations and delivery records connected to military medical preparedness.",
+    "questions": [
+      "Which product-specific decisions followed the declaration?",
+      "What do procurement and delivery records establish?"
+    ],
+    "status": "Ongoing reporting"
+  }
+]

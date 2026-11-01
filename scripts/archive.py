@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT=ROOT/'archive'
-DIRS=('data','docs','research','reports','templates','scripts','site','.github','evidence','tests')
+DIRS=('data','docs','research','reports','templates','scripts','site','.github','evidence','tests','private/internal')
 FILES=('README.md','AGENTS.md','.gitignore')
 SCHEMA='''
 PRAGMA foreign_keys=ON;

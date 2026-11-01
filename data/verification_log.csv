@@ -13,3 +13,14 @@ V011,2026-11-01,S011,Web discovery and retrieval,snippet_only_fetch_403,Retrieve
 V012,2026-11-01,S012,Web discovery and retrieval,full_text,Preserve snapshot in future capture
 V013,2026-11-01,S013,Web discovery and retrieval,dynamic_incomplete,Retrieve original or dated archive
 V014,2026-11-01,S014,Web discovery and retrieval,date_inconsistent_no_data,Retrieve original or dated archive
+V015,2026-11-01,S002,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V016,2026-11-01,S003,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V017,2026-11-01,S004,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V018,2026-11-01,S006,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V019,2026-11-01,S007,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V020,2026-11-01,S015,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V021,2026-11-01,S016,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V022,2026-11-01,S017,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V023,2026-11-01,S018,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V024,2026-11-01,S019,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V025,2026-11-01,S020,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed

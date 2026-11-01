@@ -40,8 +40,8 @@ The research program chronology is maintained in `docs/HISTORY.md`. Research lea
 
 ## Public website and archive
 
-[Preparedness Observatory](https://dtrezise.github.io/Preparedness/) is the public reader of curated research. See [website and publishing](docs/WEBSITE.md), [offline archive](docs/ARCHIVE.md), [recurring research](docs/MONITORING.md), and [product roadmap](docs/PRODUCT_ROADMAP.md).
+[Preparedness Observatory](https://dtrezise.github.io/Preparedness/) is the public reader of curated research. See [website and publishing](docs/WEBSITE.md), [offline archive](docs/ARCHIVE.md), [recurring research](docs/MONITORING.md).
 
 Build with `python3 scripts/build_site.py`; test with `python3 -m unittest discover -s tests -v`. Site source is in `site/`, generated output in ignored `_site/`. GitHub Pages deploys only that output. Each published finding has a stable URL, status, citations, share composer and downloadable social card. Local SQLite snapshots and ZIP exports stay in ignored `archive/` and `backups/` folders within this work folder.
 
-Weekly investigative maintenance is scheduled for Mondays at 9:00 a.m. Eastern in the local project. The local task needs the computer on and the app running. Indicator-specific live collectors remain disabled. The family preparedness questionnaire is a future phase; it has not been implemented.
+Weekly investigative maintenance is scheduled for Mondays at 9:00 a.m. Eastern in the local project. The local task needs the computer on and the app running. Indicator-specific live collectors remain disabled.

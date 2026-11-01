@@ -1,47 +1,51 @@
 #!/usr/bin/env python3
-"""Optional design-time helper; PNGs are committed, so site builds need no Pillow."""
+"""Design-time share-card helper; committed PNGs keep site builds dependency-free."""
 import json
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
 FONTS=Path('/System/Library/Fonts/Supplemental')
 def font(size,serif=False):
-    candidates=[FONTS/('Georgia.ttf' if serif else 'Arial.ttf'),Path('/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf' if serif else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')]
-    for path in candidates:
-        if path.exists(): return ImageFont.truetype(str(path),size)
+    paths=[FONTS/('Georgia.ttf' if serif else 'Arial.ttf'),Path('/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf' if serif else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')]
+    for path in paths:
+        if path.exists():return ImageFont.truetype(str(path),size)
     return ImageFont.load_default(size=size)
 def lines(draw,text,face,width):
     result=[];line=''
     for word in text.split():
         candidate=(line+' '+word).strip()
-        if draw.textlength(candidate,font=face)>width and line:
-            result.append(line);line=word
-        else: line=candidate
+        if draw.textlength(candidate,font=face)>width and line:result.append(line);line=word
+        else:line=candidate
     if line:result.append(line)
     return result
 
-def card(name,title,summary,label):
-    image=Image.new('RGB',(1200,630),'#f5f3ec');d=ImageDraw.Draw(image)
-    d.rectangle((0,0,1200,19),fill='#285649')
-    d.text((60,54),'PREPAREDNESS / OBSERVATORY',font=font(22),fill='#285649')
-    d.text((60,112),label.upper(),font=font(17),fill='#53625e')
-    titlefont=font(52,True)
-    while len(lines(d,title,titlefont,1065))>3:
-        titlefont=font(titlefont.size-2,True)
-    y=165
-    for line in lines(d,title,titlefont,1065):
-        d.text((58,y),line,font=titlefont,fill='#172c2c');y+=64
-    y+=20
-    for line in lines(d,summary,font(23),1065)[:3]:
-        d.text((60,y),line,font=font(23),fill='#53625e');y+=33
-    d.line((60,542,1140,542),fill='#cbd2c8',width=2)
-    d.text((60,565),'PUBLIC EVIDENCE. MEASURED CONTEXT.',font=font(18),fill='#285649')
-    d.text((700,565),'dtrezise.github.io/Preparedness',font=font(18),fill='#53625e')
-    image.save(ROOT/'site/assets'/f'{name}.png')
+def card(name,title,label,media):
+    canvas=Image.new('RGB',(1200,630),'#f8f6f0')
+    photo=Image.open(ROOT/'site'/media['path']).convert('RGB')
+    if name=='F002':
+        fitted=ImageOps.contain(photo,(600,485));canvas.paste(fitted,(600+(600-fitted.width)//2,(540-fitted.height)//2))
+    else:
+        fitted=ImageOps.fit(photo,(600,540));canvas.paste(fitted,(600,0))
+    d=ImageDraw.Draw(canvas)
+    d.rectangle((0,0,600,13),fill='#aa442e')
+    d.text((40,44),'PREPAREDNESS',font=font(24,True),fill='#18272b')
+    d.text((41,78),'OBSERVATORY',font=font(14),fill='#58615e')
+    d.text((41,145),label.upper(),font=font(14),fill='#aa442e')
+    face=font(43,True)
+    while len(lines(d,title,face,515))>5:face=font(face.size-1,True)
+    y=195
+    for line in lines(d,title,face,515):
+        d.text((38,y),line,font=face,fill='#18272b');y+=face.size+13
+    d.rectangle((0,540,1200,630),fill='#18272b')
+    d.text((40,557),'PREPAREDNESS OBSERVATORY / REPORTING',font=font(17),fill='#f8f6f0')
+    credit='Photo: '+media['credit']
+    while d.textlength(credit,font=font(12))>1100:credit=credit[:-2]
+    d.text((40,590),credit,font=font(12),fill='#d7dcd4')
+    canvas.save(ROOT/'site/assets'/f'{name}.png')
 
 if __name__=='__main__':
-    card('share','Read the signals. Question the pattern.','An open investigation into government preparedness and potential global threats. Sources and uncertainty stay together.','Public-source research')
+    media=json.loads((ROOT/'site/media.json').read_text())
+    card('share','How governments prepare for the next crisis.','Independent reporting',media['gunston-hall-norway'])
     for f in json.loads((ROOT/'site/findings.json').read_text()):
-        if f['publication_status']=='published':
-            card(f['id'],f['title'],f['boundary'],f['id']+' / Verified documentary record')
+        if f['publication_status']=='published':card(f['id'],f['title'],f['kicker'],media[f['image_id']])

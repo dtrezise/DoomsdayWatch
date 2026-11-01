@@ -1,0 +1,58 @@
+{
+  "eu-response-centre": {
+    "path": "assets/photos/eu-response-centre.webp",
+    "alt": "European emergency response staff work at computer screens in a coordination centre.",
+    "caption": "The Emergency Response Coordination Centre, pictured on the European Commission’s preparedness strategy page.",
+    "credit": "European Union",
+    "source_id": "S003",
+    "source_url": "https://commission.europa.eu/topics/preparedness_en",
+    "original_url": "https://commission.europa.eu/sites/default/files/styles/oe_theme_medium_no_crop/public/2025-03/EU%20preparedness%20union%20strategy%20Card.jpg?itok=r39Ql4S1",
+    "license": "CC BY 4.0",
+    "license_url": "https://commission.europa.eu/legal-notice_en",
+    "changes": "Web format conversion; display crop may vary.",
+    "width": 991,
+    "height": 663
+  },
+  "uk-emergency-supplies": {
+    "path": "assets/photos/uk-emergency-supplies.webp",
+    "alt": "A blue campaign illustration of bottled water, a food tin and a jar.",
+    "caption": "Emergency supplies illustrated in the UK government’s Be Ready campaign.",
+    "credit": "Crown copyright / Cabinet Office",
+    "source_id": "S015",
+    "source_url": "https://beready.campaign.gov.uk/",
+    "original_url": "https://beready.campaign.gov.uk/wp-content/uploads/sites/252/2026/09/FINAL-water-jar-can-479.png",
+    "license": "Open Government Licence v3.0",
+    "license_url": "https://www.gov.uk/help/reuse-govuk-content",
+    "changes": "Web format conversion.",
+    "width": 479,
+    "height": 358
+  },
+  "combat-medic-training": {
+    "path": "assets/photos/combat-medic-training.webp",
+    "alt": "An Army medic treats a simulated casualty during outdoor training in New Jersey.",
+    "caption": "File photo: combat-medic training in New Jersey, April 2025. The image shows a training exercise, not use of a drug covered by the 2026 declaration.",
+    "credit": "Spc. Seth Cohen / U.S. Army National Guard / DVIDS",
+    "source_id": "S017",
+    "source_url": "https://www.dvidshub.net/image/9036950/combat-medic-qualification-course-field-phase-day-4",
+    "original_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2505/9036950/1000w_q95.jpg",
+    "license": "U.S. government work; marked public domain by DVIDS",
+    "license_url": "https://www.dvidshub.net/about/copyright",
+    "changes": "Web format conversion; display crop may vary.",
+    "width": 1000,
+    "height": 667
+  },
+  "gunston-hall-norway": {
+    "path": "assets/photos/gunston-hall-norway.webp",
+    "alt": "USS Gunston Hall approaches snow-covered mountains in Norway during Steadfast Defender 2024.",
+    "caption": "USS Gunston Hall approaches Harstad, Norway, during Steadfast Defender 24 on February 21, 2024.",
+    "credit": "MC1 Danielle Serocki / U.S. Navy / DVIDS",
+    "source_id": "S016",
+    "source_url": "https://www.dvidshub.net/image/8248611/uss-gunston-hall-arrives-harstad-norway-support-steadfast-defender-24",
+    "original_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2402/8248611/1000w_q95.jpg",
+    "license": "U.S. government work; marked public domain by DVIDS",
+    "license_url": "https://www.dvidshub.net/about/copyright",
+    "changes": "Web format conversion; display crop may vary.",
+    "width": 1000,
+    "height": 637
+  }
+}

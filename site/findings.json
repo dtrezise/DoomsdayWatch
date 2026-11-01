@@ -1,11 +1,12 @@
 [
   {
     "id": "F001",
-    "title": "EU preparedness strategy includes 72-hour self-sufficiency guidance",
-    "summary": "The European Commission’s 2025 preparedness strategy includes guidelines for a minimum of 72 hours of population self-sufficiency.",
+    "title": "Europe’s three-day preparedness plan",
+    "summary": "Brussels put 72 hours of household self-sufficiency on its preparedness agenda in 2025. The proposal reaches far beyond the kitchen cupboard.",
     "sector": "civilian_infrastructure",
     "claim_ids": [
-      "C002"
+      "C002",
+      "C012"
     ],
     "published_at": "2026-11-01",
     "updated_at": "2026-11-01",
@@ -13,12 +14,35 @@
     "why_it_matters": "An older policy can look like a new warning when its original date is lost. Establishing chronology is the first step in testing whether preparedness activity is unusual.",
     "boundary": "A public guideline does not measure household stock levels, operational readiness, or the imminence of an emergency.",
     "alternatives": "The strategy addresses a range of risks. Its existence alone does not distinguish routine resilience planning from preparation for a specific threat.",
-    "next_question": "Which national measures changed in 2026, and how do implementation budgets and actual readiness compare with 2023–2025?"
+    "next_question": "Which national measures changed in 2026, and how do implementation budgets and actual readiness compare with 2023–2025?",
+    "image_id": "eu-response-centre",
+    "kicker": "Civil preparedness",
+    "format": "Explainer",
+    "sections": [
+      {
+        "heading": "A three-day buffer",
+        "paragraphs": [
+          "The European Commission’s 2025 Preparedness Union Strategy calls for guidelines to help people manage for at least 72 hours during an emergency. The household measure sits within a larger effort to strengthen civilian and military resilience."
+        ]
+      },
+      {
+        "heading": "Beyond household supplies",
+        "paragraphs": [
+          "The strategy also covers crisis coordination, essential services and cooperation between public authorities and private businesses. Its 72-hour element is a planning objective; it does not report how well equipped households already are."
+        ]
+      },
+      {
+        "heading": "The implementation question",
+        "paragraphs": [
+          "The next reporting task is to examine what national governments actually changed: advice, budgets, delivery and readiness. Those records are needed to judge the scale of the policy and its results."
+        ]
+      }
+    ]
   },
   {
     "id": "F002",
-    "title": "UK household preparedness advice has a 2024 antecedent",
-    "summary": "A May 2024 government speech announced a household preparedness website. The October 2026 Be Ready release explicitly describes an update to existing advice.",
+    "title": "Britain’s “Be Ready” campaign has a familiar message",
+    "summary": "The UK’s October 2026 campaign updates household emergency advice first launched in 2024. The history helps explain what has changed—and what still needs scrutiny.",
     "sector": "civilian_infrastructure",
     "claim_ids": [
       "C003",
@@ -30,15 +54,39 @@
     "why_it_matters": "Comparing the new campaign with its predecessor helps separate changed branding from a changed government risk assessment.",
     "boundary": "These records establish the publication history of advice. They do not demonstrate that every recommendation, budget, or underlying risk stayed the same.",
     "alternatives": "An updated campaign can reflect routine outreach, lessons from previous disruptions, or policy changes. The launch date alone cannot identify a hidden trigger.",
-    "next_question": "What changed in the actual recommendations, audience, spending, and rollout between the 2024 and 2026 campaigns?"
+    "next_question": "What changed in the actual recommendations, audience, spending, and rollout between the 2024 and 2026 campaigns?",
+    "image_id": "uk-emergency-supplies",
+    "kicker": "Household readiness",
+    "format": "Background",
+    "sections": [
+      {
+        "heading": "An update to existing advice",
+        "paragraphs": [
+          "The Cabinet Office’s October 22 release describes Be Ready as an update to household guidance. A May 2024 government speech had already announced a public preparedness website."
+        ]
+      },
+      {
+        "heading": "What the launch establishes",
+        "paragraphs": [
+          "The two records establish a policy timeline. They leave a separate reporting question: whether the new campaign changes recommendations, resources or the assessment of risk behind them."
+        ]
+      },
+      {
+        "heading": "Following the rollout",
+        "paragraphs": [
+          "Comparing the campaigns requires more than their names. The investigation will examine the recommendations, intended audiences and spending behind the public message."
+        ]
+      }
+    ]
   },
   {
     "id": "F003",
-    "title": "A medical emergency declaration has a specific legal scope",
-    "summary": "The inspected HHS notice records a July 15, 2026 determination and an August 31 declaration concerning an emergency-use pathway for acute-pain drugs addressing military medical needs.",
+    "title": "The emergency declaration behind military pain treatment",
+    "summary": "A 2026 HHS notice creates a legal pathway for acute-pain drugs addressing military medical needs. Product approval and field delivery require separate records.",
     "sector": "medical_preparedness",
     "claim_ids": [
-      "C004"
+      "C004",
+      "C014"
     ],
     "published_at": "2026-11-01",
     "updated_at": "2026-11-01",
@@ -46,15 +94,39 @@
     "why_it_matters": "Legal authorization, product approval, procurement, and field delivery are different stages. Keeping those stages separate prevents an administrative notice from becoming an unsupported operational claim.",
     "boundary": "This finding confirms the notice’s dates and scope. It does not establish a product-specific FDA authorization, delivered quantities, or the timing of an attack.",
     "alternatives": "Closing an identified military medical capability gap can explain an authorization pathway without implying a new global emergency.",
-    "next_question": "Which product-specific decisions and delivery records followed this declaration, and how do they compare with earlier military medical programs?"
+    "next_question": "Which product-specific decisions and delivery records followed this declaration, and how do they compare with earlier military medical programs?",
+    "image_id": "combat-medic-training",
+    "kicker": "Military medicine",
+    "format": "Document review",
+    "sections": [
+      {
+        "heading": "The dates in the notice",
+        "paragraphs": [
+          "The Federal Register notice records a July 15, 2026 determination and an August 31 declaration, published on September 3. It concerns an emergency-use pathway for drugs addressing acute pain in military casualties."
+        ]
+      },
+      {
+        "heading": "The next records to examine",
+        "paragraphs": [
+          "The declaration establishes the legal pathway. It does not itself establish a product-specific FDA authorization or show quantities delivered to military units. Those decisions and transactions need their own documentation."
+        ]
+      },
+      {
+        "heading": "From authority to treatment",
+        "paragraphs": [
+          "The investigation will follow subsequent product decisions, procurement and delivery records, then compare them with earlier military medical programs. The notice alone cannot establish the timing of a particular attack."
+        ]
+      }
+    ]
   },
   {
     "id": "F004",
-    "title": "Large allied exercises were already part of the baseline",
-    "summary": "NATO’s January 2024 Steadfast Defender announcement described planned participation of 90,000 personnel across the North Atlantic and Europe.",
+    "title": "NATO’s 90,000-person rehearsal for reinforcing Europe",
+    "summary": "Steadfast Defender 2024 set out to test a vast reinforcement operation across the Atlantic and Europe. Its announced scale is an important reference for assessing later military activity.",
     "sector": "military_logistics",
     "claim_ids": [
-      "C011"
+      "C011",
+      "C013"
     ],
     "published_at": "2026-11-01",
     "updated_at": "2026-11-01",
@@ -62,6 +134,29 @@
     "why_it_matters": "A large number is not automatically an anomaly. Comparable earlier exercises are necessary before judging whether a later activity represents an unusual mobilization.",
     "boundary": "This is an announced participation figure for one exercise, not audited attendance, an annual total, or proof that later deployments are routine.",
     "alternatives": "Scheduled exercises can test existing defense plans. Actual activation, duration, logistics use, and operational orders require separate evidence.",
-    "next_question": "How do matched exercises and actual transport utilization in 2026 compare with the 2023–2025 period?"
+    "next_question": "How do matched exercises and actual transport utilization in 2026 compare with the 2023–2025 period?",
+    "image_id": "gunston-hall-norway",
+    "kicker": "Military logistics",
+    "format": "Background",
+    "sections": [
+      {
+        "heading": "An exercise across the Atlantic",
+        "paragraphs": [
+          "NATO’s January 24, 2024 announcement described planned participation of 90,000 personnel in Steadfast Defender. The exercise was designed to test reinforcement and defense in an Article 5 scenario."
+        ]
+      },
+      {
+        "heading": "A reference point for later deployments",
+        "paragraphs": [
+          "That announced figure provides historical context when new exercises attract attention. It is not audited attendance, a count of all annual activity or evidence that every later movement is routine."
+        ]
+      },
+      {
+        "heading": "The logistics behind the headline number",
+        "paragraphs": [
+          "The next comparison needs matched records for transport use, duration and actual activation. Those operational measures can show changes that a single participation figure cannot."
+        ]
+      }
+    ]
   }
 ]

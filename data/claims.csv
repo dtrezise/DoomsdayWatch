@@ -10,3 +10,6 @@ C008,E009,L01,S011,NORAD deployed Avenger systems at Secret Service request in O
 C009,E010,L10,S012,AP reports 2026 US Israel Iran war began February 28,reported_claim,partially_verified,moderate,Fresh full-text authoritative reporting found; primary plus independent corroboration pending,
 C010,E001,,S005,UK published National Risk Register on August 3 2023,confirmed_fact,verified,high,Publication metadata; does not establish a new specific imminent threat,2026-11-01
 C011,E011,,S006,NATO announced 90000 planned Steadfast Defender participants in January 2024,confirmed_fact,verified,high,Opening paragraph; announced participants not audited actual attendance,2026-11-01
+C012,E003,L04,S003,EU preparedness strategy includes crisis coordination and public-private cooperation,confirmed_fact,verified,high,Key actions: public-private cooperation and crisis response coordination,2026-11-01
+C013,E011,,S006,NATO described Steadfast Defender 2024 as testing defense against a near-peer adversary in an Article 5 scenario,confirmed_fact,verified,high,Opening paragraph of NATO January 24 2024 announcement,2026-11-01
+C014,E005,L05,S007,HHS declaration concerns an emergency-use pathway for acute-pain drugs addressing military medical needs,confirmed_fact,verified,high,Declaration scope pp 56655–56656; product-specific authorization remains separate,2026-11-01

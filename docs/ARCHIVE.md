@@ -11,7 +11,7 @@ Both are ignored by Git and excluded from the site artifact.
 - `manifests/`: per-snapshot file inventories and hashes.
 - ZIP exports: a consistent SQLite database backup, all objects and manifests, plus a separate SHA-256 checksum file.
 
-Snapshots preserve the research chronology, data, findings, source scripts, reports, notebooks, site source, images and project documentation. They exclude Git internals, credentials, the archive itself and generated `_site/`. They are local historical backups, not a second physical copy. Source URLs are preserved as research records; original website bytes are archived only after an explicit capture import.
+Snapshots preserve the research chronology, data, findings, source scripts, reports, notebooks, site source, images, project documentation and local internal planning documents. They exclude Git internals, credentials, the archive itself and generated `_site/`. They are local historical backups, not a second physical copy. Source URLs are preserved as research records; original website bytes are archived only after an explicit capture import.
 
 ```sh
 python3 scripts/archive.py snapshot --note 'Before research update'
@@ -37,4 +37,4 @@ This command does not fetch, authenticate, verify truth, or automatically promot
 
 Next: encrypted backup to an independent device/service, automated checksum checks, retention policy and restore drills. Later: separate private archival storage from the public publishing catalog, use managed PostgreSQL or equivalent for metadata and versioned object storage for files, migrate stable IDs and hashes intact, define encryption/access controls and source-copyright rules, and test recovery before switching. GitHub Pages remains a public reader of curated static output.
 
-The future family planner must use separate storage and consent rules. Household identities, contacts, addresses, route choices and shelter locations are outside this research archive.
+Private household identities, contacts, addresses and location details are outside this public research archive.
