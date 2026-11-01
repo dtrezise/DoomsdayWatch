@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local archive and source captures never belong in the public repository.
+archive/
+backups/
+private/
+_site/
+.env
+.env.*

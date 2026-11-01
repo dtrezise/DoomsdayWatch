@@ -1,0 +1,12 @@
+event_id,event_date,first_reported,sector,location,description,verification_status
+E001,2023-08-03,2023-08-03,continuity_of_government,UK,National Risk Register publication,verified
+E011,2024-01-24,2024-01-24,military_logistics,NATO,Steadfast Defender announcement,verified
+E002,2024-05-22,2024-05-22,civilian_infrastructure,UK,Household preparedness website announcement,verified
+E003,2025-03-26,2025-03-26,civilian_infrastructure,EU,Preparedness strategy launch,verified
+E006,2026-02,,medical_preparedness,US/Singapore,Reported development award,partially_verified
+E010,2026-02-28,2026-11-01,geopolitical_developments,Middle East,Conflict start as reported in inspected AP article,partially_verified
+E005,2026-08-31,2026-09-03,medical_preparedness,US,HHS declaration effective date,verified
+E008,2026-09-30,,civilian_infrastructure,US,Alleged FORTRESS target,unverified
+E009,2026-10,2026-10-27,military_logistics,US,Reported Mar-a-Lago defense deployment,unverified
+E007,2026-10-21,,military_logistics,US,Alleged Dragon Covenant date and capacity,unverified
+E004,2026-10-22,2026-10-22,civilian_infrastructure,UK,Be Ready update,verified

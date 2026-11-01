@@ -1,0 +1,15 @@
+check_id,checked_at,source_id,action,outcome,next_step
+V001,2026-11-01,S001,Local read,local_read,Internal chronology only; use external primary records for factual claims
+V002,2026-11-01,S002,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V003,2026-11-01,S003,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V004,2026-11-01,S004,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V005,2026-11-01,S005,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V006,2026-11-01,S006,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V007,2026-11-01,S007,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V008,2026-11-01,S008,Web discovery and retrieval,snippet_only_fetch_404,Retrieve original or dated archive
+V009,2026-11-01,S009,Web discovery and retrieval,fetch_403,Retrieve original or dated archive
+V010,2026-11-01,S010,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V011,2026-11-01,S011,Web discovery and retrieval,snippet_only_fetch_403,Retrieve original or dated archive
+V012,2026-11-01,S012,Web discovery and retrieval,full_text,Preserve snapshot in future capture
+V013,2026-11-01,S013,Web discovery and retrieval,dynamic_incomplete,Retrieve original or dated archive
+V014,2026-11-01,S014,Web discovery and retrieval,date_inconsistent_no_data,Retrieve original or dated archive

@@ -1,0 +1,29 @@
+baseline_id,sector,year,metric,value,unit,geography,source_id,status,limitations
+B001,continuity_of_government,2023,UK risk register publication,published,milestone,UK,S005,verified_context,Not an operational activity denominator
+B002,civilian_infrastructure,2024,UK household preparedness website,launched,milestone,UK,S004,verified_context,Continuity with 2026 advice; not spending or readiness measurement
+B003,military_logistics,2024,Steadfast Defender planned personnel,90000,planned_personnel,NATO,S006,verified_context,Single exercise announcement; not annual total or actual mobilization
+B004,civilian_infrastructure,2025,EU self-sufficiency guideline,72,hours_guidance,EU,S003,verified_context,Guideline not evidence of stock levels
+B005,military_logistics,2023,Exercise size; reserve activations; charter utilization,,,scope_to_define,,missing,Annual and matched Jan–Oct counts; planned versus actual participation
+B006,military_logistics,2024,Exercise size; reserve activations; charter utilization,,,scope_to_define,,missing,Annual and matched Jan–Oct counts; planned versus actual participation
+B007,military_logistics,2025,Exercise size; reserve activations; charter utilization,,,scope_to_define,,missing,Annual and matched Jan–Oct counts; planned versus actual participation
+B008,emergency_procurement,2023,Obligations; quantities; delivery lead time,,,scope_to_define,,missing,Same award families; fiscal year and inflation; ceilings separate
+B009,emergency_procurement,2024,Obligations; quantities; delivery lead time,,,scope_to_define,,missing,Same award families; fiscal year and inflation; ceilings separate
+B010,emergency_procurement,2025,Obligations; quantities; delivery lead time,,,scope_to_define,,missing,Same award families; fiscal year and inflation; ceilings separate
+B011,geopolitical_developments,2023,Operational incidents; departures; diplomatic orders,,,scope_to_define,,missing,Same region and definitions; separate rhetoric from operations
+B012,geopolitical_developments,2024,Operational incidents; departures; diplomatic orders,,,scope_to_define,,missing,Same region and definitions; separate rhetoric from operations
+B013,geopolitical_developments,2025,Operational incidents; departures; diplomatic orders,,,scope_to_define,,missing,Same region and definitions; separate rhetoric from operations
+B014,civilian_infrastructure,2023,Grid initiating events; outage hours; preparedness campaigns,,,scope_to_define,,missing,Orders separate from extensions; policy changes and weather
+B015,civilian_infrastructure,2024,Grid initiating events; outage hours; preparedness campaigns,,,scope_to_define,,missing,Orders separate from extensions; policy changes and weather
+B016,civilian_infrastructure,2025,Grid initiating events; outage hours; preparedness campaigns,,,scope_to_define,,missing,Orders separate from extensions; policy changes and weather
+B017,medical_preparedness,2023,Delivered quantities; stock turnover; casualty exercise cadence,,,scope_to_define,,missing,Same products and procurement cycles; development versus deployment
+B018,medical_preparedness,2024,Delivered quantities; stock turnover; casualty exercise cadence,,,scope_to_define,,missing,Same products and procurement cycles; development versus deployment
+B019,medical_preparedness,2025,Delivered quantities; stock turnover; casualty exercise cadence,,,scope_to_define,,missing,Same products and procurement cycles; development versus deployment
+B020,financial_insurance,2023,War-risk quotes; paid premiums; shipping volumes,,,scope_to_define,,missing,Same route hull value coverage term deductible currency and date
+B021,financial_insurance,2024,War-risk quotes; paid premiums; shipping volumes,,,scope_to_define,,missing,Same route hull value coverage term deductible currency and date
+B022,financial_insurance,2025,War-risk quotes; paid premiums; shipping volumes,,,scope_to_define,,missing,Same route hull value coverage term deductible currency and date
+B023,continuity_of_government,2023,Public exercises; policy updates; confirmed activation,,,scope_to_define,,missing,Separate scheduled resilience work from actual activation
+B024,continuity_of_government,2024,Public exercises; policy updates; confirmed activation,,,scope_to_define,,missing,Separate scheduled resilience work from actual activation
+B025,continuity_of_government,2025,Public exercises; policy updates; confirmed activation,,,scope_to_define,,missing,Separate scheduled resilience work from actual activation
+B026,astronomical_hazards,2023,Dated impact notices; solar alert severity and duration,,,scope_to_define,,missing,Separate object risk revisions from actual impacts; solar cycle context
+B027,astronomical_hazards,2024,Dated impact notices; solar alert severity and duration,,,scope_to_define,,missing,Separate object risk revisions from actual impacts; solar cycle context
+B028,astronomical_hazards,2025,Dated impact notices; solar alert severity and duration,,,scope_to_define,,missing,Separate object risk revisions from actual impacts; solar cycle context

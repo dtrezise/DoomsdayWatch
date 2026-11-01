@@ -1,0 +1,67 @@
+[
+  {
+    "id": "F001",
+    "title": "EU preparedness strategy includes 72-hour self-sufficiency guidance",
+    "summary": "The European Commission’s 2025 preparedness strategy includes guidelines for a minimum of 72 hours of population self-sufficiency.",
+    "sector": "civilian_infrastructure",
+    "claim_ids": [
+      "C002"
+    ],
+    "published_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "publication_status": "published",
+    "why_it_matters": "An older policy can look like a new warning when its original date is lost. Establishing chronology is the first step in testing whether preparedness activity is unusual.",
+    "boundary": "A public guideline does not measure household stock levels, operational readiness, or the imminence of an emergency.",
+    "alternatives": "The strategy addresses a range of risks. Its existence alone does not distinguish routine resilience planning from preparation for a specific threat.",
+    "next_question": "Which national measures changed in 2026, and how do implementation budgets and actual readiness compare with 2023–2025?"
+  },
+  {
+    "id": "F002",
+    "title": "UK household preparedness advice has a 2024 antecedent",
+    "summary": "A May 2024 government speech announced a household preparedness website. The October 2026 Be Ready release explicitly describes an update to existing advice.",
+    "sector": "civilian_infrastructure",
+    "claim_ids": [
+      "C003",
+      "C001"
+    ],
+    "published_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "publication_status": "published",
+    "why_it_matters": "Comparing the new campaign with its predecessor helps separate changed branding from a changed government risk assessment.",
+    "boundary": "These records establish the publication history of advice. They do not demonstrate that every recommendation, budget, or underlying risk stayed the same.",
+    "alternatives": "An updated campaign can reflect routine outreach, lessons from previous disruptions, or policy changes. The launch date alone cannot identify a hidden trigger.",
+    "next_question": "What changed in the actual recommendations, audience, spending, and rollout between the 2024 and 2026 campaigns?"
+  },
+  {
+    "id": "F003",
+    "title": "A medical emergency declaration has a specific legal scope",
+    "summary": "The inspected HHS notice records a July 15, 2026 determination and an August 31 declaration concerning an emergency-use pathway for acute-pain drugs addressing military medical needs.",
+    "sector": "medical_preparedness",
+    "claim_ids": [
+      "C004"
+    ],
+    "published_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "publication_status": "published",
+    "why_it_matters": "Legal authorization, product approval, procurement, and field delivery are different stages. Keeping those stages separate prevents an administrative notice from becoming an unsupported operational claim.",
+    "boundary": "This finding confirms the notice’s dates and scope. It does not establish a product-specific FDA authorization, delivered quantities, or the timing of an attack.",
+    "alternatives": "Closing an identified military medical capability gap can explain an authorization pathway without implying a new global emergency.",
+    "next_question": "Which product-specific decisions and delivery records followed this declaration, and how do they compare with earlier military medical programs?"
+  },
+  {
+    "id": "F004",
+    "title": "Large allied exercises were already part of the baseline",
+    "summary": "NATO’s January 2024 Steadfast Defender announcement described planned participation of 90,000 personnel across the North Atlantic and Europe.",
+    "sector": "military_logistics",
+    "claim_ids": [
+      "C011"
+    ],
+    "published_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "publication_status": "published",
+    "why_it_matters": "A large number is not automatically an anomaly. Comparable earlier exercises are necessary before judging whether a later activity represents an unusual mobilization.",
+    "boundary": "This is an announced participation figure for one exercise, not audited attendance, an annual total, or proof that later deployments are routine.",
+    "alternatives": "Scheduled exercises can test existing defense plans. Actual activation, duration, logistics use, and operational orders require separate evidence.",
+    "next_question": "How do matched exercises and actual transport utilization in 2026 compare with the 2023–2025 period?"
+  }
+]

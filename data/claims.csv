@@ -1,0 +1,12 @@
+claim_id,event_id,lead_id,source_id,proposition,evidence_class,verification_status,confidence,evidence_note,verified_at
+C001,E004,L04,S002,UK published updated Be Ready advice on October 22 2026,confirmed_fact,verified,high,Publication metadata and opening; revised campaign rather than first household advice,2026-11-01
+C002,E003,L04,S003,EU strategy includes minimum 72-hour self-sufficiency guidelines in 2025,confirmed_fact,verified,high,Population preparedness section and document dates,2026-11-01
+C003,E002,L04,S004,UK household preparedness website was announced in May 2024,confirmed_fact,verified,high,Practical household preparations section,2026-11-01
+C004,E005,L05,S007,Determination effective July 15 and HHS declaration effective August 31 were published September 3 2026,confirmed_fact,verified,high,Dates and declaration sections pp 56655–56656; not product-specific FDA authorization,2026-11-01
+C005,E006,L05,S010,Company announced approximately 41m US government Wafermine development contract,reported_claim,partially_verified,moderate,Company announcement index supports reported award; exact 40.95m and obligations need underlying records,
+C006,E007,L02,S008,Dragon Covenant occurred October 21 with theoretical 2400 remains/day capacity,reported_claim,unverified,not_assessed,Search discovers Army title; original full text inaccessible; precise date and figure not verified,
+C007,E008,L03,S009,September 30 FORTRESS initiative requires 90-day endurance,reported_claim,unverified,not_assessed,Memo retrieval forbidden; separate memo and press target,
+C008,E009,L01,S011,NORAD deployed Avenger systems at Secret Service request in October,reported_claim,unverified,low,Indexed local reporting; exact occurrence and date need primary record,
+C009,E010,L10,S012,AP reports 2026 US Israel Iran war began February 28,reported_claim,partially_verified,moderate,Fresh full-text authoritative reporting found; primary plus independent corroboration pending,
+C010,E001,,S005,UK published National Risk Register on August 3 2023,confirmed_fact,verified,high,Publication metadata; does not establish a new specific imminent threat,2026-11-01
+C011,E011,,S006,NATO announced 90000 planned Steadfast Defender participants in January 2024,confirmed_fact,verified,high,Opening paragraph; announced participants not audited actual attendance,2026-11-01

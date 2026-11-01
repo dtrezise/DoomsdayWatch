@@ -1,0 +1,9 @@
+indicator_id,sector,indicator,source_family,baseline,review_trigger,cadence,last_checked,status
+W001,military_logistics,Exercise size; reserve activations; charter utilization,See sector notebook,incomplete,Annual and matched Jan–Oct counts; planned versus actual participation,weekly_proposed,,disabled
+W002,emergency_procurement,Obligations; quantities; delivery lead time,See sector notebook,incomplete,Same award families; fiscal year and inflation; ceilings separate,weekly_proposed,,disabled
+W003,geopolitical_developments,Operational incidents; departures; diplomatic orders,See sector notebook,incomplete,Same region and definitions; separate rhetoric from operations,weekly_proposed,,disabled
+W004,civilian_infrastructure,Grid initiating events; outage hours; preparedness campaigns,See sector notebook,incomplete,Orders separate from extensions; policy changes and weather,weekly_proposed,,disabled
+W005,medical_preparedness,Delivered quantities; stock turnover; casualty exercise cadence,See sector notebook,incomplete,Same products and procurement cycles; development versus deployment,weekly_proposed,,disabled
+W006,financial_insurance,War-risk quotes; paid premiums; shipping volumes,See sector notebook,incomplete,Same route hull value coverage term deductible currency and date,weekly_proposed,,disabled
+W007,continuity_of_government,Public exercises; policy updates; confirmed activation,See sector notebook,incomplete,Separate scheduled resilience work from actual activation,weekly_proposed,,disabled
+W008,astronomical_hazards,Dated impact notices; solar alert severity and duration,See sector notebook,incomplete,Separate object risk revisions from actual impacts; solar cycle context,weekly_proposed,,disabled
