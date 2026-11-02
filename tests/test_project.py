@@ -34,8 +34,8 @@ class ProjectTests(unittest.TestCase):
                     parts=urlsplit(link)
                     if parts.scheme or parts.netloc or not parts.path:continue
                     path=unquote(parts.path)
-                    self.assertTrue(path.startswith('/Preparedness/'),link)
-                    target=out/path.removeprefix('/Preparedness/')
+                    self.assertTrue(path.startswith('/DoomsdayWatch/'),link)
+                    target=out/path.removeprefix('/DoomsdayWatch/')
                     if target.is_dir():target=target/'index.html'
                     self.assertTrue(target.is_file(),f'{page}: {link}')
                     if parts.fragment and target.suffix=='.html':

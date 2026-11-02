@@ -1,7 +1,7 @@
 # Public website and publishing
 
-Canonical URL: https://dtrezise.github.io/Preparedness/
-Public repository: https://github.com/dtrezise/Preparedness
+Canonical URL: https://dtrezise.github.io/DoomsdayWatch/
+Public repository: https://github.com/dtrezise/DoomsdayWatch
 Local repository: the project checkout
 
 ## Architecture

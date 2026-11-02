@@ -190,7 +190,7 @@ class Site:
 <meta property="og:image" content="{esc(self.asset_absolute(image))}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{esc(title)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{esc(self.asset_absolute(image))}">
 <link rel="icon" href="{self.href('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{self.asset_href('assets/style.css')}">
-<link rel="alternate" type="application/atom+xml" title="Preparedness reporting" href="{self.href('feed.xml')}"><script defer src="{self.asset_href('assets/app.js')}"></script></head><body>
+<link rel="alternate" type="application/atom+xml" title="Doomsday Watch reporting" href="{self.href('feed.xml')}"><script defer src="{self.asset_href('assets/app.js')}"></script></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="edition-bar wrap"><span>Independent reporting</span><span>Security · Infrastructure · Civil preparedness</span><time datetime="{esc(cfg['research_cutoff'])}">{esc(date_label(cfg["research_cutoff"]))} edition</time></div>
 <header class="masthead wrap"><a class="brand" href="{self.href()}"><span class="brand-name">Doomsday Watch<span>{esc(cfg["subtitle"])}</span></span></a></header>

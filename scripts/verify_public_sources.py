@@ -28,7 +28,7 @@ def fetch(source):
     checked=datetime.now(timezone.utc).isoformat()
     result={'source_id':source['source_id'],'url':source['url'],'checked_at':checked,'status':'needs_review','method':'HTTP GET'}
     try:
-        request=Request(source['url'],headers={'User-Agent':'PreparednessObservatory/1.0 editorial reference verification'})
+        request=Request(source['url'],headers={'User-Agent':'DoomsdayWatch/1.0 editorial reference verification'})
         with urlopen(request,timeout=30) as response:
             data=response.read(12*1024*1024)
             media_type=response.headers.get_content_type()
