@@ -21,3 +21,9 @@ Status schema version 2 records source URLs, response hashes, attempted fallback
 ## Validation
 
 Fifteen tests passed, including XML validity/expiration, duplicate handling, blocked-page feed fallback, French national-scope/date guards, last-verified handling, publication boundaries and archive restoration. Browser checks confirmed JavaScript expiration and review-due states using a clearly labeled temporary synthetic fixture, five bars for a synthetic Critical UK level, normal source notes, Eastern timestamps, mobile width and no console errors. Synthetic assets were outside the repository and publication output.
+
+## Deployment finding and fallback correction
+
+Pages run 41498416352 succeeded, and France was verified from the hosted network. All three DHS candidates returned 403 on the hosted runner, while local retrieval succeeded. The correction therefore also preserves reviewed snapshots on push builds, leaves scheduled/manual remote collection enabled, and adds a narrow daily local fallback at 8:30 a.m. America/New_York. The fallback requires the computer and app running and has a failures-only notification policy. It uses existing Codex allowance, not a separately billed model API or a source API key.
+
+Failed updates now display the last successful value only with an explicit last-verified label, a failure flag and timestamped provenance. Its original advisory transition/source-review deadlines are preserved; a failed request never renews freshness or permits an expired alert to remain an active badge. After 36 hours it is marked stale. Static and browser handling were tested for this case as well. The verified local snapshot is published rather than overwritten by an immediate failed hosted recheck.

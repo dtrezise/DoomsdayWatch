@@ -102,11 +102,13 @@ async function refreshIndicators() {
     data.items.forEach(item => {
       const node = [...statusPanel.querySelectorAll('[data-indicator]')].find(n => n.dataset.indicator === item.id);
       if (!node) return;
-      const verified = Date.parse(item.verified_at || '');
-      const deadlines = [item.valid_until, item.review_due].map(value => Date.parse(value || '')).filter(Number.isFinite);
+      const historical = item.state !== 'verified' && item.last_verified;
+      const reading = historical || item;
+      const verified = Date.parse(reading.verified_at || '');
+      const deadlines = [reading.valid_until, reading.review_due].map(value => Date.parse(value || '')).filter(Number.isFinite);
       const deadline = deadlines.length ? Math.min(...deadlines) : NaN;
-      const expired = item.state === 'verified' && Number.isFinite(deadline) && Date.now() >= deadline;
-      const stale = item.state === 'verified' && (!Number.isFinite(verified) || Date.now() - verified > data.stale_after_hours * 3600000 || verified > Date.now() + 300000);
+      const expired = (item.state === 'verified' || historical) && Number.isFinite(deadline) && Date.now() >= deadline;
+      const stale = (item.state === 'verified' || historical) && (!Number.isFinite(verified) || Date.now() - verified > data.stale_after_hours * 3600000 || verified > Date.now() + 300000);
       const note = [...statusPanel.querySelectorAll('[data-indicator-note]')].find(n => n.dataset.indicatorNote === item.id);
       if (note) {
         note.textContent = item.label + ': ' + item.note + ' ';
@@ -133,8 +135,13 @@ async function refreshIndicators() {
           p.append(' · ' + advisory.type + ' · expires ' + expires + '.'); note.append(p);
         } catch (_) { /* malformed advisory links are never rendered */ }
       });
-      ['verified','unavailable','not_disclosed','source_blocked','retrieval_failed','needs_review','stale','expired'].forEach(state => node.classList.remove(state));
-      node.classList.add(expired ? 'expired' : stale ? 'stale' : item.state);
+      ['verified','unavailable','not_disclosed','source_blocked','retrieval_failed','needs_review','stale','expired','last_verified'].forEach(state => node.classList.remove(state));
+      node.classList.add(expired ? 'expired' : stale ? 'stale' : historical ? 'last_verified' : item.state);
+      let health = node.querySelector('.indicator-health');
+      if (historical) {
+        if (!health) { health = document.createElement('small'); health.className = 'indicator-health'; node.querySelector('.indicator-value').parentNode.append(health); }
+        health.textContent = ({source_blocked:'Update blocked', retrieval_failed:'Update failed', needs_review:'Update needs review'})[item.state] || '';
+      } else health?.remove();
       if (item.id === 'uk') {
         const level = ['LOW','MODERATE','SUBSTANTIAL','SEVERE','CRITICAL'].indexOf(item.value) + 1;
         let bars = node.querySelector('.status-bars');
@@ -145,7 +152,7 @@ async function refreshIndicators() {
         }
         if (bars) [...bars.children].forEach((bar, index) => bar.classList.toggle('on', index < level));
       }
-      node.querySelector('.indicator-value').textContent = expired ? (item.valid_until ? 'Advisory update required' : 'Source review due') : stale ? 'Stale · ' + item.value : item.value;
+      node.querySelector('.indicator-value').textContent = expired ? (reading.valid_until ? 'Advisory update required' : 'Source review due') : stale ? 'Stale · ' + reading.value : historical ? reading.value + ' · last verified' : item.value;
     });
     const time = statusPanel.querySelector('[data-status-checked]');
     time.dateTime = data.checked_at;

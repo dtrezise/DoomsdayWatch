@@ -20,6 +20,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Refresh official indicator snapshots
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: python scripts/refresh_status.py
       - name: Preserve dated indicator snapshot
         uses: actions/upload-artifact@v4

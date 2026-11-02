@@ -126,13 +126,16 @@ def parse_ntas(data,now):
 
 def display_indicator(item,snapshot,now=None):
     now=now or datetime.now(timezone.utc)
-    state=item['state'];value=item['value']
-    if state=='verified':
+    state=item['state'];reading=item.get('last_verified') if state!='verified' else None
+    reading=reading or item;value=reading['value']
+    has_reading=state=='verified' or bool(item.get('last_verified'))
+    if has_reading:
         try:
-            if item.get('valid_until') and now>=utc(item['valid_until']):return 'expired','Advisory update required'
-            if item.get('review_due') and now>=utc(item['review_due']):return 'expired','Source review due'
-            age=(now-utc(item['verified_at'])).total_seconds()
+            if reading.get('valid_until') and now>=utc(reading['valid_until']):return 'expired','Advisory update required'
+            if reading.get('review_due') and now>=utc(reading['review_due']):return 'expired','Source review due'
+            age=(now-utc(reading['verified_at'])).total_seconds()
             if age>snapshot['stale_after_hours']*3600 or age < -300:return 'stale','Stale · '+value
+            if state!='verified':return 'last_verified',value+' · last verified'
         except (ValueError,KeyError,TypeError):return 'needs_review','Source needs review'
     return state,value
 
@@ -205,7 +208,7 @@ def collect(fetch=None,now=None,previous=None,capture_dir=None):
             state='needs_review' if 'needs_review' in failures else 'source_blocked' if 'source_blocked' in failures else 'retrieval_failed'
             item.update(state=state,value=STATE_VALUES[state],note='Public information exists, but '+('the retrieved content needs review.' if state=='needs_review' else 'automated retrieval was blocked.' if state=='source_blocked' else 'the source could not be retrieved.')+' No current risk level is inferred.')
             old=previous.get(key,{})
-            if old.get('state')=='verified':item['last_verified']=dict(value=old['value'],verified_at=old['verified_at'])
+            if old.get('state')=='verified':item['last_verified']={key:old[key] for key in ('value','verified_at','source_url','source_refs','note','sha256','valid_until','review_due','advisories') if key in old}
             elif old.get('last_verified'):item['last_verified']=old['last_verified']
         items.append(item)
     return dict(schema_version=2,checked_at=now,stale_after_hours=36,items=items)

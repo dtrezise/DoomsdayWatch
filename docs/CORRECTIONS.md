@@ -19,3 +19,5 @@ Record material evidence qualifications and analytical revisions using stable cl
 | R011 | 2026-11-02 | Billionaire shelter and retreat interpretation | S045/S046 area estimates differ; S047 describes an existing Buenos Aires home | Original plan versions not independently compared. New Argentine bunker construction and a coordinated private-preparedness surge remain unverified. |
 
 | R012 | 2026-11-02 | Public indicator availability | Earlier “Not verified” badges conflated blocked retrieval with unavailable official information | DHS now uses documented public XML feeds; France uses inspected official fallbacks. DEFCON is separately labeled not publicly disclosed. Empty feed scope, active-advisory expiration and dated fallback limits are explicit. S056–S060. |
+
+| R013 | 2026-11-02 | Local versus hosted source access | Deployed run 41498416352 received 403 from every DHS candidate while local official retrieval succeeded | Push builds preserve reviewed local snapshots. Daily local fallback supplements remote checks; failed updates retain qualified, timestamped last-verified readings and original expiration limits. |

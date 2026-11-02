@@ -94,6 +94,17 @@ class IndicatorTests(unittest.TestCase):
         previous={'items':[dict(id='uk',state='verified',value='SEVERE',verified_at='2026-11-01T17:00:00+00:00')]}
         item=next(i for i in collect(fetch=blocked,previous=previous,now='2026-11-02T17:00:00+00:00')['items'] if i['id']=='uk')
         self.assertEqual(item['value'],'Source blocked');self.assertEqual(item['last_verified']['value'],'SEVERE')
+        self.assertEqual(display_indicator(item,{'stale_after_hours':36},datetime(2026,11,2,17,tzinfo=timezone.utc)),('last_verified','SEVERE · last verified'))
+        self.assertEqual(display_indicator(item,{'stale_after_hours':36},datetime(2026,11,4,17,tzinfo=timezone.utc)),('stale','Stale · SEVERE'))
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);(root/'site').mkdir()
+            current=json.loads(json.dumps(item));current['last_verified']['verified_at']=datetime.now(timezone.utc).isoformat()
+            (root/'site/status.json').write_text(json.dumps(dict(checked_at=current['last_verified']['verified_at'],stale_after_hours=36,items=[current])))
+            site=Site(ROOT,root/'out');site.root=root
+            panel=site.status_panel()
+            self.assertIn('SEVERE · last verified',panel);self.assertIn('Update blocked',panel)
+        item['last_verified']['valid_until']='2026-11-02T16:00:00+00:00'
+        self.assertEqual(display_indicator(item,{'stale_after_hours':36},datetime(2026,11,2,17,tzinfo=timezone.utc)),('expired','Advisory update required'))
 
     def test_watch_list_timeline_targets_and_no_menu(self):
         with tempfile.TemporaryDirectory() as td:
