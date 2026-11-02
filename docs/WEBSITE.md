@@ -44,3 +44,7 @@ The landing page explains the publication's remit and leads with sourced photogr
 Before changing published references, run `python3 scripts/verify_public_sources.py` with network access, inspect source content, and then run the normal validation/tests/build. The checker preserves retrieved bytes in the local archive and records HTTP results in `site/reference_checks.json`. HTTP success is a link check, not a factual-verification decision; the existing claim review remains required. New findings require linked verified claims and checked sources. Images and credits are cataloged in `site/media.json`.
 
 Product planning documents are local internal material, excluded from the public artifact. New coverage must not advertise deferred features.
+
+## Navigation
+
+Investigations is the canonical landing page at the site root. Individual story URLs remain permanent and are reached through investigation files. The former Reporting and Timeline indexes are retired; their URLs and the former investigation index redirect to the root. Methods and About the publication are footer links. Do not recreate separate Home, Reporting or Timeline navigation entries.

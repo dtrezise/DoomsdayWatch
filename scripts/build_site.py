@@ -177,7 +177,9 @@ class Site:
 
     def page(self, route, title, description, body, active='', image='assets/share.png'):
         cfg = self.config
-        nav = [('', 'Home'), ('findings/', 'Reporting'), ('investigations/', 'Investigations'), ('timeline/', 'Timeline'), ('methods/', 'Methods')]
+        nav = [('', 'Investigations')]
+        if active in ('findings/', 'investigations/'):
+            active = ''
         navigation = ''.join(f'<a href="{self.href(path)}"'+(' aria-current="page"' if active==path else '')+f'>{name}</a>' for path,name in nav)
         canonical = self.absolute(route)
         content = f'''<!doctype html>
@@ -192,9 +194,9 @@ class Site:
 <a class="skip" href="#main">Skip to content</a>
 <div class="edition-bar wrap"><span>Independent reporting</span><span>Security · Infrastructure · Civil preparedness</span><time datetime="{esc(cfg['research_cutoff'])}">{esc(date_label(cfg["research_cutoff"]))} edition</time></div>
 <header class="masthead wrap"><a class="brand" href="{self.href()}"><span class="brand-name">Preparedness<span>Observatory</span></span></a><p>Government preparedness<br>Military readiness · Civil resilience</p></header>
-<div class="nav-wrap"><nav class="wrap" aria-label="Main navigation">{navigation}<a class="nav-about" href="{self.href('about/')}">About the publication</a></nav></div>
+<div class="nav-wrap"><nav class="wrap" aria-label="Main navigation">{navigation}</nav></div>
 <main id="main" class="wrap">{body}</main>
-<footer><div class="wrap footer-main"><div><a class="footer-brand" href="{self.href()}">Preparedness Observatory</a><p>Independent reporting on preparedness, security and resilience.</p></div><div class="footer-links"><a href="{self.href('sources/')}">Source registry</a><a href="{self.href('corrections/')}">Corrections</a><a href="{self.href('about/')}">About & privacy</a><a href="{self.href('feed.xml')}">RSS / Atom</a></div></div><div class="wrap footer-note"><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p><a href="{esc(cfg['repository'])}">Public research repository ↗</a></div></footer>
+<footer><div class="wrap footer-main"><div><a class="footer-brand" href="{self.href()}">Preparedness Observatory</a><p>Independent reporting on preparedness, security and resilience.</p></div><div class="footer-links"><a href="{self.href('methods/')}">Methods</a><a href="{self.href('sources/')}">Source registry</a><a href="{self.href('corrections/')}">Corrections</a><a href="{self.href('about/')}">About the publication</a><a href="{self.href('feed.xml')}">RSS / Atom</a></div></div><div class="wrap footer-note"><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p><a href="{esc(cfg['repository'])}">Public research repository ↗</a></div></footer>
 <dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-top"><p class="eyebrow">Share this story</p><button type="button" id="close-share" class="dialog-close" aria-label="Close share composer">×</button></div><h2 id="share-title">Share story</h2><label for="share-text">Suggested post · edit before sharing</label><textarea id="share-text" rows="8"></textarea><div class="actions"><button class="primary" id="copy-post" type="button">Copy post</button><button class="button secondary" id="copy-link" type="button">Copy link</button><button class="button secondary" id="native-share" type="button">Share…</button></div><div class="share-destinations"><a data-destination="email">Email</a><a data-destination="facebook" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a data-destination="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><p class="message" id="share-message" role="status"></p><p class="subtle">Social previews use the published headline and image. Custom text may need to be pasted into your post.</p></dialog>
 </body></html>'''
         path = self.out/route/'index.html' if route else self.out/'index.html'
@@ -248,41 +250,26 @@ class Site:
         self.out.mkdir(parents=True,exist_ok=True)
         (self.out/'.preparedness-build').write_text('Generated public artifact; safe to rebuild.\n')
         shutil.copytree(self.root/'site/assets',self.out/'assets',dirs_exist_ok=True)
-        lead=max(self.findings,key=lambda finding:(finding['published_at'],finding['id']))
-        home=f'''<section class="landing-intro"><div><p class="eyebrow">The preparedness beat</p><h1>How governments prepare<br>for the next crisis.</h1></div><div><p>Military exercises. Emergency spending. The infrastructure we rely on.</p><p>Preparedness Observatory investigates the decisions, documents and resources behind preparations for war, disruption and disaster.</p><a class="text-link" href="{self.href('about/')}">About our reporting →</a></div></section>
-<section class="front-page" aria-label="Featured reporting"><div class="lead-story">{self.card(lead,'lead')}</div><aside class="front-sidebar"><h2 class="section-label">Also in this edition</h2>{self.card(self.by_id['F001'],'compact')}{self.card(self.by_id['F002'],'compact')}</aside></section>
-<section class="editorial-section"><div class="section-head"><div><p class="eyebrow">Military medicine</p><h2>Inside the emergency-use paperwork</h2></div><a href="{self.href('findings/')}">All reporting →</a></div>{self.card(self.by_id['F003'],'wide')}</section>
-<section class="editorial-section"><div class="section-head"><div><p class="eyebrow">Ongoing coverage</p><h2>The investigation files</h2></div><a href="{self.href('investigations/')}">Browse investigations →</a></div><div class="dossier-grid">{''.join(self.dossier_card(d) for d in self.investigations)}</div></section>
-<section class="publication-note"><h2>What the reporting shows so far</h2><div><p>The first files examine household advice, military exercises and medical emergency authorities. Several measures have older precedents; key operational and spending comparisons are still being assembled.</p><p>Our current assessment has not established a shared, undisclosed imminent global threat.</p><a class="text-link" href="{self.href('assessment/')}">Read the assessment →</a></div></section>'''
-        self.page('','Investigating government preparedness','Independent reporting on military readiness, emergency spending, infrastructure and civil preparedness.',home)
-        opts=''.join(f'<option value="{key}">{title}</option>' for key,(title,_) in SECTORS.items())
-        body=self.heading('Reporting','Document-based stories on military readiness, emergency policy and civil preparedness.','Latest coverage')
-        body+=f'<section class="editorial-section"><div class="filters"><label for="search">Search stories<input id="search" type="search" placeholder="Search topics, places or documents"></label><label for="sector">Topic<select id="sector"><option value="">All topics</option>{opts}</select></label></div><p id="filter-count" class="filter-count" role="status">{len(self.findings)} stories shown</p><div class="story-grid">'+''.join(self.card(f) for f in self.findings)+'</div><p id="no-results" class="no-results" hidden>No stories match this search.</p></section>'
-        self.page('findings/','Reporting','Read the latest document-based stories from Preparedness Observatory.',body,'findings/')
+        body=self.heading('Investigations','Investigating government preparedness, military readiness and civil resilience through public documents and operational records.','Ongoing coverage')+'<section class="editorial-section dossier-grid">'+''.join(self.dossier_card(d) for d in self.investigations)+'</section>'
+        self.page('','Investigations','Independent investigations into government preparedness, military readiness and civil resilience.',body)
+        # Preserve bookmarks without maintaining duplicate index pages.
+        for retired in ('investigations/', 'findings/', 'timeline/'):
+            path=self.out/retired/'index.html';path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_text(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Investigations · Preparedness Observatory</title><meta name="robots" content="noindex"><link rel="canonical" href="{self.absolute()}"><meta http-equiv="refresh" content="0;url={self.href()}"></head><body><p><a href="{self.href()}">Continue to Investigations</a></p></body></html>''')
         public_claims=set();public_sources=set()
         for f in self.findings:
             ids=self.source_ids(f);public_claims.update(f['claim_ids']);public_sources.update(ids)
             public_sources.add(self.media[f['image_id']]['source_id'])
-            body=f'<p class="crumb"><a href="{self.href("findings/")}">Reporting</a> / {esc(f["kicker"])}</p>'+self.heading(f['title'],f['summary'],f['kicker']+' / '+f['format'])
+            body=f'<p class="crumb"><a href="{self.href()}">Investigations</a> / {esc(f["kicker"])}</p>'+self.heading(f['title'],f['summary'],f['kicker']+' / '+f['format'])
             body+=f'<div class="article-byline"><span>Preparedness Observatory</span><time datetime="{f["published_at"]}">Published {esc(date_label(f["published_at"]))}</time>{self.share(f)}</div>'+self.photo(f['image_id'],full=True,eager=True)
             text=''.join(f'<section><h2>{esc(section["heading"])}</h2>'+''.join(f'<p>{esc(paragraph)}</p>' for paragraph in section['paragraphs'])+'</section>' for section in f['sections'])
             body+=f'<div class="article-layout"><article class="prose story-body">{text}{self.references(ids,f["id"],f["image_id"],f)}<div class="article-share">{self.share(f)} <a href="{self.href("assets/"+f["id"]+".png")}" download>Download image card</a><button id="print-finding" type="button" class="share-trigger">Print / save PDF</button></div></article><aside class="sidebar"><h2>In this reporting file</h2><p>{esc(f["kicker"])}</p><p>Record {f["id"]}</p><a href="{self.href("methods/")}">Reporting standards →</a><a href="{self.href("corrections/")}">Corrections →</a></aside></div>'
             self.page('findings/'+f['id']+'/',f['title'],f['summary'],body,'findings/','assets/'+f['id']+'.png')
-        body=self.heading('Investigations','Our reporting files follow public policy through the documents, decisions and operational records behind it.','Ongoing coverage')+'<section class="editorial-section dossier-grid">'+''.join(self.dossier_card(d) for d in self.investigations)+'</section>'
-        self.page('investigations/','Investigations','Ongoing reporting files on civil preparedness, military logistics and military medicine.',body,'investigations/')
         for d in self.investigations:
             ids=sorted({sid for fid in d['finding_ids'] for sid in self.source_ids(self.by_id[fid])})
-            body=f'<p class="crumb"><a href="{self.href("investigations/")}">Investigations</a> / {d["id"]}</p>'+self.heading(d['title'],d['summary'],d['status'])+self.photo(d['image_id'],full=True,eager=True)
+            body=f'<p class="crumb"><a href="{self.href()}">Investigations</a> / {d["id"]}</p>'+self.heading(d['title'],d['summary'],d['status'])+self.photo(d['image_id'],full=True,eager=True)
             body+=f'<div class="article-layout"><article class="prose"><h2>The reporting focus</h2><p>{esc(d["focus"])}</p><h2>Questions we are pursuing</h2><ul>'+''.join('<li>'+esc(q)+'</li>' for q in d['questions'])+'</ul>'+self.references(ids,d['id'],d['image_id'])+'</article><aside class="sidebar"><h2>Related coverage</h2>'+''.join(f'<a href="{self.href("findings/"+fid+"/")}">{esc(self.by_id[fid]["title"])}</a>' for fid in d['finding_ids'])+'</aside></div>'
             self.page('investigations/'+d['slug']+'/',d['title'],d['summary'],body,'investigations/')
-        body=self.heading('The preparedness timeline','Key policy announcements and exercise records behind our reporting.','Public record')+'<section class="editorial-section timeline">'
-        event_claims={}
-        for cid in sorted(public_claims):
-            c=self.claims[cid];event_claims.setdefault(c['event_id'],[]).append(c)
-        for eid in sorted(event_claims,key=lambda eid:self.events[eid]['event_date']):
-            e=self.events[eid];ids=[c['source_id'] for c in event_claims[eid]]
-            body+=f'<article class="timeline-item"><time datetime="{e["event_date"]}">{e["event_date"]}</time><div><p class="eyebrow">{esc(e["location"])}</p><h2>{esc(e["description"])}</h2>{self.references(ids,eid)}</div></article>'
-        self.page('timeline/','The preparedness timeline','A timeline of the records behind the reporting.',body+'</section>','timeline/')
         body=self.heading('Source registry','The records cited in our published reporting. Each story also carries its own expandable reference section.','Reporting resources')+'<section class="editorial-section prose">'+''.join(self.source(sid) for sid in sorted(public_sources))+'</section>'
         self.page('sources/','Source registry','Source documents and image records for published coverage.',body)
         for route,title,filename,desc in [

@@ -11,3 +11,5 @@ Public presentation must remain professional and independent: do not publish per
 Apply the applicable rules-first model-routing governance and project overrides. Existing authorized credential mechanisms may be used for research and monitoring; never commit keys, embed them in public assets or print values. Verify availability before relying on a credential. The family planner remains deferred.
 
 Website editorial requirements: use direct journalistic headlines and prose. Every public story and investigation must have inspected, working source references in an expandable section and a relevant sourced image with credit, caption and reuse terms. Keep unsupported leads in the research queue. Run scripts/verify_public_sources.py before publishing source changes, then validate and test. Product planning is local-only in private/internal/PRODUCT_ROADMAP.md; do not generate a public planning page or promote unreleased features.
+
+Navigation: Investigations is the landing page. Keep individual stories under their investigation files; do not recreate separate Home, Reporting or Timeline indexes. Methods and About belong in the footer, not the top menu.
