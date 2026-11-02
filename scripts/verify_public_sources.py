@@ -22,6 +22,7 @@ def selected_sources(root=ROOT):
         ids.update(claims[cid]['source_id'] for cid in finding['claim_ids'])
         image=media[finding['image_id']];ids.add(image['source_id'])
         ids.update(sid for sid,s in sources.items() if s['url']==image['license_url'])
+    ids.update(item['source_id'] for item in json.loads((root/'site/alert_systems.json').read_text()))
     status=json.loads((root/'site/status.json').read_text())
     status_urls={url for item in status['items'] if item['state']=='verified' for url in item.get('source_refs',[item['source_url']])}
     ids.update(sid for sid,source in sources.items() if source['url'] in status_urls)

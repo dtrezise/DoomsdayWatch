@@ -141,7 +141,6 @@ def display_indicator(item,snapshot,now=None):
 
 SPECS=[
  ('clock','Doomsday Clock',['https://thebulletin.org/doomsday-clock/']),
- ('defcon','DEFCON',[]),
  ('dhs','US Homeland Security',DHS_FEEDS+[DHS_PAGE]),
  ('uk','Europe / United Kingdom',['https://www.gov.uk/terrorism-national-emergency','https://www.mi5.gov.uk/threats-and-advice/terrorism-threat-levels']),
  ('france','Europe / France',['https://www.sgdsn.gouv.fr/vigipirate',FRANCE_DIPLO,'https://www.education.gouv.fr/consignes-de-securite-applicables-dans-les-etablissements-relevant-du-ministere-de-l-education-456201'])]
@@ -172,8 +171,6 @@ def collect(fetch=None,now=None,previous=None,capture_dir=None):
             item['attempts'].append(dict(url=url,outcome=state,reason=str(exc)[:200]));raise
     for key,label,urls in SPECS:
         item=dict(id=key,label=label,value='Retrieval failed',state='retrieval_failed',checked_at=now,source_url=urls[0] if urls else '',source_refs=[],note='The public source could not be retrieved. This is not a low-risk reading.',attempts=[])
-        if key=='defcon':
-            item.update(value='Not publicly disclosed',state='not_disclosed',note='No authenticated official public current-level feed has been identified. Public DEFCON estimates are independent assessments; an API key does not make them official.');items.append(item);continue
         failures=[]
         for url in urls:
             try:

@@ -21,8 +21,8 @@ class IndicatorTests(unittest.TestCase):
     def test_fetch_failure_is_unknown_never_clear(self):
         def fail(url):raise OSError('Test retrieval failure')
         result=collect(fetch=fail,now='2026-11-02T16:00:00+00:00')
-        self.assertTrue(all(i['state'] in {'retrieval_failed','not_disclosed'} for i in result['items']))
-        self.assertEqual(next(i for i in result['items'] if i['id']=='defcon')['value'],'Not publicly disclosed')
+        self.assertTrue(all(i['state'] in {'retrieval_failed'} for i in result['items']))
+        self.assertNotIn('defcon',[i['id'] for i in result['items']])
         self.assertEqual(result['stale_after_hours'],36)
     def test_static_old_snapshot_is_marked_stale(self):
         with tempfile.TemporaryDirectory() as td:

@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from xml.etree.ElementTree import Element, SubElement, tostring
 from validate import ROOT, validate
-from refresh_status import display_indicator
+from refresh_status import display_indicator, SPECS
 from zoneinfo import ZoneInfo
 
 SECTORS = {
@@ -250,8 +250,18 @@ class Site:
             note+='<p><a href="'+esc(advisory['url'])+'" rel="noreferrer">'+esc(advisory['summary'])+'</a> · '+esc(advisory['type'])+' · expires '+esc(datetime.fromisoformat(advisory['expires_at']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y, %I:%M %p %Z'))+'.</p>'
         return note
 
+    def alert_directory(self):
+        rows=[]
+        for item in json.loads((ROOT/'site/alert_systems.json').read_text()):
+            sid=item['source_id'];source=self.sources[sid]
+            if self.checks.get(sid,{}).get('status')!='retrieved':
+                raise ValueError('Unverified public alert reference: '+sid)
+            rows.append('<li><strong>'+esc(item['label'])+'</strong><p>'+esc(item['description'])+'</p><a href="'+esc(source['url'])+'" rel="noreferrer">'+esc(source['publisher'])+' · official source ↗</a></li>')
+        return '<details class="indicator-notes alert-directory"><summary>Official alert channels · US & Asia</summary><p>Source directory, not live alert readings. Open the issuing agency’s site for its published information. Public pages below need no API key; automated feed access is assessed separately.</p><ul>'+''.join(rows)+'</ul></details>'
+
     def status_panel(self):
         status=json.loads((self.root/'site/status.json').read_text())
+        status['items']=[i for i in status['items'] if i['id'] in {spec[0] for spec in SPECS}]
         items=''
         for item in status['items']:
             key=item['id'];state,value=display_indicator(item,status)
@@ -265,7 +275,7 @@ class Site:
             items+=f'<div class="indicator {esc(state)}" data-indicator="{esc(key)}">{graphic}<div><span class="indicator-label">{esc(item["label"])}</span><strong class="indicator-value">{esc(value)}</strong>{health}</div></div>'
         notes=''.join('<li data-indicator-note="'+esc(i['id'])+'">'+self.indicator_notes(i)+'</li>' for i in status['items'])
         stamp=datetime.fromisoformat(status['checked_at']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y, %I:%M %p %Z')
-        return f'<aside class="status-panel" aria-label="Published security indicators" data-status-url="{self.href("status.json")}"><p class="eyebrow">Published indicators</p><div class="indicator-grid">{items}</div><details class="indicator-notes"><summary>Sources, scope & freshness</summary><p>Daily source checks. Latest attempt: <time data-status-checked datetime="{esc(status["checked_at"])}">{esc(stamp)}</time>. Checks older than 36 hours are marked stale. Advisory dates and source-review deadlines can require an earlier update.</p><p>Separate systems, not a combined risk score. The Clock is a symbolic expert assessment, not a government alert or countdown. European indicators refer to individual countries. This is not a live warning service.</p><ul>{notes}</ul></details></aside>'
+        return f'<aside class="status-panel" aria-label="Published security indicators" data-status-url="{self.href("status.json")}"><p class="eyebrow">Published indicators</p><div class="indicator-grid">{items}</div><details class="indicator-notes"><summary>Sources, scope & freshness</summary><p>Daily source checks. Latest attempt: <time data-status-checked datetime="{esc(status["checked_at"])}">{esc(stamp)}</time>. Checks older than 36 hours are marked stale. Advisory dates and source-review deadlines can require an earlier update.</p><p>Separate systems, not a combined risk score. The Clock is a symbolic expert assessment, not a government alert or countdown. European indicators refer to individual countries. This is not a live warning service.</p><ul>{notes}</ul></details>{self.alert_directory()}</aside>'
 
     def dossier_card(self, dossier):
         d=dossier

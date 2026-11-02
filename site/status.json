@@ -13,7 +13,7 @@
       "source_refs": [
         "https://thebulletin.org/doomsday-clock/"
       ],
-      "note": "Symbolic setting · Bulletin of the Atomic Scientists",
+      "note": "Symbolic setting \u00b7 Bulletin of the Atomic Scientists",
       "attempts": [
         {
           "url": "https://thebulletin.org/doomsday-clock/",
@@ -26,17 +26,6 @@
       "sha256": "77d34e872d01a75b26007c51eee4b8dba6df557db0541537220d3336f46d3cd9"
     },
     {
-      "id": "defcon",
-      "label": "DEFCON",
-      "value": "Not publicly disclosed",
-      "state": "not_disclosed",
-      "checked_at": "2026-11-02T18:05:46.470366+00:00",
-      "source_url": "",
-      "source_refs": [],
-      "note": "No authenticated official public current-level feed has been identified. Public DEFCON estimates are independent assessments; an API key does not make them official.",
-      "attempts": []
-    },
-    {
       "id": "dhs",
       "label": "US Homeland Security",
       "value": "No active advisory",
@@ -47,7 +36,7 @@
         "https://www.dhs.gov/national-terrorism-advisory-system",
         "https://www.dhs.gov/ntas/1.1/feed.xml"
       ],
-      "note": "DHS NTAS · explicit current-source statement; not a general threat all-clear; official XML feed also checked.",
+      "note": "DHS NTAS \u00b7 explicit current-source statement; not a general threat all-clear; official XML feed also checked.",
       "attempts": [
         {
           "url": "https://www.dhs.gov/ntas/1.1/feed.xml",
@@ -77,7 +66,7 @@
       "source_refs": [
         "https://www.gov.uk/terrorism-national-emergency"
       ],
-      "note": "UK terrorism · JTAC / official government publication",
+      "note": "UK terrorism \u00b7 JTAC / official government publication",
       "attempts": [
         {
           "url": "https://www.gov.uk/terrorism-national-emergency",
@@ -92,14 +81,14 @@
     {
       "id": "france",
       "label": "Europe / France",
-      "value": "Vigilance renforcée",
+      "value": "Vigilance renforc\u00e9e",
       "state": "verified",
       "checked_at": "2026-11-02T18:05:46.470366+00:00",
       "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
       "source_refs": [
         "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger"
       ],
-      "note": "France Vigipirate · national posture explicitly stated by the Foreign Ministry; publication 2026-09-10. This dated fallback is reviewed after 90 days.",
+      "note": "France Vigipirate \u00b7 national posture explicitly stated by the Foreign Ministry; publication 2026-09-10. This dated fallback is reviewed after 90 days.",
       "attempts": [
         {
           "url": "https://www.sgdsn.gouv.fr/vigipirate",

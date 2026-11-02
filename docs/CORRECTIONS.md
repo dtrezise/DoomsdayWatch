@@ -21,3 +21,7 @@ Record material evidence qualifications and analytical revisions using stable cl
 | R012 | 2026-11-02 | Public indicator availability | Earlier “Not verified” badges conflated blocked retrieval with unavailable official information | DHS now uses documented public XML feeds; France uses inspected official fallbacks. DEFCON is separately labeled not publicly disclosed. Empty feed scope, active-advisory expiration and dated fallback limits are explicit. S056–S060. |
 
 | R013 | 2026-11-02 | Local versus hosted source access | Deployed run 41498416352 received 403 from every DHS candidate while local official retrieval succeeded | Push builds preserve reviewed local snapshots. Daily local fallback supplements remote checks; failed updates retain qualified, timestamped last-verified readings and original expiration limits. |
+
+### November 2, 2026 — Public alert scope
+
+Removed the non-reading DEFCON placeholder from public indicators and future collection. Added inspected official warning-system references for the United States, Japan, South Korea and Shanghai, with explicit limits on geography, archival delay and live access. No current national warning state is inferred from these directory entries.

@@ -159,7 +159,6 @@ async function refreshIndicators() {
     time.textContent = new Date(data.checked_at).toLocaleString('en-US', {timeZone:'America/New_York', timeZoneName:'short'});
   } catch (_) {
     statusPanel.querySelectorAll('[data-indicator]').forEach(node => {
-      if (node.dataset.indicator === 'defcon') return;
       node.classList.remove('verified'); node.classList.add('retrieval_failed');
       node.querySelector('.indicator-value').textContent = 'Snapshot unavailable';
     });
