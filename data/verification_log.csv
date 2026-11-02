@@ -32,3 +32,16 @@ V030,2026-11-02,S025,Primary document retrieved and inspected,full_text_200,Poli
 V031,2026-11-02,S026,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
 V032,2026-11-02,S008,Retry exact official source URL,fetch_404,Seek authorized archive or alternate primary record; failed retrieval is not disproof
 V033,2026-11-02,S009,Retry exact official source URL,fetch_403,Seek authorized archive or alternate primary record; failed retrieval is not disproof
+V042,2026-11-02,S027,Inspected full text and compared documentary proposition,full_text,What independently observed operational evidence and comparable historical records would confirm or change this account?
+V043,2026-11-02,S029,Inspected full text and compared documentary proposition,full_text,What independently observed operational evidence and comparable historical records would confirm or change this account?
+V044,2026-11-02,S031,Inspected full text and compared documentary proposition,full_text,What independently observed operational evidence and comparable historical records would confirm or change this account?
+V045,2026-11-02,S033,Inspected full text and compared documentary proposition,full_text,What independently observed operational evidence and comparable historical records would confirm or change this account?
+V046,2026-11-02,S034,Inspected full text and compared documentary proposition,full_text,What independently observed operational evidence and comparable historical records would confirm or change this account?
+V047,2026-11-02,S035,Inspected full text and compared documentary proposition,full_text,What independently observed operational evidence and comparable historical records would confirm or change this account?
+V048,2026-11-02,S008,Original Army URL and AMP retrieval,fetch_404_or_403,Retrieve original or official copy; reproduced S035 is the same upstream account
+V049,2026-11-02,S035,Compare reproduced byline and date with indexed Army result,full_text,Reproduced page dated Oct22; Army search index Oct26; no independent event corroboration
+V050,2026-11-02,S036,Inspect image metadata and caption,full_text,June9 date-taken metadata conflicts with July9 caption; use year only in caption
+V051,2026-11-02,S038,Inspect official current Clock setting and announcement,full_text,"Recheck daily; setting is symbolic, not a countdown"
+V052,2026-11-02,S039,Inspect explicit current advisories statement,full_text,Recheck daily; do not infer all-clear from missing/expired bulletin
+V053,2026-11-02,S040,Inspect national UK threat sentence,full_text,Recheck daily; keep separate from Northern Ireland-related threat level
+V054,2026-11-02,S041,Compare web-tool content with direct collector retrieval,web_full_text_http_403,Automatic value unavailable; inspect current official posture before parser changes

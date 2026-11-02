@@ -1,13 +1,13 @@
 lead_id,sector,subject,priority,next_action,status,last_reviewed
 L01,military_logistics,Mar-a-Lago Avenger deployment,high,Obtain NORAD or USSS original statement; date original imagery; separate protection from wider mobilization,open,2026-11-01
-L02,military_logistics,Dragon Covenant temporary interment and 2400 remains/day,high,Retrieve Army original or archive; distinguish theoretical capacity from observed throughput,open,2026-11-02
+L02,military_logistics,Dragon Covenant temporary interment and 2400 remains/day,high,S035 reproduced account inspected; retrieve inaccessible Army original and exercise after-action data. Validate capacity independently; same-account copies are not corroboration.,open,2026-11-02
 L03,civilian_infrastructure,FORTRESS America and 90-day endurance target,high,Retrieve signed memorandum and trace 90-day target separately,open,2026-11-02
 L04,civilian_infrastructure,UK Be Ready and EU 72-hour guidance,medium,Core dates checked; compare national implementations and older advice,open,2026-11-01
 L05,medical_preparedness,iX ketamine award and EUA pathway,high,Match award identifier to obligations; retrieve award disclosure and FDA authorization record separately,open,2026-11-01
 L06,continuity_of_government,NATO resilience updates,high,2026 requirements and 2023–2025 summit antecedents verified; examine national implementation and actual readiness measures,open,2026-11-02
 L07,medical_preparedness,UK civilian military casualty exercise,medium,Identify exact exercise release and historical cadence,open,2026-11-01
 L08,geopolitical_developments,Sabotage and Kaliningrad warning,high,Separate warning rhetoric from attributed operational incidents,open,2026-11-01
-L09,geopolitical_developments,Taiwan pressure and Keen Sword,medium,Compare official dated aggregates with matched exercise seasons,open,2026-11-01
+L09,geopolitical_developments,Taiwan pressure and Keen Sword,medium,"F008 establishes official April2025 accounts; collect matched 2023–2025 exercise windows and independent observations, not cumulative noncomparable aircraft counts.",open,2026-11-02
 L10,geopolitical_developments,US Iran conflict and Hormuz insurance claims,critical,Conflict located in fresh AP reporting; obtain government records and independent source; verify each shipping and premium figure separately,open,2026-11-02
 L11,emergency_procurement,USTRANSCOM 4.216bn charter award,high,Find award and predecessor; compare obligations utilization and activation,open,2026-11-01
 L12,civilian_infrastructure,DOE 202(c) order cluster and CRS counts,high,Retrieve all orders and cited CRS table; deduplicate initiating events and extensions,open,2026-11-01
@@ -18,3 +18,7 @@ L16,emergency_procurement,ATCC RAPID 99m and Army CBRN agreement,medium,Split aw
 L17,medical_preparedness,BARDA and SNS countermeasure activity,medium,Collect annual product quantities obligations and replacement cycles,open,2026-11-01
 L18,geopolitical_developments,Saudi Arabia diplomatic evacuation,high,Locate embassy notice; distinguish authorized and ordered departure and date,open,2026-11-01
 L19,astronomical_hazards,Asteroid or solar threat,high,2025 YR4 reassessment added as historical context; current all-object and solar hazard check remains incomplete,open,2026-11-02
+L20,geopolitical_developments,Russian airspace incursions and allied response,high,Obtain independent tracks and Russia’s response to September19 2025 incident; compare matched national annual violation records without equating intercepts with incursions.,open,2026-11-02
+L21,military_logistics,Russian maritime surveillance and cable security,high,"Follow Yantar official records, independent incident investigations and navigation-law context; do not attribute cable damage from proximity alone.",open,2026-11-02
+L22,military_logistics,Chinese carrier operational development,high,Commissioning documented in F009; independently measure air-wing training and sustained performance against prior carriers before inferring operational readiness.,open,2026-11-02
+L23,civilian_infrastructure,Volt Typhoon actual compromises and prospective disruption,high,"Obtain independent incident reports, remediation outcomes and current advisories; distinguish access, service outages and assessed wartime intent.",open,2026-11-02

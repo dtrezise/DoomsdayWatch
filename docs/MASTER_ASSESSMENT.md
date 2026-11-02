@@ -18,7 +18,7 @@ Routine resilience work and responses to public conflicts remain plausible expla
 
 ## Coverage and gaps
 
-All eight sectors have notebooks and monitoring specifications. Nineteen research leads are preserved. Reported military activities, procurement quantities, grid-order counts, financial series and continuity activation remain unresolved. Historical context exists for 2023, 2024 and 2025; complete quantitative baseline series do not. All anomaly records are candidates marked not assessable.
+All eight sectors have notebooks and monitoring specifications. The numbered research leads are preserved. Reported military activities, procurement quantities, grid-order counts, financial series and continuity activation remain unresolved. Historical context exists for 2023, 2024 and 2025; complete quantitative baseline series do not. All anomaly records are candidates marked not assessable.
 
 No current astronomical hazard conclusion is supported: the NASA risk table was not retrieved and the NOAA page returned no data plus an inconsistent future date. Seek dated authoritative products before making a hazard judgment.
 
@@ -31,3 +31,11 @@ See [integrity audit](../reports/00_source_integrity_audit.md), [corrections](CO
 ## 2026-11-02 update
 
 NATO’s 2026 civilian resilience requirements have now been inspected alongside the 2023–2025 summit texts (C015–C019; S021–S024). These establish a documented policy lineage across continuity, infrastructure and health planning. They do not measure implementation or establish a shared imminent threat. See public finding F005 and reports/2026-11-02_research_review.md.
+
+## Expanded Watch List, November 2, 2026
+
+F006–F010 add dated documentary coverage of Estonia’s reported airspace incursion and NATO response, UK monitoring of Yantar, Taiwanese and G7 responses to Chinese exercises, Fujian’s official commissioning and the Volt Typhoon joint advisory. These widen coverage but do not establish a synchronized imminent event. Shared allied statements are not independent witnesses; commissioning is not audited readiness; network compromise is distinct from an assessed future disruption plan. Historical contexts B034–B036 are individual milestones, not complete comparable operational series.
+
+F011 verifies the content of an accessible reproduced Army-attributed account about Dragon Covenant. Its original Army URL remains inaccessible, its publication dates differ between versions, and theoretical throughput remains uncorroborated. C006 stays outside the verified public claim set. The record describes simulated battlefield fatality management; no civilian burial program or casualty forecast is established. L02 remains open.
+
+The indicator panel is a separate source-checking product. Clock settings, national terrorism levels and military readiness conditions are different systems and are not combined into a threat score. Source failure does not mean low risk.

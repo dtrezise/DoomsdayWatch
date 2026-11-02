@@ -45,6 +45,14 @@ Before changing published references, run `python3 scripts/verify_public_sources
 
 Product planning documents are local internal material, excluded from the public artifact. New coverage must not advertise deferred features.
 
-## Navigation
+## Navigation and Watch List
 
-Investigations is the canonical landing page at the site root. Individual story URLs remain permanent and are reached through investigation files. The former Reporting and Timeline indexes are retired; their URLs and the former investigation index redirect to the root. Methods and About the publication are footer links. Do not recreate separate Home, Reporting or Timeline navigation entries.
+The canonical homepage is the Watch List. It contains published stories with permanent sharing URLs and expandable references. There is no top menu. Methods and About the publication remain in the footer. The sticky horizontal timeline uses event dates, not publication dates, and links to story anchors on the same page. Preserve story IDs and anchors when updating coverage.
+
+## Published indicator panel
+
+`scripts/refresh_status.py` checks allowlisted official publications, with strict text parsers and no model inference. GitHub Actions runs daily at 06:17 UTC and on publication builds. It builds the checked snapshot into Pages and retains the dated JSON as an Actions artifact for 90 days; it does not create daily Git commits. Scheduling and deployment can be delayed or fail. The browser rechecks the same-origin published snapshot every five minutes; this is not a direct live feed.
+
+The Bulletin’s Doomsday Clock is its official symbolic expert setting, not a government warning or ticking countdown. DEFCON has no authenticated official current-level feed available to this publication and stays unverified. DHS NTAS is an advisory system, not the retired color scale: only an explicit current-source statement of no active advisories is parsed automatically. Active or ambiguous bulletins require editorial review, including expiry. European levels remain country-specific; UK JTAC and France Vigipirate are not directly comparable scales. Failed retrievals and unrecognized content show “Not verified,” never an inferred all-clear. Previously verified values are marked stale after 36 hours. Source text or schema changes require parser review and tests.
+
+Weekly research reviews should download dated `indicator-snapshot-*` Actions artifacts into ignored local storage, capture/import them into the local archive, and check failed indicator sources. The committed snapshot records the reviewed development state; deployed daily snapshots can be newer. Private source captures stay local. No credentials are sent to visitors.

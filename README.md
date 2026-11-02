@@ -22,7 +22,7 @@ Each has a notebook in `research/`. Cross-sector connections require independent
 - `data/events.csv`: chronological events, including explicitly unverified alleged events.
 - `data/claims.csv`: atomic claims, evidence class, verification status and confidence.
 - `data/sources.csv`: exact citation URLs, access results and independence groups.
-- `data/leads.csv`: all 19 research leads and next verification steps.
+- `data/leads.csv`: research leads and next verification steps.
 - `data/anomalies.csv`: candidate deviations, baseline gaps and alternatives.
 - `data/baselines.csv`: 2023–2025 observations and explicit missing comparisons.
 - `data/watchlist.csv`: proposed indicator-level collection specification; see docs/MONITORING.md for the recurring research task.
@@ -45,3 +45,5 @@ The research program chronology is maintained in `docs/HISTORY.md`. Research lea
 Build with `python3 scripts/build_site.py`; test with `python3 -m unittest discover -s tests -v`. Site source is in `site/`, generated output in ignored `_site/`. GitHub Pages deploys only that output. Each published finding has a stable URL, status, citations, share composer and downloadable social card. Local SQLite snapshots and ZIP exports stay in ignored `archive/` and `backups/` folders within this work folder.
 
 Weekly investigative maintenance is scheduled for Mondays at 9:00 a.m. Eastern in the local project. The local task needs the computer on and the app running. Indicator-specific live collectors remain disabled.
+
+The Watch List homepage includes a sticky event timeline and 11 sourced reports. Published indicator snapshots are checked daily by Pages Actions; source failures show unavailable and old snapshots show stale. See WEBSITE.md for limits and retention.

@@ -19,3 +19,9 @@ This is a local Codex task, not a continuously running public warning service. I
 Local scheduled tasks require the computer to be on and the app running with the project available. See [official OpenAI documentation](https://learn.chatgpt.com/docs/automations?surface=app).
 
 Public presentation: follow the journalistic site standards in WEBSITE.md. Recheck changed public references, inspect supporting content, use credited source imagery, and keep roadmap/product planning local-only. Do not list unsourced leads as public investigations.
+
+## Coverage and indicators added November 2, 2026
+
+Follow Russian airspace incidents and maritime activity, Taiwan Strait exercises and Chinese military technology, cyber compromises and assessed disruption risks, and military fatality-management training. Match event dates and source independence; do not equate an EEZ transit with a territorial breach. F011 verifies the accessible reproduced account, not independent confirmation of the exercise or projected capacity. Obtain the Army original and after-action evidence before upgrading broader claims.
+
+Daily deterministic indicator checks run in Pages Actions independently of the weekly local research review. See WEBSITE.md for the strict parser, unavailable/stale behavior and source scope. Archive the retained dated indicator JSON artifacts during weekly reviews; inspect failures and actual changes. Never invent an official DEFCON number, an EU-wide warning level or an NTAS all-clear from a failed fetch. Keep the homepage as a Watch List with a sticky same-page event timeline and no top navigation.

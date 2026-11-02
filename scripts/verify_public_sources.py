@@ -21,6 +21,9 @@ def selected_sources(root=ROOT):
         ids.update(claims[cid]['source_id'] for cid in finding['claim_ids'])
         image=media[finding['image_id']];ids.add(image['source_id'])
         ids.update(sid for sid,s in sources.items() if s['url']==image['license_url'])
+    status=json.loads((root/'site/status.json').read_text())
+    status_urls={item['source_url'] for item in status['items'] if item['state']=='verified'}
+    ids.update(sid for sid,source in sources.items() if source['url'] in status_urls)
     return [sources[sid] for sid in sorted(ids)]
 
 
@@ -33,6 +36,10 @@ def fetch(source):
             data=response.read(12*1024*1024)
             media_type=response.headers.get_content_type()
             if response.status!=200 or len(data)<200:raise ValueError('Empty or unsuccessful response')
+            if media_type=='text/html':
+                head=data[:20000].decode('utf-8',errors='replace').lower()
+                if any(marker in head for marker in ('browser validation page','triggerinterstitialchallenge','<title>access denied','<title>just a moment','<title>gcore')):
+                    raise ValueError('Source returned a challenge page, not documentary content')
             if media_type=='application/pdf' and not data.startswith(b'%PDF'):raise ValueError('Invalid PDF response')
             result.update(status='retrieved',http_status=response.status,final_url=response.url,media_type=media_type,sha256=hashlib.sha256(data).hexdigest())
             return result,data

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-02T15:59:43.812908+00:00",
+  "stale_after_hours": 36,
+  "items": [
+    {
+      "id": "clock",
+      "label": "Doomsday Clock",
+      "value": "85 seconds",
+      "state": "verified",
+      "checked_at": "2026-11-02T15:59:43.812908+00:00",
+      "source_url": "https://thebulletin.org/doomsday-clock/",
+      "note": "Symbolic setting · Bulletin of the Atomic Scientists",
+      "attempts": [
+        {
+          "url": "https://thebulletin.org/doomsday-clock/",
+          "outcome": "verified"
+        }
+      ],
+      "verified_at": "2026-11-02T15:59:43.812908+00:00",
+      "sha256": "772914bed4a3d1caad20665cc6e090ebe712658d932c281cadcff463fd78e431"
+    },
+    {
+      "id": "defcon",
+      "label": "DEFCON",
+      "value": "Not publicly verified",
+      "state": "unavailable",
+      "checked_at": "2026-11-02T15:59:43.812908+00:00",
+      "source_url": "",
+      "note": "No authenticated official public current-level feed is available to this publication. Third-party estimates are not official DEFCON.",
+      "attempts": []
+    },
+    {
+      "id": "dhs",
+      "label": "US Homeland Security",
+      "value": "No active advisory",
+      "state": "verified",
+      "checked_at": "2026-11-02T15:59:43.812908+00:00",
+      "source_url": "https://www.dhs.gov/national-terrorism-advisory-system",
+      "note": "DHS NTAS · explicit current-source statement",
+      "attempts": [
+        {
+          "url": "https://www.dhs.gov/national-terrorism-advisory-system",
+          "outcome": "verified"
+        }
+      ],
+      "verified_at": "2026-11-02T15:59:43.812908+00:00",
+      "sha256": "78ab866f672cdf712a56834e405f02cb340857d51e73194c91b1cdb97492101d"
+    },
+    {
+      "id": "uk",
+      "label": "Europe / United Kingdom",
+      "value": "SEVERE",
+      "state": "verified",
+      "checked_at": "2026-11-02T15:59:43.812908+00:00",
+      "source_url": "https://www.gov.uk/terrorism-national-emergency",
+      "note": "UK terrorism · JTAC / official government publication",
+      "attempts": [
+        {
+          "url": "https://www.gov.uk/terrorism-national-emergency",
+          "outcome": "verified"
+        }
+      ],
+      "verified_at": "2026-11-02T15:59:43.812908+00:00",
+      "sha256": "27d9340691e10f2784aa3b8d2eafdeb563c921cde1638289cc8e4bdd3ce97053"
+    },
+    {
+      "id": "france",
+      "label": "Europe / France",
+      "value": "Not verified",
+      "state": "unavailable",
+      "checked_at": "2026-11-02T15:59:43.812908+00:00",
+      "source_url": "https://www.education.gouv.fr/consignes-de-securite-applicables-dans-les-etablissements-relevant-du-ministere-de-l-education-456201",
+      "note": "Current public value could not be verified.",
+      "attempts": [
+        {
+          "url": "https://www.education.gouv.fr/consignes-de-securite-applicables-dans-les-etablissements-relevant-du-ministere-de-l-education-456201",
+          "outcome": "unavailable",
+          "reason": "HTTP Error 403: Forbidden"
+        }
+      ]
+    }
+  ]
+}

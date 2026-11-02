@@ -77,7 +77,8 @@
           "Comparing the campaigns requires more than their names. The investigation will examine the recommendations, intended audiences and spending behind the public message."
         ]
       }
-    ]
+    ],
+    "event_date": "2026-10-22"
   },
   {
     "id": "F003",
@@ -198,6 +199,250 @@
         "heading": "The implementation gap",
         "paragraphs": [
           "Requirements do not establish delivered supplies or tested capacity. The reporting now turns to national implementation, funding and readiness records. The documents alone cannot establish an imminent conflict or undisclosed common trigger."
+        ]
+      }
+    ],
+    "event_date": "2026-09-15"
+  },
+  {
+    "id": "F006",
+    "title": "Russian jets over Estonia trigger NATO consultations",
+    "summary": "Three MiG-31s remained in Estonian airspace for about 12 minutes, Estonia reported. NATO’s council met under Article 4 four days later.",
+    "sector": "geopolitical_developments",
+    "claim_ids": [
+      "C022",
+      "C042"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "NATO’s September 23 statement described a breach lasting over ten minutes and recorded consultations requested by Estonia under Article 4. It also linked the response to Eastern Sentry, launched September 12.",
+    "boundary": "The public records inspected here are Estonian and allied accounts, not an independently reconstructed radar track. They establish the official report and response; they do not establish the pilots’ orders or an imminent attack.",
+    "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
+    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "image_id": "russia-air",
+    "kicker": "Russia / Airspace",
+    "format": "Document review",
+    "event_date": "2025-09-19",
+    "sections": [
+      {
+        "heading": "The documented record",
+        "paragraphs": [
+          "Estonia’s defence forces reported three Russian MiG-31 aircraft entering airspace near Vaindloo Island without permission on September 19, 2025. It said transponders were off and Italian F-35s responded under NATO’s Baltic Air Policing mission."
+        ]
+      },
+      {
+        "heading": "The allied response",
+        "paragraphs": [
+          "NATO’s September 23 statement described a breach lasting over ten minutes and recorded consultations requested by Estonia under Article 4. It also linked the response to Eastern Sentry, launched September 12."
+        ]
+      },
+      {
+        "heading": "Reporting limits",
+        "paragraphs": [
+          "The public records inspected here are Estonian and allied accounts, not an independently reconstructed radar track. They establish the official report and response; they do not establish the pilots’ orders or an imminent attack."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "F007",
+    "title": "The Russian ship putting Britain’s undersea cables on watch",
+    "summary": "The Royal Navy shadowed Yantar in January 2025. Britain’s defence secretary also said the vessel had complied with international navigation rules.",
+    "sector": "military_logistics",
+    "claim_ids": [
+      "C023",
+      "C043"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "In Parliament on January 22, the defence secretary said Yantar had entered the UK exclusive economic zone roughly 45 nautical miles offshore. He also stated that it had complied with international navigation rules. The government announced surveillance aircraft support for NATO’s Baltic Sentry activity.",
+    "boundary": "An exclusive economic zone is not equivalent to sovereign territorial waters. The cited material documents Britain’s account of surveillance and its response; it does not prove Yantar caused cable damage.",
+    "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
+    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "image_id": "yantar",
+    "kicker": "Russia / Maritime",
+    "format": "Document review",
+    "event_date": "2025-01-22",
+    "sections": [
+      {
+        "heading": "The documented record",
+        "paragraphs": [
+          "Britain’s Ministry of Defence reported that HMS Somerset tracked Yantar in the Channel in January 2025, following an earlier encounter in November 2024. The department described the Russian vessel as an intelligence-gathering ship."
+        ]
+      },
+      {
+        "heading": "Surveillance and the legal boundary",
+        "paragraphs": [
+          "In Parliament on January 22, the defence secretary said Yantar had entered the UK exclusive economic zone roughly 45 nautical miles offshore. He also stated that it had complied with international navigation rules. The government announced surveillance aircraft support for NATO’s Baltic Sentry activity."
+        ]
+      },
+      {
+        "heading": "Reporting limits",
+        "paragraphs": [
+          "An exclusive economic zone is not equivalent to sovereign territorial waters. The cited material documents Britain’s account of surveillance and its response; it does not prove Yantar caused cable damage."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "F008",
+    "title": "Taiwan Strait drills draw a military and diplomatic response",
+    "summary": "Taiwan reported continuing Chinese exercises on April 2, 2025. A G7 statement followed, widening the diplomatic response.",
+    "sector": "geopolitical_developments",
+    "claim_ids": [
+      "C024",
+      "C044"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "On April 6, G7 foreign ministers and the EU’s high representative issued a joint statement expressing concern about China’s large-scale drills. This is evidence of a coordinated diplomatic position, not seven separate operational confirmations.",
+    "boundary": "The sources establish published official accounts and responses. They do not determine an invasion timetable, and the Taiwanese account comes from a party to the dispute. Comparable exercise windows and independently observed activity remain necessary to assess escalation.",
+    "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
+    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "image_id": "china-exercises",
+    "kicker": "China / Taiwan Strait",
+    "format": "Document review",
+    "event_date": "2025-04-02",
+    "sections": [
+      {
+        "heading": "The documented record",
+        "paragraphs": [
+          "Taiwan’s defence ministry said on April 2, 2025 that China’s Eastern Theater Command was continuing military drills around the Taiwan Strait. It said Taiwanese forces would conduct immediate combat-readiness exercises and coordinate with the coast guard."
+        ]
+      },
+      {
+        "heading": "A contested regional signal",
+        "paragraphs": [
+          "On April 6, G7 foreign ministers and the EU’s high representative issued a joint statement expressing concern about China’s large-scale drills. This is evidence of a coordinated diplomatic position, not seven separate operational confirmations."
+        ]
+      },
+      {
+        "heading": "Reporting limits",
+        "paragraphs": [
+          "The sources establish published official accounts and responses. They do not determine an invasion timetable, and the Taiwanese account comes from a party to the dispute. Comparable exercise windows and independently observed activity remain necessary to assess escalation."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "F009",
+    "title": "Fujian brings electromagnetic catapults into China’s carrier fleet",
+    "summary": "China’s official account dates Fujian’s commissioning to November 5, 2025. Entry into service is a milestone, not a full measure of combat readiness.",
+    "sector": "military_logistics",
+    "claim_ids": [
+      "C025"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "The official account describes aircraft displayed aboard and a briefing on the catapult system. A commissioning ceremony establishes a service-entry milestone; it does not quantify sustained aircraft launch rates, crew proficiency or performance under combat conditions.",
+    "boundary": "This report relies on an inspected Chinese state account. It does not independently validate performance claims or infer that commissioning marks an imminent operation.",
+    "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
+    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "image_id": "china-carrier",
+    "kicker": "China / Military technology",
+    "format": "Document review",
+    "event_date": "2025-11-05",
+    "sections": [
+      {
+        "heading": "The documented record",
+        "paragraphs": [
+          "China’s State Council website carried a Xinhua account of Fujian’s commissioning in Sanya on November 5, 2025. It identified the ship as China’s first aircraft carrier equipped with electromagnetic catapults and one of three carriers then in service."
+        ]
+      },
+      {
+        "heading": "What the milestone leaves open",
+        "paragraphs": [
+          "The official account describes aircraft displayed aboard and a briefing on the catapult system. A commissioning ceremony establishes a service-entry milestone; it does not quantify sustained aircraft launch rates, crew proficiency or performance under combat conditions."
+        ]
+      },
+      {
+        "heading": "Reporting limits",
+        "paragraphs": [
+          "This report relies on an inspected Chinese state account. It does not independently validate performance claims or infer that commissioning marks an imminent operation."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "F010",
+    "title": "Volt Typhoon: network intrusions with a warning about disruption",
+    "summary": "A 2024 joint advisory reported actual compromises of US infrastructure networks. Its warning about future disruption was an intelligence assessment.",
+    "sector": "civilian_infrastructure",
+    "claim_ids": [
+      "C026"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "The agencies assessed that the actors were positioning themselves to disrupt operational technology during a crisis or conflict. The distinction matters: an intrusion is an observed compromise; a future destructive operation is a possibility assessed from targeting and behavior.",
+    "boundary": "The advisory is a shared government assessment, not independent corroboration by every signatory. It does not establish that every compromised network experienced an outage or that the same access remains active today. Current incident and remediation records are still needed.",
+    "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
+    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "image_id": "cyber-shield",
+    "kicker": "Cyber / Critical infrastructure",
+    "format": "Document review",
+    "event_date": "2024-02-07",
+    "sections": [
+      {
+        "heading": "The documented record",
+        "paragraphs": [
+          "CISA and partner agencies reported on February 7, 2024 that Volt Typhoon had compromised IT environments at multiple US critical-infrastructure organizations. The advisory identified communications, energy, transportation, and water and wastewater systems among the affected sectors."
+        ]
+      },
+      {
+        "heading": "Access is documented; future attacks are assessed",
+        "paragraphs": [
+          "The agencies assessed that the actors were positioning themselves to disrupt operational technology during a crisis or conflict. The distinction matters: an intrusion is an observed compromise; a future destructive operation is a possibility assessed from targeting and behavior."
+        ]
+      },
+      {
+        "heading": "Reporting limits",
+        "paragraphs": [
+          "The advisory is a shared government assessment, not independent corroboration by every signatory. It does not establish that every compromised network experienced an outage or that the same access remains active today. Current incident and remediation records are still needed."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "F011",
+    "title": "Inside the account of the Army’s battlefield burial exercise",
+    "summary": "A published Army-attributed account describes simulated temporary interment at Fort Bragg. The original Army page remains inaccessible in our checks.",
+    "sector": "military_logistics",
+    "claim_ids": [
+      "C027"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "The stated purpose was to preserve remains for later identification and repatriation in large-scale combat. The reproduced account includes a projected daily capacity; a planning estimate is not a count of actual casualties.",
+    "boundary": "The Army original returned access errors. The readable copy and indexed Army result are versions of the same account, not independent witnesses. This story verifies what the accessible document says, not every exercise claim. It provides no evidence of a domestic civilian burial program or a predicted death toll.",
+    "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
+    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "image_id": "dragon-covenant",
+    "kicker": "Military / Fatality management",
+    "format": "Document review",
+    "event_date": "2026-10-21",
+    "sections": [
+      {
+        "heading": "The documented record",
+        "paragraphs": [
+          "A readable account bylined Capt. Thomas McCarty on That PAO Guy describes Phase II of Operation Dragon Covenant at Fort Bragg. Its photo caption dates the exercise to October 21, 2026. The account describes engineers testing temporary battlefield burial procedures using simulated skeletal models and water containers."
+        ]
+      },
+      {
+        "heading": "Preserving remains for return home",
+        "paragraphs": [
+          "The stated purpose was to preserve remains for later identification and repatriation in large-scale combat. The reproduced account includes a projected daily capacity; a planning estimate is not a count of actual casualties."
+        ]
+      },
+      {
+        "heading": "Reporting limits",
+        "paragraphs": [
+          "The Army original returned access errors. The readable copy and indexed Army result are versions of the same account, not independent witnesses. This story verifies what the accessible document says, not every exercise claim. It provides no evidence of a domestic civilian burial program or a predicted death toll."
         ]
       }
     ]

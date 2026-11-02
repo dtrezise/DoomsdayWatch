@@ -76,3 +76,52 @@
     previouslyOpen = [];
   });
 })();
+
+// Same-page timeline remains keyboard navigable; observer highlights the story in view.
+const watchLinks = [...document.querySelectorAll('[data-watch-link]')];
+if (watchLinks.length && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.filter(e => e.isIntersecting).forEach(entry => {
+      watchLinks.forEach(link => {
+        if (link.dataset.watchLink === entry.target.dataset.watchStory) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, {rootMargin: '-140px 0px -55% 0px', threshold: 0});
+  document.querySelectorAll('[data-watch-story]').forEach(story => observer.observe(story));
+}
+// Fetch only our published snapshot, never visitor-side requests to third parties.
+const statusPanel = document.querySelector('[data-status-url]');
+async function refreshIndicators() {
+  if (!statusPanel) return;
+  try {
+    const response = await fetch(statusPanel.dataset.statusUrl, {cache: 'no-store'});
+    if (!response.ok) throw new Error('Snapshot unavailable');
+    const data = await response.json();
+    if (data.schema_version !== 1 || !Array.isArray(data.items)) throw new Error('Unknown status format');
+    data.items.forEach(item => {
+      const node = [...statusPanel.querySelectorAll('[data-indicator]')].find(n => n.dataset.indicator === item.id);
+      if (!node) return;
+      const verified = Date.parse(item.verified_at || '');
+      const stale = item.state === 'verified' && (!Number.isFinite(verified) || Date.now() - verified > data.stale_after_hours * 3600000 || verified > Date.now() + 300000);
+      const note = [...statusPanel.querySelectorAll('[data-indicator-note]')].find(n => n.dataset.indicatorNote === item.id);
+      if (note) {
+        note.textContent = item.label + ': ' + item.note + ' ';
+        if (item.source_url && /^https:\/\//.test(item.source_url)) {
+          const link = document.createElement('a');
+          link.href = item.source_url; link.rel = 'noreferrer'; link.textContent = 'Official source ↗'; note.append(link);
+        }
+      }
+      node.classList.toggle('stale', stale);
+      node.classList.toggle('unavailable', item.state !== 'verified');
+      node.querySelector('.indicator-value').textContent = stale ? 'Stale · ' + item.value : item.value;
+    });
+    const time = statusPanel.querySelector('[data-status-checked]');
+    time.dateTime = data.checked_at;
+    time.textContent = data.checked_at.slice(0, 16).replace('T', ' ') + ' UTC';
+  } catch (_) {
+    statusPanel.querySelectorAll('.indicator-value').forEach(node => { node.textContent = 'Snapshot unavailable'; });
+  }
+}
+refreshIndicators();
+setInterval(refreshIndicators, 300000);
