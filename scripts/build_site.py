@@ -248,7 +248,7 @@ class Site:
         self.out.mkdir(parents=True,exist_ok=True)
         (self.out/'.preparedness-build').write_text('Generated public artifact; safe to rebuild.\n')
         shutil.copytree(self.root/'site/assets',self.out/'assets',dirs_exist_ok=True)
-        lead=self.by_id['F004']
+        lead=max(self.findings,key=lambda finding:(finding['published_at'],finding['id']))
         home=f'''<section class="landing-intro"><div><p class="eyebrow">The preparedness beat</p><h1>How governments prepare<br>for the next crisis.</h1></div><div><p>Military exercises. Emergency spending. The infrastructure we rely on.</p><p>Preparedness Observatory investigates the decisions, documents and resources behind preparations for war, disruption and disaster.</p><a class="text-link" href="{self.href('about/')}">About our reporting →</a></div></section>
 <section class="front-page" aria-label="Featured reporting"><div class="lead-story">{self.card(lead,'lead')}</div><aside class="front-sidebar"><h2 class="section-label">Also in this edition</h2>{self.card(self.by_id['F001'],'compact')}{self.card(self.by_id['F002'],'compact')}</aside></section>
 <section class="editorial-section"><div class="section-head"><div><p class="eyebrow">Military medicine</p><h2>Inside the emergency-use paperwork</h2></div><a href="{self.href('findings/')}">All reporting →</a></div>{self.card(self.by_id['F003'],'wide')}</section>

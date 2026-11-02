@@ -42,7 +42,7 @@ class ProjectTests(unittest.TestCase):
                         target_parsed=Links();target_parsed.feed(target.read_text())
                         self.assertIn(parts.fragment,target_parsed.ids,f'{page}: {link}')
             manifest=json.loads((out/'publication-manifest.json').read_text())
-            self.assertEqual(len(manifest['finding_ids']),4)
+            self.assertEqual(set(manifest['finding_ids']),{f['id'] for f in json.loads((ROOT/'site/findings.json').read_text()) if f['publication_status']=='published'})
             for forbidden in ('archive','private','data','docs/HISTORY.md','archive.sqlite3'):
                 self.assertFalse((out/forbidden).exists())
             self.assertNotIn('C006',manifest['claim_ids'])

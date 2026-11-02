@@ -15,3 +15,7 @@ Use public FEMA frameworks, GAO/OMB records and NATO resilience documents. Class
 ## Open questions
 
 What observable action occurred, when, and on what authority? Is the activity above a matched baseline? What routine explanation accounts for it? What evidence would change the judgment?
+
+## 2026-11-02 documentary comparison
+
+S021–S024 establish the 2026 requirements and policy antecedents in 2023–2025. Baselines B029–B031 are qualitative policy milestones, not measured readiness. L06 remains open for national implementation and operational evidence. See C015–C019 and public finding F005.

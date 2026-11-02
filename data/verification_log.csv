@@ -24,3 +24,11 @@ V022,2026-11-01,S017,HTTP retrieval and editorial reference review,retrieved_200
 V023,2026-11-01,S018,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
 V024,2026-11-01,S019,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
 V025,2026-11-01,S020,HTTP retrieval and editorial reference review,retrieved_200,Raw response archived; source content inspected and image context reviewed
+V026,2026-11-02,S021,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
+V027,2026-11-02,S022,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
+V028,2026-11-02,S023,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
+V029,2026-11-02,S024,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
+V030,2026-11-02,S025,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
+V031,2026-11-02,S026,Primary document retrieved and inspected,full_text_200,Policy scope and historical context recorded; implementation not inferred
+V032,2026-11-02,S008,Retry exact official source URL,fetch_404,Seek authorized archive or alternate primary record; failed retrieval is not disproof
+V033,2026-11-02,S009,Retry exact official source URL,fetch_403,Seek authorized archive or alternate primary record; failed retrieval is not disproof

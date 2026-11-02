@@ -27,3 +27,7 @@ No current astronomical hazard conclusion is supported: the NASA risk table was 
 Reassess after verified unusual operational activation, independently corroborated emergency deliveries, a reproducible baseline deviation, or a dated authoritative hazard notice. New rhetoric, repeated articles and contract ceilings alone do not satisfy these triggers.
 
 See [integrity audit](../reports/00_source_integrity_audit.md), [corrections](CORRECTIONS.md), [baselines](../data/baselines.csv) and [research plan](RESEARCH_PLAN.md). This document requires revision as evidence improves.
+
+## 2026-11-02 update
+
+NATO’s 2026 civilian resilience requirements have now been inspected alongside the 2023–2025 summit texts (C015–C019; S021–S024). These establish a documented policy lineage across continuity, infrastructure and health planning. They do not measure implementation or establish a shared imminent threat. See public finding F005 and reports/2026-11-02_research_review.md.

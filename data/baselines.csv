@@ -27,3 +27,8 @@ B025,continuity_of_government,2025,Public exercises; policy updates; confirmed a
 B026,astronomical_hazards,2023,Dated impact notices; solar alert severity and duration,,,scope_to_define,,missing,Separate object risk revisions from actual impacts; solar cycle context
 B027,astronomical_hazards,2024,Dated impact notices; solar alert severity and duration,,,scope_to_define,,missing,Separate object risk revisions from actual impacts; solar cycle context
 B028,astronomical_hazards,2025,Dated impact notices; solar alert severity and duration,,,scope_to_define,,missing,Separate object risk revisions from actual impacts; solar cycle context
+B029,continuity_of_government,2023,NATO resilience objectives,agreed,policy_milestone,NATO,S022,verified_context,"Paragraph 61; qualitative antecedent, not quantitative readiness or activation"
+B030,continuity_of_government,2024,Civilian and defence planning integration,pledged,policy_milestone,NATO,S023,verified_context,Paragraph 12; not a measured implementation rate
+B031,continuity_of_government,2025,Infrastructure and civil preparedness investment category,agreed,policy_milestone,NATO,S024,verified_context,"Commitment framework, not spending delivered"
+B032,astronomical_hazards,2025,2024 YR4 NASA Earth-risk reassessment,downgraded,dated_assessment,Global,S025,verified_context,Specific object and February 24 assessment; no current general all-clear
+B033,financial_insurance,2024,IMO response to Red Sea shipping disruption,resolution_adopted,policy_milestone,Red Sea,S026,verified_context,Prior documented shipping risk context; not a comparable premium series

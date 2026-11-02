@@ -1,6 +1,6 @@
 # Preparedness OSINT Research Project
 
-Persistent, public-source investigation of unusual preparedness and potential global threats. Established 2026-11-01. Research cutoff: 2026-11-01, America/New_York. Initial release is a limited source-integrity review, not a completed threat survey.
+Persistent, public-source investigation of unusual preparedness and potential global threats. Established 2026-11-01. Research cutoff: 2026-11-02, America/New_York. Initial release is a limited source-integrity review, not a completed threat survey.
 
 Start with [master assessment](docs/MASTER_ASSESSMENT.md), [source-integrity audit](reports/00_source_integrity_audit.md), [methodology](docs/METHODOLOGY.md), and [next research steps](docs/RESEARCH_PLAN.md).
 

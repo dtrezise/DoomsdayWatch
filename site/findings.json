@@ -158,5 +158,48 @@
         ]
       }
     ]
+  },
+  {
+    "id": "F005",
+    "title": "Hospitals, fuel and transport: NATO’s civilian readiness rules",
+    "summary": "A September 2026 NATO document connects civilian services and medical stockpiles with military support. Summit texts from 2023–2025 show the policy’s earlier development.",
+    "sector": "continuity_of_government",
+    "claim_ids": [
+      "C015",
+      "C016",
+      "C017",
+      "C018",
+      "C019"
+    ],
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "why_it_matters": "The document provides a public policy framework spanning several preparedness sectors. A shared framework is a possible explanation for related planning activity, not independent evidence of a hidden trigger.",
+    "boundary": "These are documented requirements and commitments. They do not establish stockpile quantities, national implementation, emergency activation or the imminence of conflict.",
+    "alternatives": "Civilian planning may reflect established alliance resilience policy and publicly identified risks. Delivery and readiness require separate evidence.",
+    "next_question": "Which national implementation records show actual funding, delivered supplies and tested capacity?",
+    "image_id": "gunston-hall-norway",
+    "kicker": "Civilian resilience",
+    "format": "Document review",
+    "sections": [
+      {
+        "heading": "The civilian systems behind defence",
+        "paragraphs": [
+          "NATO’s September 15, 2026 requirements cover government continuity, energy, healthcare, communications and transport. The health section calls for medical supply and blood-product stockpiling arrangements."
+        ]
+      },
+      {
+        "heading": "The policy’s earlier development",
+        "paragraphs": [
+          "The 2023 Vilnius communiqué agreed resilience objectives. Washington’s 2024 declaration pledged closer civilian and defence planning. The 2025 Hague declaration included infrastructure and civil preparedness in a defence-related investment category."
+        ]
+      },
+      {
+        "heading": "The implementation gap",
+        "paragraphs": [
+          "Requirements do not establish delivered supplies or tested capacity. The reporting now turns to national implementation, funding and readiness records. The documents alone cannot establish an imminent conflict or undisclosed common trigger."
+        ]
+      }
+    ]
   }
 ]

@@ -7,7 +7,8 @@
     "image_id": "eu-response-centre",
     "finding_ids": [
       "F001",
-      "F002"
+      "F002",
+      "F005"
     ],
     "sectors": [
       "civilian_infrastructure",

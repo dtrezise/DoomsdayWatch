@@ -2,133 +2,181 @@
   {
     "source_id": "S002",
     "url": "https://www.gov.uk/government/news/households-encouraged-to-take-small-simple-steps-to-stay-prepared-in-an-emergency",
-    "checked_at": "2026-11-01T22:49:47.721068+00:00",
+    "checked_at": "2026-11-02T14:06:34.388693+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/news/households-encouraged-to-take-small-simple-steps-to-stay-prepared-in-an-emergency",
     "media_type": "text/html",
-    "sha256": "985c451305b5c0b33fb920b3976663dfb17e2f80f8f9d904e48d2b1f6931fc88",
-    "capture_id": "CAP-442cd0fc5bb84315a70d94f11d37374a"
+    "sha256": "4ae47fbf5db5a08d0dd96c22ecac0639b12f82217b57ff1b07c4edbc18f4b6c2",
+    "capture_id": "CAP-56f678d78c6741ca8f9fe2f252d1968a"
   },
   {
     "source_id": "S003",
     "url": "https://commission.europa.eu/topics/preparedness_en",
-    "checked_at": "2026-11-01T22:49:47.721490+00:00",
+    "checked_at": "2026-11-02T14:06:34.390285+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://commission.europa.eu/topics/preparedness_en",
     "media_type": "text/html",
     "sha256": "5ff2e1f4e022c844aafdb7c89ebadc0ce20fd8fa9c9a0e320dc431fe5a0fc104",
-    "capture_id": "CAP-5c635702d2434a1fa1a1c155aaa16eb8"
+    "capture_id": "CAP-594b5cfbb3754d178b42613259022bdb"
   },
   {
     "source_id": "S004",
     "url": "https://www.gov.uk/government/speeches/deputy-prime-minister-speech-on-resilience-22-may-2024",
-    "checked_at": "2026-11-01T22:49:47.721648+00:00",
+    "checked_at": "2026-11-02T14:06:34.390461+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/speeches/deputy-prime-minister-speech-on-resilience-22-may-2024",
     "media_type": "text/html",
-    "sha256": "cb9a841b37f3c02089d1b401303d74eb4214b02170ad4b2533c07fd11a5ab353",
-    "capture_id": "CAP-d07bb35308a14ed793df618b8310cfc7"
+    "sha256": "1cabeeefc33ff57d7978f4ce91403e448cffb1b0d55285510483a20a149d14a1",
+    "capture_id": "CAP-1799b9719a8748aa844aaf21e75c18e1"
   },
   {
     "source_id": "S006",
     "url": "https://www.nato.int/en/news-and-events/articles/news/2024/01/24/natos-largest-exercise-in-decades-steadfast-defender-gets-underway",
-    "checked_at": "2026-11-01T22:49:47.721779+00:00",
+    "checked_at": "2026-11-02T14:06:34.390613+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.nato.int/en/news-and-events/articles/news/2024/01/24/natos-largest-exercise-in-decades-steadfast-defender-gets-underway",
     "media_type": "text/html",
-    "sha256": "930b5c9a03203a7a6ac2ae7da4724af4dacb792b1000ab999b3316932efef16a",
-    "capture_id": "CAP-9960752ee6f7422bb168959d56dddeb9"
+    "sha256": "90604da1490d3a54f35f5dfa4183a0990467cce7fb8f38a6800991362623d8ea",
+    "capture_id": "CAP-495e4033541b4847a34835ab0aec4cd4"
   },
   {
     "source_id": "S007",
     "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-03/pdf/2026-18008.pdf",
-    "checked_at": "2026-11-01T22:49:48.153106+00:00",
+    "checked_at": "2026-11-02T14:06:34.605713+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.govinfo.gov/content/pkg/FR-2026-09-03/pdf/2026-18008.pdf",
     "media_type": "application/pdf",
     "sha256": "a2703df3690d9a25e416f40845dfba23534fa7da4e19c561b10699a800fa0b7b",
-    "capture_id": "CAP-ea823d6cab77431ab6732dd07b4d5cbe"
+    "capture_id": "CAP-fbd6962110244c3483580d1b71412f1f"
   },
   {
     "source_id": "S015",
     "url": "https://beready.campaign.gov.uk/",
-    "checked_at": "2026-11-01T22:49:48.365542+00:00",
+    "checked_at": "2026-11-02T14:06:34.754651+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://beready.campaign.gov.uk/",
     "media_type": "text/html",
     "sha256": "7083d27b52324a83a2fad55427a9dac1fc00edcf983238265ebbdc6dfa365d50",
-    "capture_id": "CAP-f433dc5d52294e23bbbc68f62fb79c8a"
+    "capture_id": "CAP-a1e89fda7b9b414ab1f3be5fbb385c79"
   },
   {
     "source_id": "S016",
     "url": "https://www.dvidshub.net/image/8248611/uss-gunston-hall-arrives-harstad-norway-support-steadfast-defender-24",
-    "checked_at": "2026-11-01T22:49:48.372594+00:00",
+    "checked_at": "2026-11-02T14:06:34.875186+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/8248611/uss-gunston-hall-arrives-harstad-norway-support-steadfast-defender-24",
     "media_type": "text/html",
     "sha256": "c4a83054b7aae4b4c096ee876d4f7b745dbc99533541936f6b3f25b7c516c7e3",
-    "capture_id": "CAP-def3ed8a862d4ea9b81f940361969447"
+    "capture_id": "CAP-4502eebedffb4336bfc0b1c7c954eb54"
   },
   {
     "source_id": "S017",
     "url": "https://www.dvidshub.net/image/9036950/combat-medic-qualification-course-field-phase-day-4",
-    "checked_at": "2026-11-01T22:49:48.432393+00:00",
+    "checked_at": "2026-11-02T14:06:35.032738+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/9036950/combat-medic-qualification-course-field-phase-day-4",
     "media_type": "text/html",
     "sha256": "e0ec5ac7a707534b9d157ebdfa86e7f16d03397e0fe198b789ac93de99d60340",
-    "capture_id": "CAP-4b106d1e6498454db3a72195d00dd8d1"
+    "capture_id": "CAP-b7734d562d1e453490ef871a7741434b"
   },
   {
     "source_id": "S018",
     "url": "https://commission.europa.eu/legal-notice_en",
-    "checked_at": "2026-11-01T22:49:48.638274+00:00",
+    "checked_at": "2026-11-02T14:06:35.179707+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://commission.europa.eu/legal-notice_en",
     "media_type": "text/html",
     "sha256": "12b893cdf2ebbd3b96e2c32063db530884cede4cda151b59737c01179fe8461c",
-    "capture_id": "CAP-ba7f483ef73c4a7faff0f0e3f16fa67c"
+    "capture_id": "CAP-eb031778122948a087e46446e98e7bf7"
   },
   {
     "source_id": "S019",
     "url": "https://www.dvidshub.net/about/copyright",
-    "checked_at": "2026-11-01T22:49:48.767628+00:00",
+    "checked_at": "2026-11-02T14:06:35.338350+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/about/copyright",
     "media_type": "text/html",
     "sha256": "f6f604dbdd67ed405a791376e2bbf7ca4307785491b64fe6bfab894a999d8695",
-    "capture_id": "CAP-7c951302816240d8b73ddfec745d225a"
+    "capture_id": "CAP-3f34492f8637405995e3775595b56ad6"
   },
   {
     "source_id": "S020",
     "url": "https://www.gov.uk/help/reuse-govuk-content",
-    "checked_at": "2026-11-01T22:49:48.813165+00:00",
+    "checked_at": "2026-11-02T14:06:35.525547+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/help/reuse-govuk-content",
     "media_type": "text/html",
-    "sha256": "c61b2517da4e6ab63d1b18a065a03fa32d6a63fd14fa5c2f3228cb2409a9b473",
-    "capture_id": "CAP-2772394d0eee4f78a226ffc8dda60ce0"
+    "sha256": "593aec8ed12f1be22776f30775054d3642688a58c548cc9c11b0e755ee005f13",
+    "capture_id": "CAP-228af81ae315472286cd804f987ffdc7"
+  },
+  {
+    "source_id": "S021",
+    "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/09/15/2026-resilience-baseline-requirements",
+    "checked_at": "2026-11-02T14:06:35.819393+00:00",
+    "status": "retrieved",
+    "method": "HTTP GET",
+    "http_status": 200,
+    "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/09/15/2026-resilience-baseline-requirements",
+    "media_type": "text/html",
+    "sha256": "09d0b218610e8539ac958c7ce9e3552928a4bca64e9a63d635fbc6d4bce07262",
+    "capture_id": "CAP-182d40baba144bcba59a1cf5b4ec047f"
+  },
+  {
+    "source_id": "S022",
+    "url": "https://nato.int/en/about-us/official-texts-and-resources/official-texts/2023/07/11/vilnius-summit-communique",
+    "checked_at": "2026-11-02T14:06:35.823490+00:00",
+    "status": "retrieved",
+    "method": "HTTP GET",
+    "http_status": 200,
+    "final_url": "https://nato.int/en/about-us/official-texts-and-resources/official-texts/2023/07/11/vilnius-summit-communique",
+    "media_type": "text/html",
+    "sha256": "e8a92d73db2c5a078549775c69bbf511c62889c0fd3a85290ad713548c3242f8",
+    "capture_id": "CAP-4039186bbaf54a9c99a89fd447e57f17"
+  },
+  {
+    "source_id": "S023",
+    "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/washington-summit-declaration",
+    "checked_at": "2026-11-02T14:06:36.065926+00:00",
+    "status": "retrieved",
+    "method": "HTTP GET",
+    "http_status": 200,
+    "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/washington-summit-declaration",
+    "media_type": "text/html",
+    "sha256": "c180a76736367240828e5ad1af0cf919e9e708ec61762f2fcc0baeb17fbe1f2a",
+    "capture_id": "CAP-07d672718fb84363aae0b810f615390c"
+  },
+  {
+    "source_id": "S024",
+    "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration",
+    "checked_at": "2026-11-02T14:06:36.120339+00:00",
+    "status": "retrieved",
+    "method": "HTTP GET",
+    "http_status": 200,
+    "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration",
+    "media_type": "text/html",
+    "sha256": "0d55f4bcdd5e8b78d06643b74dd08f13878b7006151ad11a151a61071c8bdc5f",
+    "capture_id": "CAP-6c1a736774c548aeb21235449b19b508"
   }
 ]
