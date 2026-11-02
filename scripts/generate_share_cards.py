@@ -29,8 +29,9 @@ def card(name,title,label,media):
         fitted=ImageOps.fit(photo,(600,540));canvas.paste(fitted,(600,0))
     d=ImageDraw.Draw(canvas)
     d.rectangle((0,0,600,13),fill='#aa442e')
-    d.text((40,44),'PREPAREDNESS',font=font(24,True),fill='#18272b')
-    d.text((41,78),'OBSERVATORY',font=font(14),fill='#58615e')
+    d.text((40,44),'DOOMSDAY WATCH',font=font(24,True),fill='#18272b')
+    d.text((41,82),'Government Preparations, Military Readiness,',font=font(12),fill='#58615e')
+    d.text((41,102),'Civil Resilience',font=font(12),fill='#58615e')
     d.text((41,145),label.upper(),font=font(14),fill='#aa442e')
     face=font(43,True)
     while len(lines(d,title,face,515))>5:face=font(face.size-1,True)
@@ -38,7 +39,7 @@ def card(name,title,label,media):
     for line in lines(d,title,face,515):
         d.text((38,y),line,font=face,fill='#18272b');y+=face.size+13
     d.rectangle((0,540,1200,630),fill='#18272b')
-    d.text((40,557),'PREPAREDNESS OBSERVATORY / REPORTING',font=font(17),fill='#f8f6f0')
+    d.text((40,557),'DOOMSDAY WATCH / REPORTING',font=font(17),fill='#f8f6f0')
     credit='Photo: '+media['credit']
     while d.textlength(credit,font=font(12))>1100:credit=credit[:-2]
     d.text((40,590),credit,font=font(12),fill='#d7dcd4')
