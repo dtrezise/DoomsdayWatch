@@ -98,11 +98,14 @@ async function refreshIndicators() {
     const response = await fetch(statusPanel.dataset.statusUrl, {cache: 'no-store'});
     if (!response.ok) throw new Error('Snapshot unavailable');
     const data = await response.json();
-    if (data.schema_version !== 1 || !Array.isArray(data.items)) throw new Error('Unknown status format');
+    if (![1, 2].includes(data.schema_version) || !Array.isArray(data.items)) throw new Error('Unknown status format');
     data.items.forEach(item => {
       const node = [...statusPanel.querySelectorAll('[data-indicator]')].find(n => n.dataset.indicator === item.id);
       if (!node) return;
       const verified = Date.parse(item.verified_at || '');
+      const deadlines = [item.valid_until, item.review_due].map(value => Date.parse(value || '')).filter(Number.isFinite);
+      const deadline = deadlines.length ? Math.min(...deadlines) : NaN;
+      const expired = item.state === 'verified' && Number.isFinite(deadline) && Date.now() >= deadline;
       const stale = item.state === 'verified' && (!Number.isFinite(verified) || Date.now() - verified > data.stale_after_hours * 3600000 || verified > Date.now() + 300000);
       const note = [...statusPanel.querySelectorAll('[data-indicator-note]')].find(n => n.dataset.indicatorNote === item.id);
       if (note) {
@@ -112,15 +115,47 @@ async function refreshIndicators() {
           link.href = item.source_url; link.rel = 'noreferrer'; link.textContent = 'Official source ↗'; note.append(link);
         }
       }
-      node.classList.toggle('stale', stale);
-      node.classList.toggle('unavailable', item.state !== 'verified');
-      node.querySelector('.indicator-value').textContent = stale ? 'Stale · ' + item.value : item.value;
+      if (item.id === 'dhs' && note) {
+        const link = document.createElement('a'); link.href = 'https://www.dhs.gov/national-terrorism-advisory-system'; link.textContent = ' DHS advisory page ↗'; note.append(link);
+      }
+      if (note && item.review_due) {
+        const review = document.createElement('p'); review.textContent = 'Source review due: ' + new Date(item.review_due).toLocaleString('en-US', {timeZone:'America/New_York', timeZoneName:'short'}) + '. Editorial deadline, not official policy expiration.'; note.append(review);
+      }
+      if (note && item.last_verified) {
+        const last = document.createElement('p'); last.textContent = 'Last verified: ' + item.last_verified.value + ' (' + new Date(item.last_verified.verified_at).toLocaleString('en-US', {timeZone:'America/New_York', timeZoneName:'short'}) + '). Historical, not a current reading.'; note.append(last);
+      }
+      if (note && Array.isArray(item.advisories)) item.advisories.forEach(advisory => {
+        try {
+          const url = new URL(advisory.url);
+          if (url.protocol !== 'https:' || !['dhs.gov', 'www.dhs.gov'].includes(url.hostname) || url.username) return;
+          const p = document.createElement('p'); const link = document.createElement('a'); link.href = url.href; link.rel = 'noreferrer'; link.textContent = advisory.summary; p.append(link);
+          const expires = new Date(advisory.expires_at).toLocaleString('en-US', {timeZone:'America/New_York', timeZoneName:'short'});
+          p.append(' · ' + advisory.type + ' · expires ' + expires + '.'); note.append(p);
+        } catch (_) { /* malformed advisory links are never rendered */ }
+      });
+      ['verified','unavailable','not_disclosed','source_blocked','retrieval_failed','needs_review','stale','expired'].forEach(state => node.classList.remove(state));
+      node.classList.add(expired ? 'expired' : stale ? 'stale' : item.state);
+      if (item.id === 'uk') {
+        const level = ['LOW','MODERATE','SUBSTANTIAL','SEVERE','CRITICAL'].indexOf(item.value) + 1;
+        let bars = node.querySelector('.status-bars');
+        if (level && !bars) {
+          bars = document.createElement('span'); bars.className = 'status-bars'; bars.setAttribute('aria-hidden', 'true');
+          for (let i=0;i<5;i++) bars.append(document.createElement('i'));
+          node.querySelector('.status-glyph')?.remove(); node.prepend(bars);
+        }
+        if (bars) [...bars.children].forEach((bar, index) => bar.classList.toggle('on', index < level));
+      }
+      node.querySelector('.indicator-value').textContent = expired ? (item.valid_until ? 'Advisory update required' : 'Source review due') : stale ? 'Stale · ' + item.value : item.value;
     });
     const time = statusPanel.querySelector('[data-status-checked]');
     time.dateTime = data.checked_at;
-    time.textContent = data.checked_at.slice(0, 16).replace('T', ' ') + ' UTC';
+    time.textContent = new Date(data.checked_at).toLocaleString('en-US', {timeZone:'America/New_York', timeZoneName:'short'});
   } catch (_) {
-    statusPanel.querySelectorAll('.indicator-value').forEach(node => { node.textContent = 'Snapshot unavailable'; });
+    statusPanel.querySelectorAll('[data-indicator]').forEach(node => {
+      if (node.dataset.indicator === 'defcon') return;
+      node.classList.remove('verified'); node.classList.add('retrieval_failed');
+      node.querySelector('.indicator-value').textContent = 'Snapshot unavailable';
+    });
   }
 }
 refreshIndicators();

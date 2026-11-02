@@ -11,6 +11,8 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from xml.etree.ElementTree import Element, SubElement, tostring
 from validate import ROOT, validate
+from refresh_status import display_indicator
+from zoneinfo import ZoneInfo
 
 SECTORS = {
  'military_logistics': ('Military logistics', 'Exercises, transport, activation and actual utilization.'),
@@ -237,23 +239,32 @@ class Site:
         text=''.join('<section><h3>'+esc(section['heading'])+'</h3>'+''.join('<p>'+esc(p)+'</p>' for p in section['paragraphs'])+'</section>' for section in f['sections'])
         return f'''<article class="watch-story" id="watch-{f['id']}" data-watch-story="{f['id']}"><header><p class="eyebrow">{esc(f['kicker'])} / {esc(f['format'])}</p><h2><a href="{self.href('findings/'+f['id']+'/')}">{esc(f['title'])}</a></h2><p class="story-dek">{esc(f['summary'])}</p><div class="story-meta"><span>{esc(f.get("event_label", "Event"))}: <time datetime="{self.event_date(f)}">{esc(date_label(self.event_date(f)))}</time></span><span>Reported {esc(date_label(f['published_at']))}</span>{self.share(f)}</div></header><div class="watch-story-layout"><div>{self.photo(f['image_id'],full=True,eager=eager)}</div><div class="prose watch-copy">{text}{self.watch_notes(f)}{self.references(self.source_ids(f),'watch-'+f['id'],f['image_id'],f)}<a class="text-link" href="{self.href('findings/'+f['id']+'/')}">Story permalink & sharing →</a></div></div></article>'''
 
+    def indicator_notes(self,item):
+        note='<strong>'+esc(item['label'])+':</strong> '+esc(item['note'])
+        if item['source_url']:note+=' <a href="'+esc(item['source_url'])+'" rel="noreferrer">Official source ↗</a>'
+        if item['id']=='dhs':note+=' <a href="https://www.dhs.gov/national-terrorism-advisory-system" rel="noreferrer">DHS advisory page ↗</a>'
+        if item.get('review_due'):note+='<p>Source review due: '+esc(datetime.fromisoformat(item['review_due']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y, %I:%M %p %Z'))+'. This is an editorial review deadline, not official policy expiration.</p>'
+        if item.get('last_verified'):
+            old=item['last_verified'];note+='<p>Last verified: '+esc(old['value'])+' ('+esc(datetime.fromisoformat(old['verified_at']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y, %I:%M %p %Z'))+'). This is historical, not a current reading.</p>'
+        for advisory in item.get('advisories',[]):
+            note+='<p><a href="'+esc(advisory['url'])+'" rel="noreferrer">'+esc(advisory['summary'])+'</a> · '+esc(advisory['type'])+' · expires '+esc(datetime.fromisoformat(advisory['expires_at']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y, %I:%M %p %Z'))+'.</p>'
+        return note
+
     def status_panel(self):
         status=json.loads((self.root/'site/status.json').read_text())
         items=''
         for item in status['items']:
-            key=item['id'];value=item['value'];state=item['state']
-            if state=='verified':
-                verified=datetime.fromisoformat(item['verified_at'])
-                age=(datetime.now(timezone.utc)-verified).total_seconds()
-                if age>status['stale_after_hours']*3600 or age < -300:
-                    value='Stale · '+value;state='stale'
+            key=item['id'];state,value=display_indicator(item,status)
             graphic='<span class="status-glyph" aria-hidden="true">◌</span>'
             if key=='clock':
                 graphic='<svg class="clock-glyph" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="M24 9v15l-2-16M24 3v5M45 24h-5M24 45v-5M3 24h5"/></svg>'
-            elif state=='verified' and key=='uk':graphic='<span class="status-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>'
+            elif state=='verified' and key=='uk':
+                level={'LOW':1,'MODERATE':2,'SUBSTANTIAL':3,'SEVERE':4,'CRITICAL':5}.get(item['value'],0)
+                graphic='<span class="status-bars" aria-hidden="true">'+''.join('<i'+(' class="on"' if n<level else '')+'></i>' for n in range(5))+'</span>'
             items+=f'<div class="indicator {esc(state)}" data-indicator="{esc(key)}">{graphic}<div><span class="indicator-label">{esc(item["label"])}</span><strong class="indicator-value">{esc(value)}</strong></div></div>'
-        notes=''.join('<li data-indicator-note="'+esc(i['id'])+'"><strong>'+esc(i['label'])+':</strong> '+esc(i['note'])+(' <a href="'+esc(i['source_url'])+'" rel="noreferrer">Official source ↗</a>' if i['source_url'] else '')+'</li>' for i in status['items'])
-        return f'<aside class="status-panel" aria-label="Published security indicators" data-status-url="{self.href("status.json")}"><p class="eyebrow">Published indicators</p><div class="indicator-grid">{items}</div><details class="indicator-notes"><summary>Sources, scope & freshness</summary><p>Daily source checks. Latest attempt: <time data-status-checked datetime="{esc(status["checked_at"])}">{esc(status["checked_at"][:16].replace("T"," "))} UTC</time>. Values older than 36 hours are marked stale.</p><p>Separate systems, not a combined risk score. The Clock is a symbolic expert assessment, not a government alert or countdown. European indicators refer to individual countries. This is not a live warning service.</p><ul>{notes}</ul></details></aside>'
+        notes=''.join('<li data-indicator-note="'+esc(i['id'])+'">'+self.indicator_notes(i)+'</li>' for i in status['items'])
+        stamp=datetime.fromisoformat(status['checked_at']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y, %I:%M %p %Z')
+        return f'<aside class="status-panel" aria-label="Published security indicators" data-status-url="{self.href("status.json")}"><p class="eyebrow">Published indicators</p><div class="indicator-grid">{items}</div><details class="indicator-notes"><summary>Sources, scope & freshness</summary><p>Daily source checks. Latest attempt: <time data-status-checked datetime="{esc(status["checked_at"])}">{esc(stamp)}</time>. Checks older than 36 hours are marked stale. Advisory dates and source-review deadlines can require an earlier update.</p><p>Separate systems, not a combined risk score. The Clock is a symbolic expert assessment, not a government alert or countdown. European indicators refer to individual countries. This is not a live warning service.</p><ul>{notes}</ul></details></aside>'
 
     def dossier_card(self, dossier):
         d=dossier

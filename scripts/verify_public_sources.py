@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
+from xml.etree import ElementTree as ET
 from archive import ROOT, DEFAULT, capture
 
 
@@ -22,7 +23,7 @@ def selected_sources(root=ROOT):
         image=media[finding['image_id']];ids.add(image['source_id'])
         ids.update(sid for sid,s in sources.items() if s['url']==image['license_url'])
     status=json.loads((root/'site/status.json').read_text())
-    status_urls={item['source_url'] for item in status['items'] if item['state']=='verified'}
+    status_urls={url for item in status['items'] if item['state']=='verified' for url in item.get('source_refs',[item['source_url']])}
     ids.update(sid for sid,source in sources.items() if source['url'] in status_urls)
     return [sources[sid] for sid in sorted(ids)]
 
@@ -35,7 +36,10 @@ def fetch(source):
         with urlopen(request,timeout=30) as response:
             data=response.read(12*1024*1024)
             media_type=response.headers.get_content_type()
-            if response.status!=200 or len(data)<200:raise ValueError('Empty or unsuccessful response')
+            if response.status!=200 or not data:raise ValueError('Empty or unsuccessful response')
+            if source['url'].endswith('.xml'):
+                if b'<!DOCTYPE' in data.upper() or ET.fromstring(data).tag!='alerts':raise ValueError('Invalid NTAS XML response')
+            elif len(data)<200:raise ValueError('Empty or incomplete response')
             if media_type=='text/html':
                 head=data[:20000].decode('utf-8',errors='replace').lower()
                 if any(marker in head for marker in ('browser validation page','triggerinterstitialchallenge','<title>access denied','<title>just a moment','<title>gcore')):

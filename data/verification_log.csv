@@ -59,3 +59,9 @@ V065,2026-11-02,S052,Inspect full source text and exact documentary proposition,
 V066,2026-11-02,S053,Inspect full source text and exact documentary proposition,web_full_text_http_403,"Web-tool text inspected; direct reference checker blocked403, so not used as a public story reference"
 V067,2026-11-02,S054,Inspect full source text and exact documentary proposition,web_full_text_http_403,Web-tool transcript inspected; direct retrieval403. Identifies residence but does not verify construction or bunker specifications
 V068,2026-11-02,S055,Inspect full article and compare arrival date with S053,full_text,Obtain primary arrival record; preserve Oct 27/28 discrepancy. Do not infer abnormal mission from diplomatic travel.
+V069,2026-11-02,S056,Inspect structured XML and compare current page statement,full_text,Validate alert intervals; never equate empty feed alone with universal NTAS bulletin absence
+V070,2026-11-02,S057,Inspect original API documentation,full_text,Use public documented endpoints; no credentials required
+V071,2026-11-02,S058,Inspect explicit dated national French posture,full_text,Prefer SGDSN when retrievable; dated ministry fallback due for review after90 days
+V072,2026-11-02,S059,Inspect official alternative XML endpoint,full_text,Do not automatically interpret reference-only active entries without complete metadata
+V073,2026-11-02,S060,Inspect returned response and web-tool challenge page,security_interstitial_http_200,Use an inspected official fallback; do not bypass the validation challenge
+V074,2026-11-02,S039,Compare explicit no-current-advisories sentence with empty XML feed,full_text,Retain feed-only scope when the human-readable page is blocked
