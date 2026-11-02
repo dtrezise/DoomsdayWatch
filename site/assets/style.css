@@ -12,3 +12,5 @@
 @media print{.status-panel,.watch-timeline{display:none}.watch-story-layout{display:block}.watch-story{break-before:page}.watch-story .story-photo{max-width:420px}.watch-copy .references{display:block}}
 
 .indicator[data-indicator="uk"] .status-bars i:last-child{background:#c7cbc1}.indicator.stale .status-bars i{background:#92998e}
+
+.watch-notes{border-left:3px solid #a85034;background:#eaece2;padding:18px 20px;margin:25px 0}.watch-notes .eyebrow{font:600 10px/1.4 var(--sans);letter-spacing:.12em;color:#95442c;margin-bottom:12px}.watch-notes p{font-size:13px!important;line-height:1.65!important;margin:0 0 14px!important}.watch-notes h3{font:600 12px/1.5 var(--sans)!important;margin:15px 0 5px!important}.watch-status{display:inline-block;font:600 10px var(--sans);text-transform:uppercase;letter-spacing:.06em;border-top:1px solid #b9c1b0;padding-top:10px;color:#5c6758}

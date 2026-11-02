@@ -46,4 +46,4 @@ Build with `python3 scripts/build_site.py`; test with `python3 -m unittest disco
 
 Weekly investigative maintenance is scheduled for Mondays at 9:00 a.m. Eastern in the local project. The local task needs the computer on and the app running. Indicator-specific live collectors remain disabled.
 
-The Watch List homepage includes a sticky event timeline and 11 sourced reports. Published indicator snapshots are checked daily by Pages Actions; source failures show unavailable and old snapshots show stale. See WEBSITE.md for limits and retention.
+The Watch List homepage includes a sticky event timeline and 15 sourced reports. Published indicator snapshots are checked daily by Pages Actions; source failures show unavailable and old snapshots show stale. See WEBSITE.md for limits and retention.

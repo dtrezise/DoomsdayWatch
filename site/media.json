@@ -138,5 +138,61 @@
     "changes": "Web format conversion; display crop may vary.",
     "width": 1200,
     "height": 675
+  },
+  "avenger-bedminster": {
+    "path": "assets/photos/avenger-bedminster.webp",
+    "alt": "An Avenger air-defense vehicle during a presidential protection mission.",
+    "caption": "File photo: an Avenger during presidential airspace protection in Bedminster, New Jersey, August 9, 2026. This is not a photograph of Mar-a-Lago or its barge.",
+    "credit": "Lt. Col. Andrew Scott / U.S. Air Force / DVIDS",
+    "source_id": "S052",
+    "source_url": "https://www.dvidshub.net/image/9881988/norad-temporary-flight-restriction-enforcement-mission-bedminster-new-jersey",
+    "original_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2608/9881988/1000w_q95.jpg",
+    "license": "U.S. government work; marked public domain by DVIDS",
+    "license_url": "https://www.dvidshub.net/about/copyright",
+    "changes": "Web format conversion; display crop may vary.",
+    "width": 1000,
+    "height": 665
+  },
+  "e4b-refueling": {
+    "path": "assets/photos/e4b-refueling.webp",
+    "alt": "An E-4B Nightwatch receives fuel from an aerial tanker.",
+    "caption": "File photo: an E-4B receives fuel over the Atlantic on May 16, 2025. It does not show the September 2026 Missouri flights.",
+    "credit": "SrA Christopher Campbell / U.S. Air Force / DVIDS",
+    "source_id": "S050",
+    "source_url": "https://www.dvidshub.net/image/9088692/100th-arw-refuels-e-4b-nightwatch",
+    "original_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2506/9088692/1000w_q95.jpg",
+    "license": "U.S. government work; marked public domain by DVIDS",
+    "license_url": "https://www.dvidshub.net/about/copyright",
+    "changes": "Web format conversion; display crop may vary.",
+    "width": 1000,
+    "height": 667
+  },
+  "kauai-shelter-record": {
+    "path": "assets/photos/kauai-shelter-record.webp",
+    "alt": "2023  Planning report. 2024  Storm-shelter record. Permit versions still to compare",
+    "caption": "Original editorial graphic of the reporting chronology, not an architectural plan or image of the private compound.",
+    "credit": "Doomsday Watch · original editorial graphic",
+    "source_id": "S046",
+    "source_url": "https://www.hawaiinewsnow.com/2024/12/26/facebook-ceo-addresses-hawaii-doomsday-bunker-rumors-rare-interview/",
+    "original_url": "https://www.hawaiinewsnow.com/2024/12/26/facebook-ceo-addresses-hawaii-doomsday-bunker-rumors-rare-interview/",
+    "license": "Original graphic: CC BY4.0; underlying source retains its own rights",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Original explanatory graphic; not a photograph or architectural plan.",
+    "width": 1200,
+    "height": 675
+  },
+  "argentina-retreat-record": {
+    "path": "assets/photos/argentina-retreat-record.webp",
+    "alt": "Buenos Aires. A reported home purchase. Bunker construction unverified",
+    "caption": "Original editorial graphic identifying the scope of the inspected reporting. It does not depict a verified bunker, property plan or private address.",
+    "credit": "Doomsday Watch · original editorial graphic",
+    "source_id": "S047",
+    "source_url": "https://tn.com.ar/internacional/2026/05/28/el-multimillonario-tecnologico-peter-thiel-encontro-un-nuevo-refugio-la-argentina/",
+    "original_url": "https://tn.com.ar/internacional/2026/05/28/el-multimillonario-tecnologico-peter-thiel-encontro-un-nuevo-refugio-la-argentina/",
+    "license": "Original graphic: CC BY4.0; underlying source retains its own rights",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Original explanatory graphic; not a photograph or architectural plan.",
+    "width": 1200,
+    "height": 675
   }
 }

@@ -446,5 +446,205 @@
         ]
       }
     ]
+  },
+  {
+    "id": "F012",
+    "title": "Mar-a-Lago adds air defenses and a floating security platform",
+    "summary": "Published command statements acknowledge added defenses. A reported barge deployment deserves scrutiny alongside the longer history of presidential maritime protection.",
+    "sector": "military_logistics",
+    "claim_ids": [
+      "C045",
+      "C046",
+      "C047",
+      "C055"
+    ],
+    "event_date": "2026-10-30",
+    "event_label": "Statement published",
+    "image_id": "avenger-bedminster",
+    "kicker": "Presidential security",
+    "watch_reason": "An acknowledged addition to the protective system, including a reported floating platform.",
+    "baseline_note": "Bedminster had an Avenger in August 2026. Coast Guard maritime zones were documented in 2025; neither supplies a complete deployment baseline.",
+    "change_trigger": "Dated changes in duration, capacity and geographic coverage, compared with equivalent presidential visits.",
+    "sections": [
+      {
+        "heading": "A new protective layer",
+        "paragraphs": [
+          "The War Zone published October 30 responses from NORAD/USNORTHCOM and the Secret Service acknowledging added ground-based air defenses and counter-drone capabilities near Mar-a-Lago. Officials did not disclose a specific triggering threat."
+        ]
+      },
+      {
+        "heading": "What was reported on the water",
+        "paragraphs": [
+          "WPTV reported observing defense assets aboard a barge in the Intracoastal Waterway on October 26. That is a waterborne defense platform, not evidence of a newly assembled Navy fleet offshore."
+        ]
+      },
+      {
+        "heading": "The comparison starts before October",
+        "paragraphs": [
+          "An official August 9 photograph documents an Avenger protecting presidential airspace at Bedminster, New Jersey. A July 2025 Coast Guard rule also documents maritime security measures near Mar-a-Lago. That temporary rule expired September 30, 2025 and cannot establish current patrol strength."
+        ]
+      },
+      {
+        "heading": "What remains unmeasured",
+        "paragraphs": [
+          "The added capability is documented in attributed statements and reporting. Its operational scale, duration and departure from comparable prior visits remain unresolved. No common global trigger has been established."
+        ]
+      }
+    ],
+    "boundary": "Command statements confirm the acknowledged protective deployment. Reporter observations and historic Coast Guard rules do not establish a Navy warship surge, current patrol strength or the specific threat behind the change.",
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "format": "Source review",
+    "watch_status": "Baseline review open",
+    "why_it_matters": "An acknowledged addition to the protective system, including a reported floating platform.",
+    "alternatives": "Bedminster had an Avenger in August 2026. Coast Guard maritime zones were documented in2025; neither supplies a complete deployment baseline.",
+    "next_question": "Dated changes in duration, capacity and geographic coverage, compared with equivalent presidential visits."
+  },
+  {
+    "id": "F013",
+    "title": "Zuckerberg’s Hawaii shelter puts billionaire preparedness on the record",
+    "summary": "Underground-shelter plans were reported in 2023. Later local reporting obtained a county document and carried Zuckerberg’s response disputing the doomsday interpretation.",
+    "sector": "civilian_infrastructure",
+    "claim_ids": [
+      "C048",
+      "C049"
+    ],
+    "event_date": "2023-12-14",
+    "event_label": "First report published",
+    "image_id": "kauai-shelter-record",
+    "kicker": "Billionaire shelters",
+    "watch_reason": "A reported private underground shelter, with an established chronology rather than a newly discovered 2026 project.",
+    "baseline_note": "WIRED reported the plans in 2023; HNN revisited them in 2024. A broader matched permit series has not been assembled.",
+    "change_trigger": "New permits, accelerated construction, occupancy or supply changes supported by original records and compared with earlier development.",
+    "sections": [
+      {
+        "heading": "The planning-document trail",
+        "paragraphs": [
+          "WIRED’s December 14, 2023 investigation reported plans for a roughly 5,000-square-foot underground shelter at Mark Zuckerberg’s Kauai compound. Its reporting drew on planning records and interviews."
+        ]
+      },
+      {
+        "heading": "A storm shelter, according to later reporting",
+        "paragraphs": [
+          "Hawaii News Now reported on December 25, 2024 that it obtained a county document describing a nearly 4,500-square-foot storm shelter. It also carried Zuckerberg’s response, taken from a Bloomberg interview, describing the shelter as part of the property and rejecting claims that the ranch was a doomsday bunker."
+        ]
+      },
+      {
+        "heading": "The construction question",
+        "paragraphs": [
+          "These are verified publications of reported plans and a response. Doomsday Watch has not independently obtained the underlying plan versions or reconciled the differing area estimates. The records support investigating a shelter; they do not establish foreknowledge of catastrophe or a new synchronized billionaire building surge."
+        ]
+      }
+    ],
+    "boundary": "Underlying plans have not been independently obtained here. Differences in reported area remain unresolved; reported shelter construction does not establish the owner’s threat knowledge or a current industry-wide surge.",
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "format": "Source review",
+    "watch_status": "Baseline review open",
+    "why_it_matters": "A reported private underground shelter, with an established chronology rather than a newly discovered2026 project.",
+    "alternatives": "WIRED reported the plans in2023; HNN revisited them in2024. A broader matched permit series has not been assembled.",
+    "next_question": "New permits, accelerated construction, occupancy or supply changes supported by original records and compared with earlier development."
+  },
+  {
+    "id": "F014",
+    "title": "Peter Thiel’s Argentina refuge comes into view",
+    "summary": "Reporting describes a purchased Buenos Aires mansion and an interest in Argentina as a fallback. A newly built bunker retreat remains unverified.",
+    "sector": "civilian_infrastructure",
+    "claim_ids": [
+      "C050"
+    ],
+    "event_date": "2026-05-28",
+    "event_label": "Report published",
+    "image_id": "argentina-retreat-record",
+    "kicker": "Private retreats / Argentina",
+    "watch_reason": "Reported residential diversification by a prominent investor, with the construction claim still open.",
+    "baseline_note": "The inspected account concerns an existing Buenos Aires home. It is not a permit or construction record for a new Argentine bunker.",
+    "change_trigger": "Independently inspected deeds, permit filings or construction evidence that establish a new retreat, its timing and intended use.",
+    "sections": [
+      {
+        "heading": "An existing home in Buenos Aires",
+        "paragraphs": [
+          "A New York Times report published in Spanish by TN on May 28, 2026 describes Peter Thiel purchasing a mansion in Buenos Aires. It attributes his interest in Argentina as a fallback to people familiar with his thinking, and reports that Thiel did not respond to a request for comment."
+        ]
+      },
+      {
+        "heading": "Where the bunker claim stands",
+        "paragraphs": [
+          "The inspected account supports reporting an existing-home purchase and attributed motives. It does not verify a newly built Argentine bunker complex. Property ownership, construction and intended emergency use require separate evidence."
+        ]
+      },
+      {
+        "heading": "The next records",
+        "paragraphs": [
+          "The watch will follow original ownership and building records, with attention to timing and project scope. TN credits the New York Times; the Spanish version is the same reporting chain, not independent corroboration. No private address or current occupancy details are needed to test the construction claim."
+        ]
+      }
+    ],
+    "boundary": "Existing-home and motive claims are attributed reporting. No independently inspected Argentine bunker permit, new-build record or common threat knowledge has been established.",
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "format": "Source review",
+    "watch_status": "Baseline review open",
+    "why_it_matters": "Reported residential diversification by a prominent investor, with the construction claim still open.",
+    "alternatives": "The inspected account concerns an existing Buenos Aires home. It is not a permit or construction record for a new Argentine bunker.",
+    "next_question": "Independently inspected deeds, permit filings or construction evidence that establish a new retreat, its timing and intended use."
+  },
+  {
+    "id": "F015",
+    "title": "Doomsday planes draw attention over Missouri and Cebu",
+    "summary": "September flight-track reports and an October diplomatic arrival bring command aircraft into view. A comparable traffic baseline remains missing.",
+    "sector": "continuity_of_government",
+    "claim_ids": [
+      "C051",
+      "C052",
+      "C053",
+      "C054",
+      "C059"
+    ],
+    "event_date": "2026-10-28",
+    "event_label": "Latest report published",
+    "image_id": "e4b-refueling",
+    "kicker": "Command aircraft / Flight watch",
+    "watch_reason": "Paired-flight reports in September and an E-4B arrival reported in October warrant a timestamp, mission-context and baseline check.",
+    "baseline_note": "Official 2025 records document standing alert duty and defense-secretary travel. No matched Aug–Oct 2023–2025 versus 2026 sortie series has been obtained.",
+    "change_trigger": "A reproducible change in aircraft-days, flight hours or independently verified simultaneous activity, accounting for coverage, exercises and travel.",
+    "sections": [
+      {
+        "heading": "Two September reports",
+        "paragraphs": [
+          "The Eagle published reports of paired E-4B sightings on September 2 and flight paths on September 29, 2026. The first describes one colored track as earlier and another as current; that description alone cannot establish simultaneous flights. The later story also reports an E-6B sighting. Both rely on the same observer and tracker provider."
+        ]
+      },
+      {
+        "heading": "An October arrival with a public purpose",
+        "paragraphs": [
+          "Daily Tribune reported in late October that Pete Hegseth arrived in Cebu aboard an E-4B for regional defense meetings. This is an attributed report of diplomatic travel, not evidence of emergency activation. The exact arrival date was not resolved across inspected reports."
+        ]
+      },
+      {
+        "heading": "The standing mission",
+        "paragraphs": [
+          "A 2025 Air Force photo caption describes a standing requirement for at least one E-4B on round-the-clock alert. Alert duty is not continuous flight. A separate March 2025 official photograph documents defense-secretary travel aboard an E-4B, another reason to test sightings against known activity."
+        ]
+      },
+      {
+        "heading": "The abnormality test",
+        "paragraphs": [
+          "The review window is August 1–November 2, 2026. The September observations remain reported sightings, not independently reconstructed missions. No comparable flight-count series has been obtained. Without timestamps and consistent coverage, neither an abnormal surge nor crisis activation can be concluded. The watch uses historical aggregates rather than live aircraft positions."
+        ]
+      }
+    ],
+    "boundary": "The published sighting accounts are verified as documents; their aircraft identities, simultaneous timing and unusual mission interpretation are not independently established. Incomplete tracker coverage prevents a reliable flight-rate comparison. The late-October Cebu arrival is attributed reporting; its exact arrival date remains unresolved.",
+    "published_at": "2026-11-02",
+    "updated_at": "2026-11-02",
+    "publication_status": "published",
+    "format": "Source review",
+    "watch_status": "Baseline review open",
+    "why_it_matters": "Paired-flight reports in September and an E-4B arrival reported in October warrant a timestamp, mission-context and baseline check.",
+    "alternatives": "Official2025 records document standing alert duty and defense-secretary travel. No matched Aug–Oct2023–2025 versus2026 sortie series has been obtained.",
+    "next_question": "A reproducible change in aircraft-days, flight hours or independently verified simultaneous activity, accounting for coverage, exercises and travel."
   }
 ]

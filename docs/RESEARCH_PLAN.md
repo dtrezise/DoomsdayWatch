@@ -17,6 +17,10 @@ Initial verified milestones cover each historical year, but only selected civili
 
 ## Future monitoring design
 
-The weekly local research task was enabled after the public-site launch; see MONITORING.md. Indicator-specific unattended collectors remain disabled. An eventual collector should use allowlisted official APIs/feeds, dated products, response hashes and immutable captures. Store retrieval results separately from analytical status; deduplicate origin chains; retry with limits; flag stale or missing data. Draft alerts require human verification before claims enter assessments.
+The weekly local research task was enabled after the public-site launch; see MONITORING.md. The narrowly scoped published-indicator collector runs daily; research and anomaly classifications remain subject to review. An eventual collector should use allowlisted official APIs/feeds, dated products, response hashes and immutable captures. Store retrieval results separately from analytical status; deduplicate origin chains; retry with limits; flag stale or missing data. Draft alerts require human verification before claims enter assessments.
 
 Proposed weekly review cadence is recorded in data/watchlist.csv and should be adjusted by product: space-weather products expire much faster than annual procurement baselines. Alert only on meaningful verified changes, completion/failure requiring attention, or user action; stay quiet when unchanged. Define historical backfill and retention before scheduling. Never auto-publish threat judgments.
+
+## Abnormal-activity watch
+
+L01 and L24–L26 track presidential protective-system changes, billionaire shelter/retreat projects and historical command-aircraft activity. Separate event dates from publication dates. Seek original permit versions, deployment durations and coverage-adjusted flight logs. Compare matched 2023–2025 and 2026 windows, controlling for travel, exercises, maintenance and source visibility. A reported refuge motive, a new media story or a screenshot does not measure a surge. Keep private addresses, live tactical aircraft positions and unneeded current occupancy out of public reporting.

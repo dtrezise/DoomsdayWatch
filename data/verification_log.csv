@@ -45,3 +45,17 @@ V051,2026-11-02,S038,Inspect official current Clock setting and announcement,ful
 V052,2026-11-02,S039,Inspect explicit current advisories statement,full_text,Recheck daily; do not infer all-clear from missing/expired bulletin
 V053,2026-11-02,S040,Inspect national UK threat sentence,full_text,Recheck daily; keep separate from Northern Ireland-related threat level
 V054,2026-11-02,S041,Compare web-tool content with direct collector retrieval,web_full_text_http_403,Automatic value unavailable; inspect current official posture before parser changes
+V055,2026-11-02,S042,Inspect full source text and exact documentary proposition,full_text,"Statements obtained directly by reporter; official confirmation of ground-based and counter-UAS assets, not specific trigger"
+V056,2026-11-02,S043,Inspect full source text and exact documentary proposition,full_text,"WPTV observation and caption Oct 26; barge in Intracoastal Waterway, not a Navy fleet"
+V057,2026-11-02,S044,Inspect full source text and exact documentary proposition,full_text,90 FR 35617–35619; historical temporary zone expired September 30 2025; patrol-assets provision
+V058,2026-11-02,S045,Inspect full source text and exact documentary proposition,full_text,Investigation based on planning documents; reported roughly 5000 sqft underground shelter. Records not independently obtained by this publication
+V059,2026-11-02,S046,Inspect full source text and exact documentary proposition,full_text,"HNN obtained county planning document, reported nearly 4500 sqft storm shelter; response from Bloomberg interview; original plan versions not compared"
+V060,2026-11-02,S047,Inspect full source text and exact documentary proposition,full_text,Byline credits NYT. Existing Buenos Aires mansion purchase reported; attributed motive. Not independent TN corroboration and not a bunker construction record
+V061,2026-11-02,S048,Inspect full source text and exact documentary proposition,full_text,Reports Sept 2 observations; text explicitly says yellow path earlier and red path current; simultaneity not established by that description
+V062,2026-11-02,S049,Inspect full source text and exact documentary proposition,full_text,Claims two E-4B paths Sept 29; source screenshot and same observer/provider as S048; no complete flight-log denominator
+V063,2026-11-02,S050,Inspect full source text and exact documentary proposition,full_text,Official caption documents 24/7 alert requirement; alert status is not continuous airborne flight
+V064,2026-11-02,S051,Inspect full source text and exact documentary proposition,full_text,"Official caption documents Secretary Hegseth aboard an E-4B over Pacific; baseline travel use, not recent emergency activation"
+V065,2026-11-02,S052,Inspect full source text and exact documentary proposition,full_text,Aug 9 2026 photograph by Lt.Col.Andrew Scott. Prior presidential-protection context outside Florida
+V066,2026-11-02,S053,Inspect full source text and exact documentary proposition,web_full_text_http_403,"Web-tool text inspected; direct reference checker blocked403, so not used as a public story reference"
+V067,2026-11-02,S054,Inspect full source text and exact documentary proposition,web_full_text_http_403,Web-tool transcript inspected; direct retrieval403. Identifies residence but does not verify construction or bunker specifications
+V068,2026-11-02,S055,Inspect full article and compare arrival date with S053,full_text,Obtain primary arrival record; preserve Oct 27/28 discrepancy. Do not infer abnormal mission from diplomatic travel.

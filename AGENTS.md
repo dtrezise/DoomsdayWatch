@@ -12,6 +12,6 @@ Apply the applicable rules-first model-routing governance and project overrides.
 
 Website editorial requirements: use direct journalistic headlines and prose. Every public story and investigation must have inspected, working source references in an expandable section and a relevant sourced image with credit, caption and reuse terms. Keep unsupported leads in the research queue. Run scripts/verify_public_sources.py before publishing source changes, then validate and test. Product planning is local-only in private/internal/PRODUCT_ROADMAP.md; do not generate a public planning page or promote unreleased features.
 
-Navigation: Investigations is the landing page. Keep individual stories under their investigation files; do not recreate separate Home, Reporting or Timeline indexes. Methods and About belong in the footer, not the top menu.
+Navigation: Watch List is the landing page, with published reports on the page and a sticky horizontal timeline to story anchors. No top menu. Preserve individual story/share URLs; do not recreate separate Home, Reporting or Timeline indexes. Methods and About belong in the footer.
 
 Publication brand: Doomsday Watch. Masthead descriptor: Government Preparations, Military Readiness, Civil Resilience. Use the current name in public titles, bylines, feed metadata and share cards.

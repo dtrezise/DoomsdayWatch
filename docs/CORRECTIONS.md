@@ -13,3 +13,7 @@ Record material evidence qualifications and analytical revisions using stable cl
 
 | R007 | 2026-11-02 | Dragon Covenant source access | Accessible reproduced account S035 inspected; original S008 still fails retrieval | F011 confirms document content only; C006 capacity claim remains unverified. Copies share one origin; reproduced page dates Oct22 versus indexed Army Oct26. |
 | R008 | 2026-11-02 | Cyber Shield image dating | Source date-taken metadata and caption disagree on month | S036 imagery caption uses 2025 only and identifies training, not an actual intrusion. |
+
+| R009 | 2026-11-02 | Mar-a-Lago source gap | Full-text command/USSS responses in S042 inspected; C008 becomes partially verified | Added ground-based and counter-drone capability acknowledged; exact installation date/type and wider-threat inference remain separate. F012 cites atomic C045–C047/C055. |
+| R010 | 2026-11-02 | Command-aircraft simultaneity | S048 describes one earlier colored track and one current track | A screenshot with both paths does not independently establish simultaneous aircraft or an abnormal surge. F015 retains attributed sightings and missing baseline. |
+| R011 | 2026-11-02 | Billionaire shelter and retreat interpretation | S045/S046 area estimates differ; S047 describes an existing Buenos Aires home | Original plan versions not independently compared. New Argentine bunker construction and a coordinated private-preparedness surge remain unverified. |
