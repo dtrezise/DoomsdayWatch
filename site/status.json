@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-11-02T18:05:46.470366+00:00",
+  "checked_at": "2026-11-03T13:31:33.640909+00:00",
   "stale_after_hours": 36,
   "items": [
     {
@@ -8,35 +8,35 @@
       "label": "Doomsday Clock",
       "value": "85 seconds",
       "state": "verified",
-      "checked_at": "2026-11-02T18:05:46.470366+00:00",
+      "checked_at": "2026-11-03T13:31:33.640909+00:00",
       "source_url": "https://thebulletin.org/doomsday-clock/",
       "source_refs": [
         "https://thebulletin.org/doomsday-clock/"
       ],
-      "note": "Symbolic setting \u00b7 Bulletin of the Atomic Scientists",
+      "note": "Symbolic setting · Bulletin of the Atomic Scientists",
       "attempts": [
         {
           "url": "https://thebulletin.org/doomsday-clock/",
           "outcome": "retrieved",
-          "sha256": "77d34e872d01a75b26007c51eee4b8dba6df557db0541537220d3336f46d3cd9",
+          "sha256": "a187eb058782f5240f9c85bd119391be855457fca1eb767e1767c6bad04b9fb8",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-02T18:05:46.470366+00:00",
-      "sha256": "77d34e872d01a75b26007c51eee4b8dba6df557db0541537220d3336f46d3cd9"
+      "verified_at": "2026-11-03T13:31:33.640909+00:00",
+      "sha256": "a187eb058782f5240f9c85bd119391be855457fca1eb767e1767c6bad04b9fb8"
     },
     {
       "id": "dhs",
       "label": "US Homeland Security",
       "value": "No active advisory",
       "state": "verified",
-      "checked_at": "2026-11-02T18:05:46.470366+00:00",
+      "checked_at": "2026-11-03T13:31:33.640909+00:00",
       "source_url": "https://www.dhs.gov/ntas/1.1/feed.xml",
       "source_refs": [
         "https://www.dhs.gov/national-terrorism-advisory-system",
         "https://www.dhs.gov/ntas/1.1/feed.xml"
       ],
-      "note": "DHS NTAS \u00b7 explicit current-source statement; not a general threat all-clear; official XML feed also checked.",
+      "note": "DHS NTAS · explicit current-source statement; not a general threat all-clear; official XML feed also checked.",
       "attempts": [
         {
           "url": "https://www.dhs.gov/ntas/1.1/feed.xml",
@@ -47,10 +47,10 @@
         {
           "url": "https://www.dhs.gov/national-terrorism-advisory-system",
           "outcome": "retrieved",
-          "sha256": "6de556f246e3b0f7b8c354294bc6e05a75b142caa9ce6ae390d7e3e79a021050"
+          "sha256": "eadd3eac15042c31a8539cef2f7fa94c056a00c3cd17d2741658a24cb7216fe8"
         }
       ],
-      "verified_at": "2026-11-02T18:05:46.470366+00:00",
+      "verified_at": "2026-11-03T13:31:33.640909+00:00",
       "sha256": "73dd2580819e216684b5b3539ac8c12e98cba1a35de8b60cac51acd5717a268b",
       "advisories": [],
       "expired_entries": 0,
@@ -61,39 +61,39 @@
       "label": "Europe / United Kingdom",
       "value": "SEVERE",
       "state": "verified",
-      "checked_at": "2026-11-02T18:05:46.470366+00:00",
+      "checked_at": "2026-11-03T13:31:33.640909+00:00",
       "source_url": "https://www.gov.uk/terrorism-national-emergency",
       "source_refs": [
         "https://www.gov.uk/terrorism-national-emergency"
       ],
-      "note": "UK terrorism \u00b7 JTAC / official government publication",
+      "note": "UK terrorism · JTAC / official government publication",
       "attempts": [
         {
           "url": "https://www.gov.uk/terrorism-national-emergency",
           "outcome": "retrieved",
-          "sha256": "4a9d9541d881dedc5ffee0e9407e3f0447f424b912f19e1d4b1a5ad26a6a5c3d",
+          "sha256": "54fd7634eb366aa0cfcea679ed3824284587781b4ae1e8681947e72929d485a3",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-02T18:05:46.470366+00:00",
-      "sha256": "4a9d9541d881dedc5ffee0e9407e3f0447f424b912f19e1d4b1a5ad26a6a5c3d"
+      "verified_at": "2026-11-03T13:31:33.640909+00:00",
+      "sha256": "54fd7634eb366aa0cfcea679ed3824284587781b4ae1e8681947e72929d485a3"
     },
     {
       "id": "france",
       "label": "Europe / France",
-      "value": "Vigilance renforc\u00e9e",
+      "value": "Vigilance renforcée",
       "state": "verified",
-      "checked_at": "2026-11-02T18:05:46.470366+00:00",
+      "checked_at": "2026-11-03T13:31:33.640909+00:00",
       "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
       "source_refs": [
         "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger"
       ],
-      "note": "France Vigipirate \u00b7 national posture explicitly stated by the Foreign Ministry; publication 2026-09-10. This dated fallback is reviewed after 90 days.",
+      "note": "France Vigipirate · national posture explicitly stated by the Foreign Ministry; publication 2026-09-10. This dated fallback is reviewed after 90 days.",
       "attempts": [
         {
           "url": "https://www.sgdsn.gouv.fr/vigipirate",
           "outcome": "source_blocked",
-          "sha256": "ce406c929fc06fec6959fd1e628fe01fb5b19f9c74e258fa67c167f6312d2ee8",
+          "sha256": "ffbcaf05a74291eb03689400e424e2a78c8aa4bcc04fab1866b7d1ed5e3b3379",
           "reason": "Public source returned a security/interstitial page"
         },
         {
@@ -103,7 +103,7 @@
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-02T18:05:46.470366+00:00",
+      "verified_at": "2026-11-03T13:31:33.640909+00:00",
       "sha256": "8254ff7532bdb803aa48be82a1a475748a444e850d033b173e71147bd8adcbd5",
       "source_date": "2026-09-10",
       "review_due": "2026-12-09T00:00:00+00:00"
