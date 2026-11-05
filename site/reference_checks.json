@@ -314,14 +314,14 @@
   {
     "source_id": "S038",
     "url": "https://thebulletin.org/doomsday-clock/",
-    "checked_at": "2026-11-02T18:34:39.051417+00:00",
+    "checked_at": "2026-11-05T13:29:59.285455+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://thebulletin.org/doomsday-clock/",
     "media_type": "text/html",
-    "sha256": "b4b664fc71fad742d736137da4f3d7d62fc30f66a98f96efca36b6e3cc7c7c42",
-    "capture_id": "CAP-8e97674beebb4504bca9e7c3b25bb429"
+    "sha256": "688afa473976587129b4e190bd17c4c86050849416ac71d263d85bdae7a7684f",
+    "capture_id": "CAP-857807784d44400b889d2154ce92bb3a"
   },
   {
     "source_id": "S039",
@@ -338,14 +338,14 @@
   {
     "source_id": "S040",
     "url": "https://www.gov.uk/terrorism-national-emergency",
-    "checked_at": "2026-11-02T18:34:39.495359+00:00",
+    "checked_at": "2026-11-05T13:29:59.291428+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/terrorism-national-emergency",
     "media_type": "text/html",
-    "sha256": "efc41b6288d15ebb93afb785edcceb57641e300189c9e08ce65d00be26ebb3c0",
-    "capture_id": "CAP-92c5c9992e784d97ae76e958e4d1085c"
+    "sha256": "14c91e100419c7dbe5029d019ad43d0f0ec42d0554c3a77c9aea038f5820de03",
+    "capture_id": "CAP-c93c5519715f4fbab62b578464f06f1a"
   },
   {
     "source_id": "S042",
@@ -494,26 +494,26 @@
   {
     "source_id": "S056",
     "url": "https://www.dhs.gov/ntas/1.1/feed.xml",
-    "checked_at": "2026-11-02T18:34:40.907933+00:00",
+    "checked_at": "2026-11-05T13:30:01.183837+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dhs.gov/ntas/1.1/feed.xml",
     "media_type": "application/rss+xml",
     "sha256": "73dd2580819e216684b5b3539ac8c12e98cba1a35de8b60cac51acd5717a268b",
-    "capture_id": "CAP-7639b10c121c45498cc575c2b290bd08"
+    "capture_id": "CAP-04f1516c682c4a77b5ba06841e1885b0"
   },
   {
     "source_id": "S058",
     "url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
-    "checked_at": "2026-11-02T18:34:41.043580+00:00",
+    "checked_at": "2026-11-05T13:30:01.244403+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
     "media_type": "text/html",
     "sha256": "8254ff7532bdb803aa48be82a1a475748a444e850d033b173e71147bd8adcbd5",
-    "capture_id": "CAP-a235bdc765f14c55a533a0d0e520d374"
+    "capture_id": "CAP-e52db72fe42d478c9b32bc1d959b5cd7"
   },
   {
     "source_id": "S062",
