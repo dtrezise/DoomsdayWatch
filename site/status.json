@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-11-06T18:35:30.300020+00:00",
+  "checked_at": "2026-11-07T13:34:09.703097+00:00",
   "stale_after_hours": 36,
   "items": [
     {
@@ -8,7 +8,7 @@
       "label": "Doomsday Clock",
       "value": "85 seconds",
       "state": "verified",
-      "checked_at": "2026-11-06T18:35:30.300020+00:00",
+      "checked_at": "2026-11-07T13:34:09.703097+00:00",
       "source_url": "https://thebulletin.org/doomsday-clock/",
       "source_refs": [
         "https://thebulletin.org/doomsday-clock/"
@@ -18,19 +18,19 @@
         {
           "url": "https://thebulletin.org/doomsday-clock/",
           "outcome": "retrieved",
-          "sha256": "75dfec4c80e667330bff199ddf054076b96ac82b7828c5adfe1ab76cfac6ae31",
+          "sha256": "2a31144987b6887424efc74f857ad3bb7b203b29d284f54a928ba4c7cb3b67e1",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-06T18:35:30.300020+00:00",
-      "sha256": "75dfec4c80e667330bff199ddf054076b96ac82b7828c5adfe1ab76cfac6ae31"
+      "verified_at": "2026-11-07T13:34:09.703097+00:00",
+      "sha256": "2a31144987b6887424efc74f857ad3bb7b203b29d284f54a928ba4c7cb3b67e1"
     },
     {
       "id": "dhs",
       "label": "US Homeland Security",
       "value": "No active advisory",
       "state": "verified",
-      "checked_at": "2026-11-06T18:35:30.300020+00:00",
+      "checked_at": "2026-11-07T13:34:09.703097+00:00",
       "source_url": "https://www.dhs.gov/ntas/1.1/feed.xml",
       "source_refs": [
         "https://www.dhs.gov/national-terrorism-advisory-system",
@@ -47,10 +47,10 @@
         {
           "url": "https://www.dhs.gov/national-terrorism-advisory-system",
           "outcome": "retrieved",
-          "sha256": "10100ba343d4469948216a5e4c0880edd145e04790c67a7341c02258acb1994d"
+          "sha256": "2b2fa9cf155ca5e2883e6b33a5153431cec1afeaf67559f7f0fbc89ca3dc0a54"
         }
       ],
-      "verified_at": "2026-11-06T18:35:30.300020+00:00",
+      "verified_at": "2026-11-07T13:34:09.703097+00:00",
       "sha256": "73dd2580819e216684b5b3539ac8c12e98cba1a35de8b60cac51acd5717a268b",
       "advisories": [],
       "expired_entries": 0,
@@ -61,7 +61,7 @@
       "label": "Europe / United Kingdom",
       "value": "SEVERE",
       "state": "verified",
-      "checked_at": "2026-11-06T18:35:30.300020+00:00",
+      "checked_at": "2026-11-07T13:34:09.703097+00:00",
       "source_url": "https://www.gov.uk/terrorism-national-emergency",
       "source_refs": [
         "https://www.gov.uk/terrorism-national-emergency"
@@ -71,19 +71,19 @@
         {
           "url": "https://www.gov.uk/terrorism-national-emergency",
           "outcome": "retrieved",
-          "sha256": "d5616bebb9b09405f99578f4d4fd88ca08a8ec83de6ab94a985f5f4084109640",
+          "sha256": "7bf7572d3ad97b039f7bdfc7838370535205bcc56c40a94646894a86386d4a2e",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-06T18:35:30.300020+00:00",
-      "sha256": "d5616bebb9b09405f99578f4d4fd88ca08a8ec83de6ab94a985f5f4084109640"
+      "verified_at": "2026-11-07T13:34:09.703097+00:00",
+      "sha256": "7bf7572d3ad97b039f7bdfc7838370535205bcc56c40a94646894a86386d4a2e"
     },
     {
       "id": "france",
       "label": "Europe / France",
       "value": "Vigilance renforcée",
       "state": "verified",
-      "checked_at": "2026-11-06T18:35:30.300020+00:00",
+      "checked_at": "2026-11-07T13:34:09.703097+00:00",
       "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
       "source_refs": [
         "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger"
@@ -93,7 +93,7 @@
         {
           "url": "https://www.sgdsn.gouv.fr/vigipirate",
           "outcome": "source_blocked",
-          "sha256": "fe06b167d9abda410ccef57cc10aa3b9c1621beda89e7d65cad1da8205d8081b",
+          "sha256": "86221ad37cc38273fd65054c354b6e4cbb32959d948b7ab17ac2c757ebe7c798",
           "reason": "Public source returned a security/interstitial page"
         },
         {
@@ -103,7 +103,7 @@
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-06T18:35:30.300020+00:00",
+      "verified_at": "2026-11-07T13:34:09.703097+00:00",
       "sha256": "812ab38fac05a054f32382cb89f1ae028ce937463e5661b7551a28387bf8f13a",
       "source_date": "2026-09-10",
       "review_due": "2026-12-09T00:00:00+00:00"
