@@ -65,3 +65,22 @@ V071,2026-11-02,S058,Inspect explicit dated national French posture,full_text,Pr
 V072,2026-11-02,S059,Inspect official alternative XML endpoint,full_text,Do not automatically interpret reference-only active entries without complete metadata
 V073,2026-11-02,S060,Inspect returned response and web-tool challenge page,security_interstitial_http_200,Use an inspected official fallback; do not bypass the validation challenge
 V074,2026-11-02,S039,Compare explicit no-current-advisories sentence with empty XML feed,full_text,Retain feed-only scope when the human-readable page is blocked
+V075,2026-11-09,S067,Inspect primary document and capture original response,full_text,Annual register entries by issuance date. Multiple named orders can share an entry. Register count does not measure outage events.
+V076,2026-11-09,S068,Inspect primary document and capture original response,full_text,Annual register entries by issuance date. Multiple named orders can share an entry. Register count does not measure outage events.
+V077,2026-11-09,S069,Inspect primary document and capture original response,full_text,Annual register entries by issuance date. Multiple named orders can share an entry. Register count does not measure outage events.
+V078,2026-11-09,S070,Inspect primary document and capture original response,full_text,Annual register entries by issuance date. Multiple named orders can share an entry. Register count does not measure outage events.
+V079,2026-11-09,S071,Inspect primary document and capture original response,full_text,March 5 orbital update supersedes the prior 4.3% lunar estimate for this object and date.
+V080,2026-11-09,S072,Inspect primary document and capture original response,full_text,Same joint assessment as S034. Summary distinguishes observed IT compromises from assessed intent to disrupt operational technology.
+V081,2026-11-09,S073,Inspect primary document in browser text,full_text,Figure 3: replacement obligations by appropriation cohort as of November 12 2024. Direct PDF download returned 403 while browser text was accessible. No byte capture.
+V082,2026-11-09,S074,Inspect primary document in browser text,full_text,September 12–13 meeting minutes describe ongoing H5N1 vaccine fill. Direct download returned 403 while browser text was accessible. No byte capture.
+V083,2026-11-09,S075,Inspect primary document and capture original response,full_text,Dated IMO conflict and transit context with bounded estimates. Does not supply insurance quotes or a matched transit time series.
+V084,2026-11-09,S076,Inspect primary document and capture original response,full_text,Official allegation of laser activity during a later Yantar monitoring episode. Same ministry as January reporting and no independent technical record.
+V085,2026-11-09,S077,Inspect primary document and capture original response,full_text,"Use DATES and operative provisions for 2025. Discussion contains an inconsistent March 19 2024 reference. Rule establishes legal authority, not number of patrol vessels."
+V086,2026-11-09,S078,Inspect primary document and capture original response,full_text,NATO-reported Europe-wide scrambles to intercept approaching aircraft. Not a count of territorial violations or a matched Estonia series.
+V087,2026-11-09,S008,Retry Army AMP original,http_404,Keep C006 unverified. Seek original or exercise after-action documentation.
+V088,2026-11-09,S034,Recheck advisory HTML after November 5 access failure and compare with PDF S072,full_text,Both refer to the same advisory. Preserve the earlier 403 as a retrieval failure.
+V089,2026-11-09,S073,Attempt direct original PDF capture,http_403,Inspected browser text retained as verification basis. No original bytes imported.
+V090,2026-11-09,S074,Attempt direct original PDF capture,http_403,Inspected browser text retained as verification basis. No original bytes imported.
+V091,2026-11-09,S079,Inspect company press release and preserve PDF,full_text,"Verify independent award, obligations, deliveries and FDA authorization"
+V092,2026-11-09,S080,Retrieve original memorandum,http_403,Seek inspectable official document and verify reported endurance target separately
+V093,2026-11-09,S081,Retrieve official Fujian follow-up,tls_hostname_mismatch,Web fetch also timed out. Keep as lead only

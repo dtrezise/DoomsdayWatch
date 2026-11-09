@@ -22,6 +22,9 @@ Record material evidence qualifications and analytical revisions using stable cl
 
 | R013 | 2026-11-02 | Local versus hosted source access | Deployed run 41498416352 received 403 from every DHS candidate while local official retrieval succeeded | Push builds preserve reviewed local snapshots. Daily local fallback supplements remote checks; failed updates retain qualified, timestamped last-verified readings and original expiration limits. |
 
+| R014 | 2026-11-09 | DOE emergency order comparison | Matched January–October DOE registers list 1, 1, 11 and 65 order documents for 2023–2026 | The 2025 register has nine entries covering eleven orders. The counts include extensions and repeat facilities. Distinct grid emergencies and actual dispatch remain unmeasured. See S067–S070 and the [row-level audit](https://github.com/dtrezise/DoomsdayWatch/blob/main/evidence/doe_202c_register_jan_oct_2023_2026.csv). |
+| R015 | 2026-11-09 | Asteroid 2024 YR4 lunar encounter | NASA's March 5, 2026 update ruled out the December 2032 lunar impact | The new Webb observations supersede the earlier lunar estimate for this object and encounter. [NASA update](https://science.nasa.gov/blogs/planetary-defense/2026/03/05/new-nasa-asteroid-observations-eliminate-chance-of-2032-lunar-impact/). |
+
 ### November 2, 2026 — Public alert scope
 
 Removed the non-reading DEFCON placeholder from public indicators and future collection. Added inspected official warning-system references for the United States, Japan, South Korea and Shanghai, with explicit limits on geography, archival delay and live access. No current national warning state is inferred from these directory entries.

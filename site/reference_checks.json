@@ -266,14 +266,14 @@
   {
     "source_id": "S034",
     "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a",
-    "checked_at": "2026-11-02T18:34:38.372067+00:00",
+    "checked_at": "2026-11-09T14:04:46.255954+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a",
     "media_type": "text/html",
-    "sha256": "7551b4ac23f26625427783bdfd023d443e09ea6983647873e33865935b927f4e",
-    "capture_id": "CAP-133feba1fa11420cbd99ca88ede69e12"
+    "sha256": "7093eb15e8859a7cd8b8ad7f126e51bf8b3d713dc48ac31d371c1f619bdd8623",
+    "capture_id": "CAP-c3c8031aa2b84c6e8fecc60b020afa02"
   },
   {
     "source_id": "S035",
