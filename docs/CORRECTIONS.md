@@ -28,3 +28,7 @@ Record material evidence qualifications and analytical revisions using stable cl
 ### November 2, 2026 — Public alert scope
 
 Removed the non-reading DEFCON placeholder from public indicators and future collection. Added inspected official warning-system references for the United States, Japan, South Korea and Shanghai, with explicit limits on geography, archival delay and live access. No current national warning state is inferred from these directory entries.
+
+### November 16, 2026 — Dragon Covenant primary record
+
+The official unit article and matching photograph are now accessible through DVIDS. F011 cites these records. The earlier reproduced account shares the author and upstream origin. C006 remains unverified pending independent evidence of sustained capacity. [Unit article](https://www.dvidshub.net/news/printable/577612) · [Image record](https://www.dvidshub.net/image/10039783/army-tests-battlefield-temporary-interment).

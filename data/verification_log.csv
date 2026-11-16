@@ -84,3 +84,7 @@ V090,2026-11-09,S074,Attempt direct original PDF capture,http_403,Inspected brow
 V091,2026-11-09,S079,Inspect company press release and preserve PDF,full_text,"Verify independent award, obligations, deliveries and FDA authorization"
 V092,2026-11-09,S080,Retrieve original memorandum,http_403,Seek inspectable official document and verify reported endurance target separately
 V093,2026-11-09,S081,Retrieve official Fujian follow-up,tls_hostname_mismatch,Web fetch also timed out. Keep as lead only
+V094,2026-11-16,S082,Inspect official unit publication and capture HTML,full_text,Keep exercise account and projected throughput distinct
+V095,2026-11-16,S083,Inspect official photo caption and VIRIN,full_text,Use primary image provenance and existing reuse policy
+V096,2026-11-16,S084,Inspect November11 statement and capture HTML,full_text,Obtain event-level incident log and denominator before rate comparison
+V097,2026-11-16,S085,Inspect historical GAO product summary,full_text,PDF capture returned403; keep byte-capture limits explicit

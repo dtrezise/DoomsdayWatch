@@ -2,577 +2,601 @@
   {
     "source_id": "S002",
     "url": "https://www.gov.uk/government/news/households-encouraged-to-take-small-simple-steps-to-stay-prepared-in-an-emergency",
-    "checked_at": "2026-11-02T18:34:35.425927+00:00",
+    "checked_at": "2026-11-16T13:58:59.107466+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/news/households-encouraged-to-take-small-simple-steps-to-stay-prepared-in-an-emergency",
     "media_type": "text/html",
-    "sha256": "16fc112090f12650925ed9f27e007224fa633f09b39438fec09f97cd7d2426ee",
-    "capture_id": "CAP-facabea6eea2479fa4e3d4d7df0043cb"
+    "sha256": "8e282a90b36178d4ba974b87596889810f779759d72ae389bfffbe515c9c16f4",
+    "capture_id": "CAP-472b0308ed9548f1b7887db649d3a188"
   },
   {
     "source_id": "S003",
     "url": "https://commission.europa.eu/topics/preparedness_en",
-    "checked_at": "2026-11-02T18:34:35.426531+00:00",
+    "checked_at": "2026-11-16T13:58:59.107880+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://commission.europa.eu/topics/preparedness_en",
     "media_type": "text/html",
-    "sha256": "5ff2e1f4e022c844aafdb7c89ebadc0ce20fd8fa9c9a0e320dc431fe5a0fc104",
-    "capture_id": "CAP-9c9c44ef41764ed9a13b1b6b80ada27d"
+    "sha256": "b861182a252fb461fc2b69f45e1c0dc78ae87aa7c46e9447d63b46fa6314ef26",
+    "capture_id": "CAP-98f13e5fdc1e445f996102551f842040"
   },
   {
     "source_id": "S004",
     "url": "https://www.gov.uk/government/speeches/deputy-prime-minister-speech-on-resilience-22-may-2024",
-    "checked_at": "2026-11-02T18:34:35.426679+00:00",
+    "checked_at": "2026-11-16T13:58:59.108063+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/speeches/deputy-prime-minister-speech-on-resilience-22-may-2024",
     "media_type": "text/html",
-    "sha256": "0083084c3f74ca057dfec0592961b4545b1e5957a252630cfd9fcc4633c9f403",
-    "capture_id": "CAP-bf697bc469b343978fc046d51a32af61"
+    "sha256": "0ccbc90711d15b20f68471a3409d01ca5eb1640ace8e8775cd4dcf89a8234cf8",
+    "capture_id": "CAP-621aba32122f4d74a7be2ee2d1c9688a"
   },
   {
     "source_id": "S006",
     "url": "https://www.nato.int/en/news-and-events/articles/news/2024/01/24/natos-largest-exercise-in-decades-steadfast-defender-gets-underway",
-    "checked_at": "2026-11-02T18:34:35.426810+00:00",
+    "checked_at": "2026-11-16T13:58:59.108241+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.nato.int/en/news-and-events/articles/news/2024/01/24/natos-largest-exercise-in-decades-steadfast-defender-gets-underway",
     "media_type": "text/html",
-    "sha256": "a99c6dc3931d4f3d800b0061bfd053c77081229b49031c0008112291ef04b01b",
-    "capture_id": "CAP-484923a7e65745559220931e70912949"
+    "sha256": "ec259fba429759d7a7722fc25be8a01adf4a9fa284dda89b40218b39d7775b14",
+    "capture_id": "CAP-25f0231aa3e14996ac2b944a880e4fed"
   },
   {
     "source_id": "S007",
     "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-03/pdf/2026-18008.pdf",
-    "checked_at": "2026-11-02T18:34:35.817777+00:00",
+    "checked_at": "2026-11-16T13:58:59.519241+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.govinfo.gov/content/pkg/FR-2026-09-03/pdf/2026-18008.pdf",
     "media_type": "application/pdf",
     "sha256": "a2703df3690d9a25e416f40845dfba23534fa7da4e19c561b10699a800fa0b7b",
-    "capture_id": "CAP-0931c560534141c5b8679024990ed469"
+    "capture_id": "CAP-e80c9c89efaf4a488f5c0f5d6ff1fdff"
   },
   {
     "source_id": "S015",
     "url": "https://beready.campaign.gov.uk/",
-    "checked_at": "2026-11-02T18:34:35.833475+00:00",
+    "checked_at": "2026-11-16T13:58:59.794335+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://beready.campaign.gov.uk/",
     "media_type": "text/html",
-    "sha256": "7083d27b52324a83a2fad55427a9dac1fc00edcf983238265ebbdc6dfa365d50",
-    "capture_id": "CAP-65ec1c9c426b463eaf724f4b3f918c6f"
+    "sha256": "39f7d48fd9c937f791225546c20bfa72a1b02b77498ad35016a1c8d807945566",
+    "capture_id": "CAP-dce0d53a886c4850a531fb0c9e649a12"
   },
   {
     "source_id": "S016",
     "url": "https://www.dvidshub.net/image/8248611/uss-gunston-hall-arrives-harstad-norway-support-steadfast-defender-24",
-    "checked_at": "2026-11-02T18:34:36.107304+00:00",
+    "checked_at": "2026-11-16T13:58:59.928834+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/8248611/uss-gunston-hall-arrives-harstad-norway-support-steadfast-defender-24",
     "media_type": "text/html",
-    "sha256": "c4a83054b7aae4b4c096ee876d4f7b745dbc99533541936f6b3f25b7c516c7e3",
-    "capture_id": "CAP-f34c0659824c468a82dc06991824ff4e"
+    "sha256": "69f00d7f85122431031dba66fb30936664e268986377edd76e934aa642183e43",
+    "capture_id": "CAP-1a468fa3eff64e7998bbfd26ea256dae"
   },
   {
     "source_id": "S017",
     "url": "https://www.dvidshub.net/image/9036950/combat-medic-qualification-course-field-phase-day-4",
-    "checked_at": "2026-11-02T18:34:36.110924+00:00",
+    "checked_at": "2026-11-16T13:59:00.147021+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/9036950/combat-medic-qualification-course-field-phase-day-4",
     "media_type": "text/html",
-    "sha256": "e0ec5ac7a707534b9d157ebdfa86e7f16d03397e0fe198b789ac93de99d60340",
-    "capture_id": "CAP-fdb6c89bf9f347ad8d0f9f4928d674f3"
+    "sha256": "2533fdc774bf7120c1a065138cf88d327ce554eb0de8f7aa49614de07a61aa9a",
+    "capture_id": "CAP-95dbe03efebe43aea590acfa0786966b"
   },
   {
     "source_id": "S018",
     "url": "https://commission.europa.eu/legal-notice_en",
-    "checked_at": "2026-11-02T18:34:36.514398+00:00",
+    "checked_at": "2026-11-16T13:59:00.171613+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://commission.europa.eu/legal-notice_en",
     "media_type": "text/html",
-    "sha256": "12b893cdf2ebbd3b96e2c32063db530884cede4cda151b59737c01179fe8461c",
-    "capture_id": "CAP-26deb8b6e15c495aad278c48c0b3493a"
+    "sha256": "b4087d35dde8753c90d912eaaec0681cbde70b53d9c7e82113e9a539fea65724",
+    "capture_id": "CAP-6aa64b371137497d98b21a54310e981f"
   },
   {
     "source_id": "S019",
     "url": "https://www.dvidshub.net/about/copyright",
-    "checked_at": "2026-11-02T18:34:36.518108+00:00",
+    "checked_at": "2026-11-16T13:59:00.312486+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/about/copyright",
     "media_type": "text/html",
-    "sha256": "f6f604dbdd67ed405a791376e2bbf7ca4307785491b64fe6bfab894a999d8695",
-    "capture_id": "CAP-67845ae634854e9880855c1d9d7edc67"
+    "sha256": "8dbda4d2cd4fa1b8c70be60cfa9311683dba140a0abce0871dda479093d5a5d2",
+    "capture_id": "CAP-1466a9dc32ba4a5984ec88f4155dae6c"
   },
   {
     "source_id": "S020",
     "url": "https://www.gov.uk/help/reuse-govuk-content",
-    "checked_at": "2026-11-02T18:34:36.628792+00:00",
+    "checked_at": "2026-11-16T13:59:00.355050+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/help/reuse-govuk-content",
     "media_type": "text/html",
-    "sha256": "ce18c2d4c1b99786f65638fc57bbc1cdd950c4c073266f766b4d821b51d70d5f",
-    "capture_id": "CAP-1f5ddfb872834ffc8746b1d67cc4396a"
+    "sha256": "e1961287db8c122f94c60991e7e353c17723c81b66b1c011f3f0c1a4c5b5f912",
+    "capture_id": "CAP-21073fb771df43b3a67e4c62e72c23c3"
   },
   {
     "source_id": "S021",
     "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/09/15/2026-resilience-baseline-requirements",
-    "checked_at": "2026-11-02T18:34:36.687087+00:00",
+    "checked_at": "2026-11-16T13:59:00.427422+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/09/15/2026-resilience-baseline-requirements",
     "media_type": "text/html",
-    "sha256": "f95c09c8d2dcf4ce458a2aa31608f50536d840b062ee1fcfed71f445b383d2ae",
-    "capture_id": "CAP-4985b3c299fb4af1b2fdf2deed06bb43"
+    "sha256": "af3dbf7392a728df6b8751fb18bbbe25f5590c3033e31420d434fce5d61c7e31",
+    "capture_id": "CAP-74841b30a7e3452d9945caf549386002"
   },
   {
     "source_id": "S022",
     "url": "https://nato.int/en/about-us/official-texts-and-resources/official-texts/2023/07/11/vilnius-summit-communique",
-    "checked_at": "2026-11-02T18:34:36.723490+00:00",
+    "checked_at": "2026-11-16T13:59:00.495509+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://nato.int/en/about-us/official-texts-and-resources/official-texts/2023/07/11/vilnius-summit-communique",
     "media_type": "text/html",
-    "sha256": "e402743fc2d5d266de1f48b200fdd97e8deb95b717c8011dad93efe5a0fdf692",
-    "capture_id": "CAP-7be89f667c5149bcbf97349ddeef016e"
+    "sha256": "110895fd58ec46c684e7954911a3f575a2326d67bab3e9d1a23b12917a35e26b",
+    "capture_id": "CAP-ab7220d012ff43cfaa8d43f28c145942"
   },
   {
     "source_id": "S023",
     "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/washington-summit-declaration",
-    "checked_at": "2026-11-02T18:34:36.841549+00:00",
+    "checked_at": "2026-11-16T13:59:00.501750+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/washington-summit-declaration",
     "media_type": "text/html",
-    "sha256": "10f6b7cfa1ceb9111aef81895e974186b6a554b2055139fae7f529f47064f4c4",
-    "capture_id": "CAP-a24c998473d74478898949d7d4a76382"
+    "sha256": "f877fbc00dedb57b0117d6f5bde5f639a440ad74d27355d44b0da73488d439f2",
+    "capture_id": "CAP-73159f687daf423b956a46799122594a"
   },
   {
     "source_id": "S024",
     "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration",
-    "checked_at": "2026-11-02T18:34:36.928203+00:00",
+    "checked_at": "2026-11-16T13:59:01.049653+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration",
     "media_type": "text/html",
-    "sha256": "9dadefcef786d5d640afacb74ea9afc62d765641b6949fa92a3b1fa469308c17",
-    "capture_id": "CAP-9ab84bdae68c4b79b76071b0ad66084b"
+    "sha256": "52e88fde6f7d439ea11ba198ac8fbfa32242a422ece0840d4f6c0c375452996b",
+    "capture_id": "CAP-a566792ad1904de7b3652444b258f812"
   },
   {
     "source_id": "S027",
     "url": "https://mil.ee/en/news/russian-federation-aircraft-violated-estonian-airspace/",
-    "checked_at": "2026-11-02T18:34:37.130982+00:00",
+    "checked_at": "2026-11-16T13:59:01.468713+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://mil.ee/en/news/russian-federation-aircraft-violated-estonian-airspace/",
     "media_type": "text/html",
-    "sha256": "434e3e3e3164baedef766900ead2e29359d8d9bfe4f4343d2a1b9651571646ce",
-    "capture_id": "CAP-00de5d43781d4f43a6bf441250f6cc32"
+    "sha256": "731435c6084978fa1d17f2138b084c918310d5a0b65233f108e5763259546ad0",
+    "capture_id": "CAP-e01131e8dd794daebf988cdd54903e93"
   },
   {
     "source_id": "S028",
     "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/09/23/statement-by-the-north-atlantic-council-on-recent-airspace-violations-by-russia",
-    "checked_at": "2026-11-02T18:34:37.659673+00:00",
+    "checked_at": "2026-11-16T13:59:01.988002+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/09/23/statement-by-the-north-atlantic-council-on-recent-airspace-violations-by-russia",
     "media_type": "text/html",
-    "sha256": "b6cef10db1dc82a39421259ba0542a0d64ed6cb6824d24ad516cd1464bd34aa2",
-    "capture_id": "CAP-39908ce5ee4c4282a605902ab929c6ff"
+    "sha256": "94360195315ae88985172ef6670632aa28d90680c65a42554efa693f3aeb13e9",
+    "capture_id": "CAP-b6962b428e134488ae598e2a086f3f90"
   },
   {
     "source_id": "S029",
     "url": "https://www.gov.uk/government/news/royal-navy-tracking-russian-spy-vessel-in-the-channel-to-keep-uk-safe",
-    "checked_at": "2026-11-02T18:34:37.895806+00:00",
+    "checked_at": "2026-11-16T13:59:02.381908+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/news/royal-navy-tracking-russian-spy-vessel-in-the-channel-to-keep-uk-safe",
     "media_type": "text/html",
-    "sha256": "06bbb5eeadcff4c3ca9afd40e222f0b6d45a3c38ed58078a082825b18862e665",
-    "capture_id": "CAP-10e03aaed22942738cfb49454a50fde3"
+    "sha256": "a27010585fc2ea9a5e3fa9f66b9cb1b9110e64930ed14ab04a464a1ca05d4fcf",
+    "capture_id": "CAP-831e70f8ed53432a8bca3ade881db8a9"
   },
   {
     "source_id": "S030",
     "url": "https://www.gov.uk/government/speeches/defence-secretary-oral-statement-on-russian-maritime-activity-and-uk-response-22-january-2025",
-    "checked_at": "2026-11-02T18:34:38.041908+00:00",
+    "checked_at": "2026-11-16T13:59:02.476082+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/speeches/defence-secretary-oral-statement-on-russian-maritime-activity-and-uk-response-22-january-2025",
     "media_type": "text/html",
-    "sha256": "fdfb6312e1087c8eb72c454fe87227032e35971750536429c5bfc7497d42b423",
-    "capture_id": "CAP-30518736d3214ef4ba0b563ab385b7ea"
+    "sha256": "d73ba15bd53a9703f5cfa5bd1a50dda975e46852a42dfcce4334c4845ab51112",
+    "capture_id": "CAP-49f20ef24a5d4c5b8f20e26d25b55243"
   },
   {
     "source_id": "S031",
     "url": "https://www.mnd.gov.tw/en/informationservices/publication/84265",
-    "checked_at": "2026-11-02T18:34:38.306067+00:00",
+    "checked_at": "2026-11-16T13:59:02.600753+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.mnd.gov.tw/en/informationservices/publication/84265",
     "media_type": "text/html",
-    "sha256": "6ae5e2dfa73805d89e64d33eaf76c5910f4c128884cd7b455b71963cdbaf6727",
-    "capture_id": "CAP-1ecde3f2eb8c4a6580dd4adcd9e7a2f5"
+    "sha256": "e4cf5fe0f13c982e2184ff2f2ee4415797a42b02f56a64d6a59e516928b91561",
+    "capture_id": "CAP-78b75bdfa4434073b3e636c0aebffb37"
   },
   {
     "source_id": "S032",
     "url": "https://www.gov.uk/government/news/g7-foreign-ministers-statement-on-chinas-large-scale-military-drills-around-taiwan--2",
-    "checked_at": "2026-11-02T18:34:38.315031+00:00",
+    "checked_at": "2026-11-16T13:59:02.709007+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/government/news/g7-foreign-ministers-statement-on-chinas-large-scale-military-drills-around-taiwan--2",
     "media_type": "text/html",
-    "sha256": "bf6f572f0dfd2fe4a489b7bdf3d95b83c10feb78095871dc22c81ea384b0984f",
-    "capture_id": "CAP-a58a2211582e44b3b76f921750648d79"
+    "sha256": "0436f679daf0d106cf5e78cfa0adecc92b586262971c2cba7d65854aef7c7066",
+    "capture_id": "CAP-62150d72c58f4f32b01baa1ab2c3a420"
   },
   {
     "source_id": "S033",
     "url": "https://english.www.gov.cn/news/202511/07/content_WS690d990cc6d00ca5f9a0764d.html",
-    "checked_at": "2026-11-02T18:34:38.330061+00:00",
+    "checked_at": "2026-11-16T13:59:02.791320+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://english.www.gov.cn/news/202511/07/content_WS690d990cc6d00ca5f9a0764d.html",
     "media_type": "text/html",
     "sha256": "69abc6a73c2892010412cec2c69bbec24678bbde0c3f23e27e42b4d7bf95c9da",
-    "capture_id": "CAP-901204fb423447f7a62fa77943853106"
+    "capture_id": "CAP-c9687b6d0b774adf931ce29b22ae8252"
   },
   {
     "source_id": "S034",
     "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a",
-    "checked_at": "2026-11-09T14:04:46.255954+00:00",
+    "checked_at": "2026-11-16T13:59:02.911757+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a",
     "media_type": "text/html",
-    "sha256": "7093eb15e8859a7cd8b8ad7f126e51bf8b3d713dc48ac31d371c1f619bdd8623",
-    "capture_id": "CAP-c3c8031aa2b84c6e8fecc60b020afa02"
+    "sha256": "00a7f112c68904455ff736d5150aa647798f02165fff5f51dcd989545b86d2af",
+    "capture_id": "CAP-c1d7f6e5fb874598a7761e129f87ba43"
   },
   {
     "source_id": "S035",
     "url": "https://thatpaoguy.com/2026/10/22/army-tests-battlefield-temporary-interment-to-validate-remains-preservation-and-future-repatriation/",
-    "checked_at": "2026-11-02T18:34:38.621605+00:00",
+    "checked_at": "2026-11-16T13:59:02.988404+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://thatpaoguy.com/2026/10/22/army-tests-battlefield-temporary-interment-to-validate-remains-preservation-and-future-repatriation/",
     "media_type": "text/html",
-    "sha256": "89c8c5a64c547d9982883d834620ade3a5fc09b46eee6e9e21fcb46ffe3652d5",
-    "capture_id": "CAP-aee92e61ac424f858da4aabeec590f62"
+    "sha256": "18eb6b4d5745ea12bbef4e40d1840fe11c0aca35f77f0022314d7a603783045f",
+    "capture_id": "CAP-18782442ceef476a9f3e0101657d86af"
   },
   {
     "source_id": "S036",
     "url": "https://www.dvidshub.net/image/9107699/900-plus-take-part-virginia-guard-hosted-exercise-cyber-shield",
-    "checked_at": "2026-11-02T18:34:38.757679+00:00",
+    "checked_at": "2026-11-16T13:59:03.263884+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/9107699/900-plus-take-part-virginia-guard-hosted-exercise-cyber-shield",
     "media_type": "text/html",
-    "sha256": "f5c3b85053fd6f86d950ec8b4ce528c14617ef9117e111554a592a7f17f8b590",
-    "capture_id": "CAP-46422cfdca5845b891c1d1936776fa61"
+    "sha256": "89b74ebc5239139a0e3118077e04280fbb5ee15717fc57b2d8a4e98dd2bfa217",
+    "capture_id": "CAP-6e434ceeb7384333bd2e2a65c2a1e878"
   },
   {
     "source_id": "S037",
     "url": "https://creativecommons.org/licenses/by/4.0/",
-    "checked_at": "2026-11-02T18:34:38.944403+00:00",
+    "checked_at": "2026-11-16T13:59:03.537406+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://creativecommons.org/licenses/by/4.0/",
     "media_type": "text/html",
     "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01",
-    "capture_id": "CAP-993808b5a47b4ee8877603170cb69d9b"
+    "capture_id": "CAP-5dad35de7b614b0590ed9e885b7c7e1a"
   },
   {
     "source_id": "S038",
     "url": "https://thebulletin.org/doomsday-clock/",
-    "checked_at": "2026-11-06T18:36:10.684968+00:00",
+    "checked_at": "2026-11-16T13:59:03.710979+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://thebulletin.org/doomsday-clock/",
     "media_type": "text/html",
-    "sha256": "75dfec4c80e667330bff199ddf054076b96ac82b7828c5adfe1ab76cfac6ae31",
-    "capture_id": "CAP-c8d6346de847447e8b7ae7796aed3d93"
+    "sha256": "8f68725c445f66fabe3ef6ad3d4106ff83fbb9885d7217816f87d1c9a30472fb",
+    "capture_id": "CAP-b9354bab9f484dc3aacc757a6844f80e"
   },
   {
     "source_id": "S039",
     "url": "https://www.dhs.gov/national-terrorism-advisory-system",
-    "checked_at": "2026-11-06T18:36:10.712756+00:00",
+    "checked_at": "2026-11-16T13:59:03.867754+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dhs.gov/national-terrorism-advisory-system",
     "media_type": "text/html",
-    "sha256": "21db459342425787ed0063b1adc50a2f5a50ff436987d447cec39e53f5a7f673",
-    "capture_id": "CAP-b0d2c868411c44a891f573b4d862ef6f"
+    "sha256": "847ba77006a61fbc1093b2b3ff5b97a5cb798f43fd79d1160b168036bef874cf",
+    "capture_id": "CAP-fce0f51955a54bb7bed11fcd0fc44d4b"
   },
   {
     "source_id": "S040",
     "url": "https://www.gov.uk/terrorism-national-emergency",
-    "checked_at": "2026-11-06T18:36:11.086004+00:00",
+    "checked_at": "2026-11-16T13:59:04.127463+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.gov.uk/terrorism-national-emergency",
     "media_type": "text/html",
-    "sha256": "d5616bebb9b09405f99578f4d4fd88ca08a8ec83de6ab94a985f5f4084109640",
-    "capture_id": "CAP-566cd5ec63994583b7119a758f0b022b"
+    "sha256": "c853db2f7a9c873d344d8faf0acc0b215dfba6ed462971acaf395ae78ec2245b",
+    "capture_id": "CAP-2d3c70d11dd24a8fa2a0a5d70f00368c"
   },
   {
     "source_id": "S042",
     "url": "https://www.twz.com/land/avenger-assemble-surface-to-air-missiles-deployed-to-protect-trumps-mar-a-lago-estate",
-    "checked_at": "2026-11-02T18:34:39.513928+00:00",
+    "checked_at": "2026-11-16T13:59:04.188462+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.twz.com/land/avenger-assemble-surface-to-air-missiles-deployed-to-protect-trumps-mar-a-lago-estate",
     "media_type": "text/html",
-    "sha256": "4b7428f40b3374a24f399b10a234e306faeed001e854462e989df461ef118357",
-    "capture_id": "CAP-2a6c35d98d4e4b8e9665571dd06b8a31"
+    "sha256": "c896427dd162baca8a1fc2e780b3db31efbce0a9e52078f7b381d90ac15fa64e",
+    "capture_id": "CAP-74428965aa6c446fb39d1f9c287ea3ed"
   },
   {
     "source_id": "S043",
     "url": "https://www.wptv.com/news/region-c-palm-beach-county/palm-beach/air-defense-systems-spotted-on-barge-outside-mar-a-lago-as-security-measures-expand",
-    "checked_at": "2026-11-02T18:34:39.589474+00:00",
+    "checked_at": "2026-11-16T13:59:04.423161+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.wptv.com/news/region-c-palm-beach-county/palm-beach/air-defense-systems-spotted-on-barge-outside-mar-a-lago-as-security-measures-expand",
     "media_type": "text/html",
-    "sha256": "b34dca9d9ccbf70c5cc6552b749b114eb1cebeabe8a81424ec6017e77fd2e367",
-    "capture_id": "CAP-aff3f6a3b9ff4e88a05bc5554a1e45ae"
+    "sha256": "5297cb44f9414f81b8c3c25eab0101ceb3a1172dcc56bbda03d310ec0c7fe70e",
+    "capture_id": "CAP-48bc9f2866254ccd8cc480279ba71849"
   },
   {
     "source_id": "S044",
     "url": "https://www.govinfo.gov/content/pkg/FR-2025-07-29/pdf/2025-14291.pdf",
-    "checked_at": "2026-11-02T18:34:39.717758+00:00",
+    "checked_at": "2026-11-16T13:59:04.749621+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.govinfo.gov/content/pkg/FR-2025-07-29/pdf/2025-14291.pdf",
     "media_type": "application/pdf",
     "sha256": "c1b0b186aa87e8fef91425d3676d6f28dc5960099fe73c58599b846f6b86ba0d",
-    "capture_id": "CAP-60236881ab284cc3bce440481342ad8c"
+    "capture_id": "CAP-1a69131e96954a098a9f628696a365b8"
   },
   {
     "source_id": "S045",
     "url": "https://www.wired.com/story/mark-zuckerberg-inside-hawaii-compound/",
-    "checked_at": "2026-11-02T18:34:39.777031+00:00",
+    "checked_at": "2026-11-16T13:59:04.967022+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.wired.com/story/mark-zuckerberg-inside-hawaii-compound/",
     "media_type": "text/html",
-    "sha256": "3e98d0045db460cac0cfa01de656592d788459563f517b208d8680f74be5bca2",
-    "capture_id": "CAP-efb8a0ba623e4a87b5442bf50767bc38"
+    "sha256": "37a5e39a1b764d63dd67b2d159c29acc570f597c4f57b698f139f65608171e3c",
+    "capture_id": "CAP-67feb7a8a4de4c2e86fc5306e68dc91d"
   },
   {
     "source_id": "S046",
     "url": "https://www.hawaiinewsnow.com/2024/12/26/facebook-ceo-addresses-hawaii-doomsday-bunker-rumors-rare-interview/",
-    "checked_at": "2026-11-02T18:34:39.801512+00:00",
+    "checked_at": "2026-11-16T13:59:05.011323+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.hawaiinewsnow.com/2024/12/26/facebook-ceo-addresses-hawaii-doomsday-bunker-rumors-rare-interview/",
     "media_type": "text/html",
-    "sha256": "9df6c303f9d268c3c940a0f1c83de8a6dc113601df12ee651a5d5e23856b6be1",
-    "capture_id": "CAP-b47240d6b2794f0086704f7f8c5690c0"
+    "sha256": "6b57329f9384f242022dc86eca31fc506501fc0c72a6c0c5fde77ba0db80c7f4",
+    "capture_id": "CAP-2db3e636495840399de94e58738c670d"
   },
   {
     "source_id": "S047",
     "url": "https://tn.com.ar/internacional/2026/05/28/el-multimillonario-tecnologico-peter-thiel-encontro-un-nuevo-refugio-la-argentina/",
-    "checked_at": "2026-11-02T18:34:40.015708+00:00",
+    "checked_at": "2026-11-16T13:59:05.073421+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://tn.com.ar/internacional/2026/05/28/el-multimillonario-tecnologico-peter-thiel-encontro-un-nuevo-refugio-la-argentina/",
     "media_type": "text/html",
-    "sha256": "fbd27381eadd3173e5e19a2b854f24ccf3d55d0d391164c89226a59fc85b695b",
-    "capture_id": "CAP-8393afb536964b71bef56129ad16900c"
+    "sha256": "425ee4cf2f7e7a946342700a149304eb98f1bd086088ca5b8abdf90cfb52db8e",
+    "capture_id": "CAP-440f082a461346eabf4d8fc28e8e3dc3"
   },
   {
     "source_id": "S048",
     "url": "https://101theeagle.com/2-missouri-doomsday-planes/",
-    "checked_at": "2026-11-02T18:34:40.214623+00:00",
+    "checked_at": "2026-11-16T13:59:05.495298+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://101theeagle.com/2-missouri-doomsday-planes/",
     "media_type": "text/html",
     "sha256": "28f16fe0a53ba4de46017e61d336326fdcf42e71c1ac2a2b8db5c5825cbbb22f",
-    "capture_id": "CAP-187aab34ebca400d9e2da6d70b9346ec"
+    "capture_id": "CAP-e3601e85e4e342d7b91e5b85282491ce"
   },
   {
     "source_id": "S049",
     "url": "https://101theeagle.com/doomsday-planes-missouri-flight-path/",
-    "checked_at": "2026-11-02T18:34:40.366770+00:00",
+    "checked_at": "2026-11-16T13:59:05.556944+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://101theeagle.com/doomsday-planes-missouri-flight-path/",
     "media_type": "text/html",
-    "sha256": "7541c4ce446a517470b828b91a699583af367b70e883681d57817565ca5a7b8d",
-    "capture_id": "CAP-1e5c2419890d4b34b9dca4ce66320328"
+    "sha256": "a6583d623476700d3615a2ab5aa8307b7cceb47ca10a72c6c06f36e390f03d30",
+    "capture_id": "CAP-00dfac9175b243f395cf2c95b6a502f3"
   },
   {
     "source_id": "S050",
     "url": "https://www.dvidshub.net/image/9088692/100th-arw-refuels-e-4b-nightwatch",
-    "checked_at": "2026-11-02T18:34:40.453577+00:00",
+    "checked_at": "2026-11-16T13:59:05.591861+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/9088692/100th-arw-refuels-e-4b-nightwatch",
     "media_type": "text/html",
-    "sha256": "11f6999c8abe8cb5651a9a4acc62dd37b1e4044332e46d2e37ca1dea52e12dea",
-    "capture_id": "CAP-bec20054e3a04645b80ef5a0e40ca0d4"
+    "sha256": "be77fada60d5f41fcbdf96cb4bd65f25f30f6c3e8891ee5445f6712a79bfb8c2",
+    "capture_id": "CAP-2d76cf3af54b4e5491085896b00bae4c"
   },
   {
     "source_id": "S051",
     "url": "https://www.dvidshub.net/image/8940961/sd-hegseth-signs-memorandum-aboard-e-4b",
-    "checked_at": "2026-11-02T18:34:40.620296+00:00",
+    "checked_at": "2026-11-16T13:59:05.862965+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/8940961/sd-hegseth-signs-memorandum-aboard-e-4b",
     "media_type": "text/html",
-    "sha256": "085000eb2909d2f44ea7ff646faa6f5f00129dea03dc410259287b1ee80fc5bc",
-    "capture_id": "CAP-9a70fccf472c44b38cb933692959344e"
+    "sha256": "ad8808ab317e9b38cbb0dc0de951dd575108b3318ec8b3a6d486e036c59b55da",
+    "capture_id": "CAP-d1b357a57a7f47fdb428f5be8902fbd8"
   },
   {
     "source_id": "S052",
     "url": "https://www.dvidshub.net/image/9881988/norad-temporary-flight-restriction-enforcement-mission-bedminster-new-jersey",
-    "checked_at": "2026-11-02T18:34:40.732132+00:00",
+    "checked_at": "2026-11-16T13:59:05.878011+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dvidshub.net/image/9881988/norad-temporary-flight-restriction-enforcement-mission-bedminster-new-jersey",
     "media_type": "text/html",
-    "sha256": "14223c78c0d0656e3bd9d818cd3ce6588ab36d788da3eb073ec3a4f454e01dc1",
-    "capture_id": "CAP-ea9d7fee6afb4ac58afe82f87d8a8c91"
+    "sha256": "9ca7cc69bf3d0e15d50f0d688c0b3083a4927423abecd1bbb0c1480cbca915fa",
+    "capture_id": "CAP-979af1a1f3e040869c47c4d0b4fbd47d"
   },
   {
     "source_id": "S055",
     "url": "https://tribune.net.ph/2026/10/28/teodoro-urges-stronger-asean-cooperation-on-disaster-response",
-    "checked_at": "2026-11-02T18:34:40.779096+00:00",
+    "checked_at": "2026-11-16T13:59:05.882481+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://tribune.net.ph/2026/10/28/teodoro-urges-stronger-asean-cooperation-on-disaster-response",
     "media_type": "text/html",
-    "sha256": "bf7772e421c884fc3835ac764b274fe057040f99bab9e0519b700f78224119f2",
-    "capture_id": "CAP-d829a37cf1654cdea3cd47436f0e9ad3"
+    "sha256": "3c7133b48ceb34795cd9330eb3b97cbc8bcb49628cd0069d64d2f566cbbaedef",
+    "capture_id": "CAP-1f1741ec03024f85b50b84625ee17a66"
   },
   {
     "source_id": "S056",
     "url": "https://www.dhs.gov/ntas/1.1/feed.xml",
-    "checked_at": "2026-11-06T18:36:16.432476+00:00",
+    "checked_at": "2026-11-16T13:59:05.931877+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.dhs.gov/ntas/1.1/feed.xml",
     "media_type": "application/rss+xml",
     "sha256": "73dd2580819e216684b5b3539ac8c12e98cba1a35de8b60cac51acd5717a268b",
-    "capture_id": "CAP-082756dafcb2433a894bb20d43c7639d"
+    "capture_id": "CAP-b92d0874058a4662b8e8305de2f008e3"
   },
   {
     "source_id": "S058",
     "url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
-    "checked_at": "2026-11-06T18:36:17.205416+00:00",
+    "checked_at": "2026-11-16T13:59:06.128181+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
     "media_type": "text/html",
-    "sha256": "812ab38fac05a054f32382cb89f1ae028ce937463e5661b7551a28387bf8f13a",
-    "capture_id": "CAP-acdb78fa1b234511a5ce739343400a82"
+    "sha256": "85727811c06f558e6c15fc3e241cfc1a3b68399209ff977e7a4922a10171ba92",
+    "capture_id": "CAP-5db6a9c2e75a4ab88f98e9502818827f"
   },
   {
     "source_id": "S062",
     "url": "https://catalog.data.gov/dataset/ipaws-archived-alerts",
-    "checked_at": "2026-11-02T18:34:41.060638+00:00",
+    "checked_at": "2026-11-16T13:59:06.136369+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://catalog.data.gov/dataset/ipaws-archived-alerts",
     "media_type": "text/html",
-    "sha256": "e8beb43762074156b588b461ca2775c765bc8b7193ea30a966fd51bf31facfa0",
-    "capture_id": "CAP-a997527184a84fab937e91ded0c4c008"
+    "sha256": "67484f161c1110c44ba9a827249a436cd4e1531f29de3df2dcea204173f88eda",
+    "capture_id": "CAP-d43a5bc6b5c548c3a478d8ab525f31f0"
   },
   {
     "source_id": "S063",
     "url": "https://www.fdma.go.jp/about/organization/post-18.html",
-    "checked_at": "2026-11-02T18:34:41.114091+00:00",
+    "checked_at": "2026-11-16T13:59:06.179410+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.fdma.go.jp/about/organization/post-18.html",
     "media_type": "text/html",
     "sha256": "70a01e6c9480248740854912d2036d88acfeefcc3ed7e0d5d4718ea9ab489f8a",
-    "capture_id": "CAP-dd982b55d5354a7586015f7e9b48d5eb"
+    "capture_id": "CAP-4335c6e091784e658fa107aad6312f13"
   },
   {
     "source_id": "S064",
     "url": "https://eng.safekorea.go.kr/safekorea-eng/main/main.do",
-    "checked_at": "2026-11-02T18:34:41.348666+00:00",
+    "checked_at": "2026-11-16T13:59:06.576849+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://eng.safekorea.go.kr/safekorea-eng/main/main.do",
     "media_type": "text/html",
-    "sha256": "bfef4180cf378600aa0965e4770ccc901a6d591e7da63c8f4da111a3d364f7e8",
-    "capture_id": "CAP-e42c4126204342a0bf276b3860120da6"
+    "sha256": "2fe214bb4e9c662df8a9e63ecc92606f7993d1d2d4455439e7145df120236612",
+    "capture_id": "CAP-efd730dcbfc94fe2837da08370b3d859"
   },
   {
     "source_id": "S065",
     "url": "https://www.shanghai.gov.cn/202311th/20230919/17ed26cf7c9849c680807a866767b725.html",
-    "checked_at": "2026-11-02T18:34:41.434891+00:00",
+    "checked_at": "2026-11-16T13:59:06.800262+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.shanghai.gov.cn/202311th/20230919/17ed26cf7c9849c680807a866767b725.html",
     "media_type": "text/html",
     "sha256": "374be78d21130dc65241a970bcf64e6b00804bb9c74578d88ea5dd84422d341d",
-    "capture_id": "CAP-bb8d252f346f45678984af53d27844eb"
+    "capture_id": "CAP-d34cd70c66c949d69b375b0943e3d47f"
   },
   {
     "source_id": "S066",
     "url": "https://www.weather.gov/documentation/services-web-alerts",
-    "checked_at": "2026-11-02T18:34:42.039413+00:00",
+    "checked_at": "2026-11-16T13:59:07.453069+00:00",
     "status": "retrieved",
     "method": "HTTP GET",
     "http_status": 200,
     "final_url": "https://www.weather.gov/documentation/services-web-alerts",
     "media_type": "text/html",
-    "sha256": "fe6db427417fe674bdb8bcd2c47af88bc0b176fdde5699c2f46cee6faf00629f",
-    "capture_id": "CAP-78fbe43a474e4978bd607c7a0e2a762d"
+    "sha256": "8b5fa2dcc62d4560688745e1b244ffa6a1d068c07ae7374dd976a50daea003e5",
+    "capture_id": "CAP-1a15ad8fdac64de3841a4832d91631a3"
+  },
+  {
+    "source_id": "S082",
+    "url": "https://www.dvidshub.net/news/printable/577612",
+    "checked_at": "2026-11-16T13:59:07.639616+00:00",
+    "status": "retrieved",
+    "method": "HTTP GET",
+    "http_status": 200,
+    "final_url": "https://www.dvidshub.net/news/printable/577612",
+    "media_type": "text/html",
+    "sha256": "951d873ef72b1d3046fc6a968dc15c61085425317743baf25a938e211cb88c5c",
+    "capture_id": "CAP-06d8bcb31efb4cb983362c44d17cf8fb"
+  },
+  {
+    "source_id": "S083",
+    "url": "https://www.dvidshub.net/image/10039783/army-tests-battlefield-temporary-interment",
+    "checked_at": "2026-11-16T13:59:07.803083+00:00",
+    "status": "retrieved",
+    "method": "HTTP GET",
+    "http_status": 200,
+    "final_url": "https://www.dvidshub.net/image/10039783/army-tests-battlefield-temporary-interment",
+    "media_type": "text/html",
+    "sha256": "e2b7a3b6d32e1c47687e7b9819e8eda6b2eb6e462d63c89df73bcb214fd5c679",
+    "capture_id": "CAP-b0de4e0af9f54912951ea51246951d01"
   }
 ]

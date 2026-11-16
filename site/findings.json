@@ -409,40 +409,41 @@
   },
   {
     "id": "F011",
-    "title": "Inside the account of the Army’s battlefield burial exercise",
-    "summary": "A published Army-attributed account describes simulated temporary interment at Fort Bragg. The original Army page remains inaccessible in our checks.",
+    "title": "Army records document battlefield burial training at Fort Bragg",
+    "summary": "An official unit account and photograph document simulated interment training. Sustained daily capacity still needs an after-action record.",
     "sector": "military_logistics",
     "claim_ids": [
-      "C027"
+      "C027",
+      "C063"
     ],
     "published_at": "2026-11-02",
-    "updated_at": "2026-11-02",
+    "updated_at": "2026-11-16",
     "publication_status": "published",
-    "why_it_matters": "The stated purpose was to preserve remains for later identification and repatriation in large-scale combat. The reproduced account includes a projected daily capacity; a planning estimate is not a count of actual casualties.",
-    "boundary": "The Army original returned access errors. The readable copy and indexed Army result are versions of the same account, not independent witnesses. This story verifies what the accessible document says, not every exercise claim. It provides no evidence of a domestic civilian burial program or a predicted death toll.",
+    "why_it_matters": "The exercise examines preservation and later repatriation in contested combat.",
+    "boundary": "The official publication and reproduced copy share an author and evidence chain. Sustained throughput remains unverified.",
     "alternatives": "The documentary record does not by itself establish common cause or imminent catastrophe.",
-    "next_question": "What independently observed operational evidence and comparable historical records would confirm or change this account?",
+    "next_question": "Will an after-action report document sustained performance and the conditions used to calculate capacity?",
     "image_id": "dragon-covenant",
     "kicker": "Military / Fatality management",
     "format": "Document review",
     "event_date": "2026-10-21",
     "sections": [
       {
-        "heading": "The documented record",
+        "heading": "The unit publication",
         "paragraphs": [
-          "A readable account bylined Capt. Thomas McCarty on That PAO Guy describes Phase II of Operation Dragon Covenant at Fort Bragg. Its photo caption dates the exercise to October 21, 2026. The account describes engineers testing temporary battlefield burial procedures using simulated skeletal models and water containers."
+          "DVIDS carries the 3rd Corps Sustainment Command’s account by Capt. Thomas McCarty, posted October 22, 2026. Its photo record dates the exercise to October 21. The training used simulated skeletal models and water containers."
         ]
       },
       {
-        "heading": "Preserving remains for return home",
+        "heading": "Measured trial and planning estimate",
         "paragraphs": [
-          "The stated purpose was to preserve remains for later identification and repatriation in large-scale combat. The reproduced account includes a projected daily capacity; a planning estimate is not a count of actual casualties."
+          "The account distinguishes an observed trench-digging time from a projected daily capacity. Confirmation of sustained performance requires after-action measurements."
         ]
       },
       {
-        "heading": "Reporting limits",
+        "heading": "Source review",
         "paragraphs": [
-          "The Army original returned access errors. The readable copy and indexed Army result are versions of the same account, not independent witnesses. This story verifies what the accessible document says, not every exercise claim. It provides no evidence of a domestic civilian burial program or a predicted death toll."
+          "The official article resolves the earlier reliance on a reproduced account. Both versions share their origin. The Army.mil access errors remain in the retrieval history."
         ]
       }
     ]

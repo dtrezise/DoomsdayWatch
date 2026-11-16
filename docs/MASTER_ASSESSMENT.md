@@ -49,3 +49,7 @@ F012–F015 add source reviews of acknowledged Mar-a-Lago protective capabilitie
 The DOE registers support a rise in Section 202(c) order paperwork in matched January–October windows. The recorded totals are 1, 1, 11 and 65 documents in 2023–2026. These totals include extensions and repeat facilities. Determining whether distinct emergencies or actual dispatch rose requires linking the orders by underlying incident and checking operating data. The [weekly review](../reports/2026-11-09_research_review.md) records the comparison and the limits of the evidence across all eight sectors.
 
 The IMO statement provides primary documentary support for the February 28 start date of the conflict and subsequent shipping disruption. Premium figures remain unverified. The iX release provides the exact amount the issuer reported for Wafermine development. It describes work toward authorization, with agency award and FDA records still needed. NASA's March 2026 lunar update supersedes the earlier 2024 YR4 estimate for the December 2032 encounter. These findings do not establish a shared undisclosed cause.
+
+## November 16 source review
+
+DVIDS supplies the official unit publication and matching photograph for F011, resolving its primary-source access gap. C006 still requires independently measured capacity evidence. The [weekly review](../reports/2026-11-16_research_review.md) records the new IMO statement, a historical stockpile-coordination benchmark and the remaining collection gaps.
