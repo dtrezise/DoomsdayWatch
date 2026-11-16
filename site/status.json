@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "checked_at": "2026-11-09T13:28:54.258121+00:00",
+  "checked_at": "2026-11-16T13:29:27.894588+00:00",
   "stale_after_hours": 36,
   "items": [
     {
@@ -8,7 +8,7 @@
       "label": "Doomsday Clock",
       "value": "85 seconds",
       "state": "verified",
-      "checked_at": "2026-11-09T13:28:54.258121+00:00",
+      "checked_at": "2026-11-16T13:29:27.894588+00:00",
       "source_url": "https://thebulletin.org/doomsday-clock/",
       "source_refs": [
         "https://thebulletin.org/doomsday-clock/"
@@ -18,19 +18,19 @@
         {
           "url": "https://thebulletin.org/doomsday-clock/",
           "outcome": "retrieved",
-          "sha256": "2a784fb56fffb2cae2f7183af4820cd69afdb0654e07857e9e3e056a6b25dc82",
+          "sha256": "7608bfb61b5a94457b299002c54d363b31dadca650520fcdfc00727a81be866b",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-09T13:28:54.258121+00:00",
-      "sha256": "2a784fb56fffb2cae2f7183af4820cd69afdb0654e07857e9e3e056a6b25dc82"
+      "verified_at": "2026-11-16T13:29:27.894588+00:00",
+      "sha256": "7608bfb61b5a94457b299002c54d363b31dadca650520fcdfc00727a81be866b"
     },
     {
       "id": "dhs",
       "label": "US Homeland Security",
       "value": "No active advisory",
       "state": "verified",
-      "checked_at": "2026-11-09T13:28:54.258121+00:00",
+      "checked_at": "2026-11-16T13:29:27.894588+00:00",
       "source_url": "https://www.dhs.gov/ntas/1.1/feed.xml",
       "source_refs": [
         "https://www.dhs.gov/national-terrorism-advisory-system",
@@ -47,10 +47,10 @@
         {
           "url": "https://www.dhs.gov/national-terrorism-advisory-system",
           "outcome": "retrieved",
-          "sha256": "c647c1a78784f1c5232f84863f9030bbb0d536ec26902f260880e5cb973fd89d"
+          "sha256": "eb6561b0aaa562ba6aa64768e4851b87e4424a6b160e85390b411794d7d8a807"
         }
       ],
-      "verified_at": "2026-11-09T13:28:54.258121+00:00",
+      "verified_at": "2026-11-16T13:29:27.894588+00:00",
       "sha256": "73dd2580819e216684b5b3539ac8c12e98cba1a35de8b60cac51acd5717a268b",
       "advisories": [],
       "expired_entries": 0,
@@ -61,7 +61,7 @@
       "label": "Europe / United Kingdom",
       "value": "SEVERE",
       "state": "verified",
-      "checked_at": "2026-11-09T13:28:54.258121+00:00",
+      "checked_at": "2026-11-16T13:29:27.894588+00:00",
       "source_url": "https://www.gov.uk/terrorism-national-emergency",
       "source_refs": [
         "https://www.gov.uk/terrorism-national-emergency"
@@ -71,19 +71,19 @@
         {
           "url": "https://www.gov.uk/terrorism-national-emergency",
           "outcome": "retrieved",
-          "sha256": "cc5e6158f884d9a9921cd066359246cc92710ceee823f670d732619ee70a809b",
+          "sha256": "46c33b90a5805b63f14d4a9d2c5677a4287652974e28e1305fc9c6e493d1adc6",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-09T13:28:54.258121+00:00",
-      "sha256": "cc5e6158f884d9a9921cd066359246cc92710ceee823f670d732619ee70a809b"
+      "verified_at": "2026-11-16T13:29:27.894588+00:00",
+      "sha256": "46c33b90a5805b63f14d4a9d2c5677a4287652974e28e1305fc9c6e493d1adc6"
     },
     {
       "id": "france",
       "label": "Europe / France",
       "value": "Vigilance renforcée",
       "state": "verified",
-      "checked_at": "2026-11-09T13:28:54.258121+00:00",
+      "checked_at": "2026-11-16T13:29:27.894588+00:00",
       "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
       "source_refs": [
         "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger"
@@ -93,18 +93,18 @@
         {
           "url": "https://www.sgdsn.gouv.fr/vigipirate",
           "outcome": "source_blocked",
-          "sha256": "03bf6103204dcf5b4004ac1e3b2d57507794ad6cd1796dd63274eb58fecc2c37",
+          "sha256": "575df010142a42626074dc7c0e2f8f9592ba09fdb30510e2647d89b18f80d501",
           "reason": "Public source returned a security/interstitial page"
         },
         {
           "url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/alertes/vigilance-renforcee-pour-les-ressortissants-francais-a-l-etranger",
           "outcome": "retrieved",
-          "sha256": "60e1d6789838126e76923ac4da13d64ee90a5228d6f835af593147342e7a5c59",
+          "sha256": "85727811c06f558e6c15fc3e241cfc1a3b68399209ff977e7a4922a10171ba92",
           "parsed": true
         }
       ],
-      "verified_at": "2026-11-09T13:28:54.258121+00:00",
-      "sha256": "60e1d6789838126e76923ac4da13d64ee90a5228d6f835af593147342e7a5c59",
+      "verified_at": "2026-11-16T13:29:27.894588+00:00",
+      "sha256": "85727811c06f558e6c15fc3e241cfc1a3b68399209ff977e7a4922a10171ba92",
       "source_date": "2026-09-10",
       "review_due": "2026-12-09T00:00:00+00:00"
     }
