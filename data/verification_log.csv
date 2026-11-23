@@ -88,3 +88,9 @@ V094,2026-11-16,S082,Inspect official unit publication and capture HTML,full_tex
 V095,2026-11-16,S083,Inspect official photo caption and VIRIN,full_text,Use primary image provenance and existing reuse policy
 V096,2026-11-16,S084,Inspect November11 statement and capture HTML,full_text,Obtain event-level incident log and denominator before rate comparison
 V097,2026-11-16,S085,Inspect historical GAO product summary,full_text,PDF capture returned403; keep byte-capture limits explicit
+V098,2026-11-23,S085,Inspect current recommendation1 and2 follow-up text,full_text,GAO describes July2025 role guidance and May2025 guidance-review procedures. Obtain underlying guidance before evaluating outcomes.
+V099,2026-11-23,S085,Attempt original HTTP capture,http_403,Browser text inspected. No original response bytes imported.
+V100,2026-11-23,S086,Inspect recommendation tracker and attempt direct capture,full_text_http_403,GAO reports implementation. Original direct download blocked. Underlying memoranda remain separate.
+V101,2026-11-23,S087,Inspect release summary and event descriptions in browser,full_text,Preserve scramble definition and selected week. Not an incursion count.
+V102,2026-11-23,S088,Inspect release summary and date; attempt direct capture,full_text_http_403,Retain full-page April3 versus search-date April2 conflict.
+V103,2026-11-23,S089,Inspect release summary and event descriptions in browser,full_text,Four alerts involve multiple aircraft. Obtain full series before inferring trend.

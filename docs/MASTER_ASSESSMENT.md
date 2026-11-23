@@ -53,3 +53,7 @@ The IMO statement provides primary documentary support for the February 28 start
 ## November 16 source review
 
 DVIDS supplies the official unit publication and matching photograph for F011, resolving its primary-source access gap. C006 still requires independently measured capacity evidence. The [weekly review](../reports/2026-11-16_research_review.md) records the new IMO statement, a historical stockpile-coordination benchmark and the remaining collection gaps.
+
+## November 23 historical follow-up
+
+GAO's stockpile recommendation trackers describe remedial guidance issued in 2025. This follow-up qualifies the historical coordination deficiencies recorded in the November 16 review. The [November 23 review](../reports/2026-11-23_research_review.md) retains the distinction between documented governance changes and measured operational performance, and records selected Baltic air-policing releases for future series construction.
